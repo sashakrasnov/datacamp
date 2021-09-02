@@ -1,0 +1,1 @@
+In this chapter, you will become acquainted with the fundamentals of Relational Databases and the Relational Model. You will learn how to connect to a database and then interact with it by writing basic SQL queries, both in raw SQL as well as with SQLAlchemy, which provides a Pythonic way of interacting with databases.

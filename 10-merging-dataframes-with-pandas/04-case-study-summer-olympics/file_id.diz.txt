@@ -1,0 +1,1 @@
+To cement your new skills, you'll apply them by working on an in-depth study involving Olympic medal data. The analysis involves integrating your multi-DataFrame skills from this course and also skills you've gained in previous pandas courses. This is a rich dataset that will allow you to fully leverage your pandas data manipulation skills. Enjoy!

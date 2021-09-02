@@ -1,0 +1,1 @@
+This chapter gives you the tools required to run a simulation. We'll start with a review of random variables and probability distributions. We will then learn how to run a simulation by first looking at a simulation workflow and then recreating it in the context of a game of dice. Finally, we will learn how to use simulations for making decisions.

@@ -1,0 +1,1 @@
+In this chapter, you will build on the database knowledge you began acquiring in the previous chapter by writing more nuanced queries that allow you to filter, order, and count your data, all within the Pythonic framework provided by SQLAlchemy!

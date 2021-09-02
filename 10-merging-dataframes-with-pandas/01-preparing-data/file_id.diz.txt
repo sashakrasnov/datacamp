@@ -1,0 +1,1 @@
+In this chapter, you'll learn about different techniques you can use to import multiple files into DataFrames. Having imported your data into individual DataFrames, you'll then learn how to share information between DataFrames using their Indexes. Understanding how Indexes work is essential information that you'll need for merging DataFrames later in the course.

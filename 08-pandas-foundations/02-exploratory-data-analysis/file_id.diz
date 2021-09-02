@@ -1,0 +1,1 @@
+Having learned how to ingest and inspect your data, the next step is to explore it visually as well as quantitatively. This process, known as exploratory data analysis (EDA), is a crucial component of any data science project, and pandas has powerful methods that help with statistical and visual EDA. In this chapter, you will learn how and when to apply these techniques.

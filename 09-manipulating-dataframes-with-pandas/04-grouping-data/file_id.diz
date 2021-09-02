@@ -1,0 +1,1 @@
+In this chapter, you'll learn how to identify and split DataFrames by groups or categories for further aggregation or analysis. You'll also learn how to transform and filter your data, including how to detect outliers and impute missing values. Knowing how to effectively group data in pandas can be a seriously powerful addition to your data science toolbox.
