@@ -30,5 +30,5 @@ C = 2 * math.pi * r
 A = math.pi * r * r
 
 # Build printout
-print("Circumference: " + str(C))
-print("Area: " + str(A))
+print('Circumference: ' + str(C))
+print('Area: ' + str(A))

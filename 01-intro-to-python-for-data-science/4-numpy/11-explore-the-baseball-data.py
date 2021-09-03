@@ -4,7 +4,19 @@ Explore the baseball data
 Because the mean and median are so far apart, you decide to complain to the MLB. They find the error and send the corrected data over to you. It's again available as a 2D Numpy array np_baseball, with three columns.
 
 The Python script on the right already includes code to print out informative messages with the different summary statistics. Can you finish the job?
+'''
 
+from random import uniform
+import numpy as np
+
+height_in = [uniform(71, 85) for _ in range(1015)]
+weight_lb = [h * uniform(2.2, 2.5) for h in height_in]
+age = [uniform(20, 35) for _ in range(1015)]
+
+baseball = list(zip(weight_lb, height_in, age))
+np_baseball = np.array(baseball)
+
+'''
 Instructions
 
 *   The code to print out the mean height is already included. Complete the code for the median height. Replace None with the correct code.
@@ -16,20 +28,29 @@ Instructions
 
 
 # Import numpy
+
 import numpy as np
 
 # Print mean height (first column)
-avg = np.mean(np_baseball[:,0])
-print("Average: " + str(avg))
+
+avg = np.mean(np_baseball[:, 0])
+
+print('Average: ' + str(avg))
 
 # Print median height. Replace 'None'
-med = np.median(np_baseball[:,0])
-print("Median: " + str(med))
+
+med = np.median(np_baseball[:, 0])
+
+print('Median: ' + str(med))
 
 # Print out the standard deviation on height. Replace 'None'
-stddev = np.std(np_baseball[:,0])
-print("Standard Deviation: " + str(stddev))
+
+stddev = np.std(np_baseball[:, 0])
+
+print('Standard Deviation: ' + str(stddev))
 
 # Print out correlation between first and second column. Replace 'None'
-corr = np.corrcoef(np_baseball[:,0], np_baseball[:,1])
-print("Correlation: " + str(corr))
+
+corr = np.corrcoef(np_baseball[:, 0], np_baseball[:, 1])
+
+print('Correlation: ' + str(corr))

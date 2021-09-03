@@ -18,7 +18,7 @@ Instructions
 # Several variables to experiment with
 savings = 100
 factor = 1.1
-desc = "compound interest"
+desc = 'compound interest'
 
 # Assign product of factor and savings to year1
 year1 = savings * factor

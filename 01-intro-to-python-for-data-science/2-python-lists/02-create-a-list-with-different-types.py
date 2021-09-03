@@ -15,13 +15,13 @@ Instructions
 
 # area variables (in square meters)
 hall = 11.25
-kit = 18.0
-liv = 20.0
-bed = 10.75
-bath = 9.50
+kit  = 18.00
+liv  = 20.00
+bed  = 10.75
+bath =  9.50
 
 # Create list areas
-areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom", bed, "bathroom", bath]
+areas = ['hallway', hall, 'kitchen', kit, 'living room', liv, 'bedroom', bed, 'bathroom', bath]
 
 # Print areas
 print(areas)

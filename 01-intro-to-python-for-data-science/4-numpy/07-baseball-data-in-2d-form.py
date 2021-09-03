@@ -6,7 +6,14 @@ You have another look at the MLB data and realize that it makes more sense to re
 The MLB was, again, very helpful and passed you the data in a different structure, a Python list of lists. In this list of lists, each sublist represents the height and weight of a single baseball player. The name of this embedded list is baseball.
 
 Can you store the data as a 2D array to unlock numpy's extra functionality?
+'''
 
+baseball = [[180,  78.4],
+            [215, 102.7],
+            [210,  98.5],
+            [188,  75.2]]
+
+'''
 Instructions
 
 *   Use np.array() to create a 2D numpy array from baseball. Name it np_baseball.

@@ -10,7 +10,14 @@ You've seen it with your own eyes: Python lists and numpy arrays sometimes behav
 |   np_x[1]
 
 The script on the right already contains code that imports numpy as np, and stores both the height and weight of the MLB players as numpy arrays.
+'''
 
+from random import uniform
+
+height_in = [uniform(71, 85) for _ in range(200)]
+weight_lb = [h * uniform(2.2, 2.5) for h in height_in]
+
+'''
 Instructions
 
 *   Subset np_weight_lb: print out the element at index 50.

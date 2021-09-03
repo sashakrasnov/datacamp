@@ -15,7 +15,14 @@ For numpy specifically, you can also use boolean numpy arrays:
 |   y[high]
 
 The code that calculates the BMI of all baseball players is already included. Follow the instructions and reveal interesting things from the data!
+'''
 
+from random import uniform
+
+height_in = [uniform(71, 85) for _ in range(200)]
+weight_lb = [h * uniform(2.2, 2.5) for h in height_in]
+
+'''
 Instructions
 
 *   Create a boolean numpy array: the element of the array should be True if the corresponding baseball player's BMI is below 21. You can use the < operator for this. Name the array light.

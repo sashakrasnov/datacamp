@@ -11,7 +11,14 @@ You've contacted FIFA for some data and they handed you two lists. The lists are
 Each element in the lists corresponds to a player. The first list, positions, contains strings representing each player's position. The possible positions are: 'GK' (goalkeeper), 'M' (midfield), 'A' (attack) and 'D' (defense). The second list, heights, contains integers representing the height of the player in cm. The first player in the lists is a goalkeeper and is pretty tall (191 cm).
 
 You're fairly confident that the median height of goalkeepers is higher than that of other players on the soccer field. Some of your friends don't believe you, so you are determined to show them using the data you received from FIFA and your newly acquired Python skills.
+'''
 
+from random import uniform, choice
+
+heights = [uniform(180, 215) for _ in range(200)]
+positions = [choice(('GK', 'M', 'A', 'D')) for _ in range(200)]
+
+'''
 Instructions
 
 *   Convert heights and positions, which are regular lists, to numpy arrays. Call them np_heights and np_positions.
@@ -38,7 +45,7 @@ gk_heights = np_heights[np_positions == 'GK']
 other_heights = np_heights[np_positions != 'GK']
 
 # Print out the median height of goalkeepers. Replace 'None'
-print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+print('Median height of goalkeepers: ' + str(np.median(gk_heights)))
 
 # Print out the median height of other players. Replace 'None'
-print("Median height of other players: " + str(np.median(other_heights)))
+print('Median height of other players: ' + str(np.median(other_heights)))

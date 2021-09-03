@@ -13,7 +13,7 @@ Instructions
 '''
 
 # string to experiment with: room
-room = "poolhouse"
+room = 'poolhouse'
 
 # Use upper() on room: room_up
 room_up = room.upper()

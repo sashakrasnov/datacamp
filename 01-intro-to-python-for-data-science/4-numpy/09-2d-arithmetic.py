@@ -14,7 +14,20 @@ Execute the code below in the IPython shell and see if you understand:
 |   np_mat + np_mat
 
 np_baseball is coded for you; it's again a 2D numpy array with 3 columns representing height, weight and age.
+'''
 
+from random import uniform
+from numpy import array as np_array
+
+height_in = [uniform(71, 85) for _ in range(200)]
+weight_lb = [h * uniform(2.2, 2.5) for h in height_in]
+age = [uniform(20, 35) for _ in range(200)]
+
+baseball = list(zip(weight_lb, height_in, age))
+
+updated = np_array([1.1, -0.3, 1])
+
+'''
 Instructions
 
 *   You managed to get hold of the changes in weight, height and age of all baseball players. It is available as a 2D numpy array, updated. Add np_baseball and updated and print out the result.
