@@ -8,7 +8,17 @@ With matplotlib, you can create a bunch of different plots in Python. The most b
 |   plt.show()
 
 In the video, you already saw how much the world population has grown over the past years. Will it continue to do so? The world bank has estimates of the world population for the years 1950 up to 2100. The years are loaded in your workspace as a list called year, and the corresponding populations as a list called pop.
+'''
+from random import random
 
+year = list(range(1988, 2018))
+#pop = [10 + random() for _ in year]
+pop = [10]
+
+for _ in range(len(year) - 1):
+    pop.append(pop[-1] + random() / 3)
+
+'''
 Instructions
 
 *   print() the last item from both the year and the pop list to see what the predicted population for the year 2100 is. Use two print() functions.

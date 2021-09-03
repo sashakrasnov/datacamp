@@ -10,12 +10,28 @@ In the video, Filip has demonstrated how you could control the y-ticks by specif
 In this example, the ticks corresponding to the numbers 0, 1 and 2 will be replaced by one, two and three, respectively.
 
 Let's do a similar thing for the x-axis of your world development chart, with the xticks() function. The tick values 1000, 10000 and 100000 should be replaced by 1k, 10k and 100k. To this end, two lists have already been created for you: tick_val and tick_lab.
+'''
 
+import csv
+
+gdp_cap = []
+life_exp = []
+
+with open('../datasets/gapminder.csv', 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+
+    for row in reader:
+        gdp_cap.append(float(row['gdp_cap']))
+        life_exp.append(float(row['life_exp']))
+
+'''
 Instructions
 
 *   Use tick_val and tick_lab as inputs to the xticks() function to make the the plot more readable.
 *   As usual, display the plot with plt.show() after you've added the customizations.
 '''
+
+import matplotlib.pyplot as plt
 
 # Scatter plot
 plt.scatter(gdp_cap, life_exp)

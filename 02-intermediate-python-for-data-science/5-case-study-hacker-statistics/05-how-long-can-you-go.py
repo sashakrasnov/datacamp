@@ -21,7 +21,7 @@ np.random.seed(123)
 # Initialize random_walk
 random_walk = [0]
 
-for x in range(100) :
+for x in range(100):
     step = random_walk[-1]
     dice = np.random.randint(1, 7)
 

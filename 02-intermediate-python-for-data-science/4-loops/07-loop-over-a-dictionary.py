@@ -23,4 +23,4 @@ europe = {'spain':'madrid', 'france':'paris', 'germany':'bonn',
           
 # Iterate over europe
 for k, v in europe.items() :
-    print("the capital of " + k + " is " + v)
+    print('the capital of ' + k + ' is ' + v)

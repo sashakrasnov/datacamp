@@ -12,7 +12,18 @@ If you're dealing with a 2D Numpy array, it's more complicated. A 2D array is bu
 |       ...
 
 Two Numpy arrays that you might recognize from the intro course are available in your Python session: np_height, a Numpy array containing the heights of Major League Baseball players, and np_baseball, a 2D Numpy array that contains both the heights (first column) and weights (second column) of those players.
+'''
 
+from random import uniform
+import numpy as np
+
+height_in = [uniform(71, 85) for _ in range(200)]
+weight_lb = [h * uniform(2.2, 2.5) for h in height_in]
+
+np_height = np.array(height_in)
+np_baseball = np.array(list(zip(height_in, weight_lb)))
+
+'''
 Instructions
 
 *   Import the numpy package under the local alias np.
@@ -24,9 +35,9 @@ Instructions
 import numpy as np
 
 # For loop over np_height
-for h in np_height :
-    print(str(h) + " inches")
+for h in np_height:
+    print(str(h) + ' inches')
 
 # For loop over np_baseball
-for b in np.nditer(np_baseball) :
+for b in np.nditer(np_baseball):
     print(b)

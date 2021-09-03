@@ -24,12 +24,11 @@ np.random.seed(123)
 all_walks = []
 
 # Simulate random walk 10 times
-for i in range(10) :
-
+for i in range(10):
     # Code from before
     random_walk = [0]
 
-    for x in range(100) :
+    for x in range(100):
         step = random_walk[-1]
         dice = np.random.randint(1, 7)
 

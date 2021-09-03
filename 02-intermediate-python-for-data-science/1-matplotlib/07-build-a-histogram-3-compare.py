@@ -6,11 +6,28 @@ In the video, you saw population pyramids for the present day and for the future
 Let's do a similar comparison. life_exp contains life expectancy data for different countries in 2007. You also have access to a second list now, life_exp1950, containing similar data for 1950. Can you make a histogram for both datasets?
 
 You'll again be making two plots. The plt.show() and plt.clf() commands to render everything nicely are already included. Also matplotlib.pyplot is imported for you, as plt.
+'''
 
+import csv
+from random import uniform
+
+life_exp = []
+life_exp1950 = []
+
+with open('../datasets/gapminder.csv', 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+
+    for row in reader:
+        life_exp.append(float(row['life_exp']))
+        life_exp1950.append(float(row['life_exp']) - uniform(3, 8))
+
+'''
 Instructions
 *   Build a histogram of life_exp with 15 bins.
 *   Build a histogram of life_exp1950, also with 15 bins. Is there a big difference with the histogram for the 2007 data?
 '''
+
+import matplotlib.pyplot as plt
 
 # Histogram of life_exp, 15 bins
 plt.hist(life_exp, bins=15)

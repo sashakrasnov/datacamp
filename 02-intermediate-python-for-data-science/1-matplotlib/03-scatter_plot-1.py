@@ -8,7 +8,21 @@ When you have a time scale along the horizontal axis, the line plot is your frie
 |   plt.show()
 
 Let's continue with the gdp_cap versus life_exp plot, the GDP and life expectancy data for different countries in 2007. Maybe a scatter plot will be a better alternative?
+'''
 
+import csv
+
+gdp_cap = []
+life_exp = []
+
+with open('../datasets/gapminder.csv', 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+
+    for row in reader:
+        gdp_cap.append(float(row['gdp_cap']))
+        life_exp.append(float(row['life_exp']))
+
+'''
 Instructions
 
 *   Change the line plot that's coded in the script to a scatter plot.

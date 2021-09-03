@@ -16,12 +16,33 @@ How did we make the list col you ask? The Gapminder data contains a list contine
 |   }
 
 Nothing to worry about now; you will learn about dictionaries in the next chapter.
+'''
 
+import csv
+
+gdp_cap = []
+life_exp = []
+pop = []
+
+with open('../datasets/gapminder.csv', 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+
+    for row in reader:
+        gdp_cap.append(float(row['gdp_cap']))
+        life_exp.append(float(row['life_exp']))
+        pop.append(float(row['population']) / 1E6)
+
+col = ['red', 'green']
+
+'''
 Instructions
 
 *   Add c = col to the arguments of the plt.scatter() function.
 *   Change the opacity of the bubbles by setting the alpha argument to 0.8 inside plt.scatter(). Alpha can be set from zero to one, where zero is totally transparent, and one is not at all transparent.
 '''
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Specify c and alpha inside plt.scatter()
 plt.scatter(x=gdp_cap, y=life_exp, s=2*np.array(pop), c=col, alpha=0.8)

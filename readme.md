@@ -5,3 +5,12 @@ I completed this course back in 2018. All exercises in the course are made in su
 In this repository, you will find completed exercises with "restored" algorithms - with data loading and preprocessing - just unpack dataset.7z and run.
 
 Anyway, this course is too easy, and I would recommend it only for people who make the first step in Python, data processing, statistical analysis, and visualization.
+
+<h3>Acquired Certificates</h3>
+
+<a href="https://www.datacamp.com/statement-of-accomplishment/track/3f614bbc7fe6e3616a1e4bc90ed6dc6f8dafef2f">Data Analyst</a>
+
+<a href="https://www.datacamp.com/statement-of-accomplishment/track/bdc54a85841a02764964e77888b6568ba91060e7">Machine Learning</a>
+
+<a href="https://www.datacamp.com/statement-of-accomplishment/track/8e1514d50d088ddf8530ecf0fdd89e66f9eacac8">Data Scientist</a>
+

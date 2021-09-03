@@ -16,7 +16,7 @@ Instructions
 # Import cars data
 import pandas as pd
 
-cars = pd.read_csv('cars.csv', index_col=0)
+cars = pd.read_csv('../datasets/cars.csv', index_col=0)
 
 # Create car_maniac: observations that have a cars_per_cap over 500
 cpc = cars['cars_per_cap']

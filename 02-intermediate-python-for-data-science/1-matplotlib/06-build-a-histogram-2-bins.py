@@ -8,12 +8,26 @@ To control the number of bins to divide your data in, you can set the bins argum
 That's exactly what you'll do in this exercise. You'll be making two plots here. The code in the script already includes plt.show() and plt.clf() calls; plt.show() displays a plot; plt.clf() cleans it up again so you can start afresh.
 
 As before, life_exp is available and matploblib.pyplot is imported as plt.
+'''
 
+import csv
+
+life_exp = []
+
+with open('../datasets/gapminder.csv', 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+
+    for row in reader:
+        life_exp.append(float(row['life_exp']))
+
+'''
 Instructions
 
 *   Build a histogram of life_exp, with 5 bins. Can you tell which bin contains the most observations?
 *   Build another histogram of life_exp, this time with 20 bins. Is this better?
 '''
+
+import matplotlib.pyplot as plt
 
 # Build histogram with 5 bins
 plt.hist(life_exp, bins=5)
