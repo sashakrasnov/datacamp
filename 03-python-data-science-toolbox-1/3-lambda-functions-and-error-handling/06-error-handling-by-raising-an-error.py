@@ -13,8 +13,8 @@ Instructions
 
 # Define shout_echo
 def shout_echo(word1, echo=1):
-    """Concatenate echo copies of word1 and three
-    exclamation marks at the end of the string."""
+    '''Concatenate echo copies of word1 and three
+    exclamation marks at the end of the string.'''
 
     # Raise an error with raise
     if echo < 0:
@@ -30,4 +30,4 @@ def shout_echo(word1, echo=1):
     return shout_word
 
 # Call shout_echo
-shout_echo("particle", echo=5)
+shout_echo('particle', echo=5)

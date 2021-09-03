@@ -11,7 +11,7 @@ Instructions
 '''
 
 # Create a string: team
-team = "teen titans"
+team = 'teen titans'
 
 # Define change_team()
 def change_team():
@@ -21,7 +21,7 @@ def change_team():
     global team
 
     # Change the value of team in global: team
-    team = "justice league"
+    team = 'justice league'
 
 # Print team
 print(team)

@@ -20,8 +20,8 @@ tweets_df = pd.read_csv('../datasets/tweets.csv')
 
 # Define count_entries()
 def count_entries(df, col_name='lang'):
-    """Return a dictionary with counts of
-    occurrences as value for each key."""
+    '''Return a dictionary with counts of
+    occurrences as value for each key.'''
     
     # Raise a ValueError if col_name is NOT in DataFrame
     if col_name not in df.columns:

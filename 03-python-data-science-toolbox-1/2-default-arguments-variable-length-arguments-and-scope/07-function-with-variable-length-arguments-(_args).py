@@ -16,10 +16,10 @@ Instructions
 
 # Define gibberish
 def gibberish(*args):
-    """Concatenate strings in *args together."""
+    '''Concatenate strings in *args together.'''
 
     # Initialize an empty string: hodgepodge
-    hodgepodge = ""
+    hodgepodge = ''
 
     # Concatenate the strings in args
     for word in args:
@@ -32,7 +32,7 @@ def gibberish(*args):
 one_word = gibberish('luke')
 
 # Call gibberish() with five strings: many_words
-many_words = gibberish("luke", "leia", "han", "obi", "darth")
+many_words = gibberish('luke', 'leia', 'han', 'obi', 'darth')
 
 # Print one_word and many_words
 print(one_word)

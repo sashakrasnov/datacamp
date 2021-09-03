@@ -18,7 +18,7 @@ Instructions
 '''
 
 # Create a list of strings: spells
-spells = ["protego", "accio", "expecto patronum", "legilimens"]
+spells = ['protego', 'accio', 'expecto patronum', 'legilimens']
 
 # Use map() to apply a lambda function over spells: shout_spells
 shout_spells = map(lambda s: s + '!!!', spells)

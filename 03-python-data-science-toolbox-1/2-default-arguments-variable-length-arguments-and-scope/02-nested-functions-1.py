@@ -13,12 +13,12 @@ Instructions
 
 # Define three_shouts
 def three_shouts(word1, word2, word3):
-    """Returns a tuple of strings
-    concatenated with '!!!'."""
+    '''Returns a tuple of strings
+    concatenated with '!!!'.'''
 
     # Define inner
     def inner(word):
-        """Returns a string concatenated with '!!!'."""
+        '''Returns a string concatenated with '!!!'.'''
         return word + '!!!'
 
     # Return a tuple of strings

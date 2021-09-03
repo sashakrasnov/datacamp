@@ -13,8 +13,8 @@ Instructions
 
 # Define shout_echo
 def shout_echo(word1, echo=1):
-    """Concatenate echo copies of word1 and three
-     exclamation marks at the end of the string."""
+    '''Concatenate echo copies of word1 and three
+    exclamation marks at the end of the string.'''
 
     # Concatenate echo copies of word1 using *: echo_word
     echo_word = word1 * echo

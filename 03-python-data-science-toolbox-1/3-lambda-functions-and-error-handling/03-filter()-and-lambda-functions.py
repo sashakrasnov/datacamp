@@ -15,7 +15,7 @@ Instructions
 fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli']
 
 # Use filter() to apply a lambda function over fellowship: result
-result = filter(lambda f: len(f) > 6 , fellowship)
+result = filter(lambda f: len(f) > 6, fellowship)
 
 # Convert result to a list: result_list
 result_list = list(result)

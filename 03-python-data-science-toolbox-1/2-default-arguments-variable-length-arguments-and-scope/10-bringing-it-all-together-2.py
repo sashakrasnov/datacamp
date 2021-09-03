@@ -17,7 +17,7 @@ Instructions
 import pandas as pd
 
 # Import Twitter data as DataFrame: df
-tweets_df = pd.read_csv('tweets.csv')
+tweets_df = pd.read_csv('../datasets/tweets.csv')
 
 # Define count_entries()
 def count_entries(df, *args):

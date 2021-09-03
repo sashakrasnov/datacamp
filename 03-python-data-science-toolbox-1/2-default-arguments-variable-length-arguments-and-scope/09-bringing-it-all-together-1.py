@@ -18,12 +18,12 @@ Instructions
 import pandas as pd
 
 # Import Twitter data as DataFrame: df
-tweets_df = pd.read_csv('tweets.csv')
+tweets_df = pd.read_csv('../datasets/tweets.csv')
 
 # Define count_entries()
 def count_entries(df, col_name='lang'):
-    """Return a dictionary with counts of
-    occurrences as value for each key."""
+    '''Return a dictionary with counts of
+    occurrences as value for each key.'''
 
     # Initialize an empty dictionary: cols_count
     cols_count = {}
@@ -33,7 +33,6 @@ def count_entries(df, col_name='lang'):
 
     # Iterate over the column in DataFrame
     for entry in col:
-
         # If entry is in cols_count, add 1
         if entry in cols_count.keys():
             cols_count[entry] += 1
