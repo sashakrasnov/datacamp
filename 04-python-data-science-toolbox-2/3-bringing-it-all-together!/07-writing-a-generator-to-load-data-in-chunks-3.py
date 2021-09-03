@@ -9,7 +9,25 @@ You will process the file line by line, to create a dictionary of the counts of 
 The generator function read_large_file() and the csv file 'world_dev_ind.csv' are preloaded and ready for your use. 
 
 Go for it!
+'''
 
+def read_large_file(file_object):
+    '''A generator function to read a large file lazily.'''
+
+    # Loop indefinitely until the end of the file
+    while True:
+
+        # Read a line from the file: data
+        data = file_object.readline()
+
+        # Break if this is the end of the file
+        if not data:
+            break
+
+        # Yield the line of data
+        yield data
+
+'''
 Instructions
 
 *   Bind the file 'world_dev_ind.csv' to file in the context manager with open().

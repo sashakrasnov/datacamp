@@ -18,8 +18,8 @@ row_vals = ['Arab World', 'ARB', 'Adolescent fertility rate (births per 1,000 wo
 
 # Define lists2dict()
 def lists2dict(list1, list2):
-    """Return a dictionary where list1 provides
-    the keys and list2 provides the values."""
+    '''Return a dictionary where list1 provides
+    the keys and list2 provides the values.'''
 
     # Zip lists: zipped_lists
     zipped_lists = zip(list1, list2)

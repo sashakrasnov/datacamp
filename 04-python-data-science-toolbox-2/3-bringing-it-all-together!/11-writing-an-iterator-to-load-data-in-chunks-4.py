@@ -4,7 +4,12 @@ Writing an iterator to load data in chunks (4)
 In the previous exercises, you've only processed the data from the first DataFrame chunk. This time, you will aggregate the results over all the DataFrame chunks in the dataset. This basically means you will be processing the entire dataset now. This is neat because you're going to be able to process the entire large dataset by just working on smaller pieces of it!
 
 You're going to use the data from 'ind_pop_data.csv', available in your current directory. The packages pandas and matplotlib.pyplot have been imported as pd and plt respectively for your use.
+'''
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+'''
 Instructions
 
 *   Initialize an empty DataFrame data using pd.DataFrame().
@@ -13,7 +18,8 @@ Instructions
 '''
 
 # Initialize reader object: urb_pop_reader
-urb_pop_reader = pd.read_csv('../datasets/ind_pop_data.csv', chunksize=1000)
+# 'world_dev_ind.csv' is exactly the same as 'ind_pop_data.csv'
+urb_pop_reader = pd.read_csv('../datasets/world_dev_ind.csv', chunksize=1000)
 
 # Initialize empty DataFrame: data
 data = pd.DataFrame()

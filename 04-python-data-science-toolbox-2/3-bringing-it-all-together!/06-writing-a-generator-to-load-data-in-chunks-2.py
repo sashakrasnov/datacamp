@@ -20,7 +20,7 @@ Instructions
 
 # Define read_large_file()
 def read_large_file(file_object):
-    """A generator function to read a large file lazily."""
+    '''A generator function to read a large file lazily.'''
 
     # Loop indefinitely until the end of the file
     while True:

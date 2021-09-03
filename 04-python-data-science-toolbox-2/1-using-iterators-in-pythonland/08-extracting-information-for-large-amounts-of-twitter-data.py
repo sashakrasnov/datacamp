@@ -20,8 +20,8 @@ import pandas as pd
 
 # Define count_entries()
 def count_entries(csv_file, c_size, colname):
-    """Return a dictionary with counts of
-    occurrences as value for each key."""
+    '''Return a dictionary with counts of
+    occurrences as value for each key.'''
     
     # Initialize an empty dictionary: counts_dict
     counts_dict = {}
