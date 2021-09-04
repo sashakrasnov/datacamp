@@ -33,7 +33,7 @@ for key in group.keys():
     print(key)
 
 # Set variable equal to time series data: strain
-strain = data['strain']['Strain'].value
+strain = data['strain']['Strain'][:]
 
 # Set number of time points to sample: num_samples
 num_samples = 10000

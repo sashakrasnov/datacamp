@@ -20,7 +20,7 @@ Instructions
 import pickle
 
 # Open pickle file and load data: d
-with open('data.pkl', 'rb') as file:
+with open('../datasets/data.pkl', 'rb') as file:
     d = pickle.load(file)
 
 # Print d
