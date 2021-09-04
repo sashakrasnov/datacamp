@@ -6,7 +6,12 @@ Now that your data is in the proper shape, you need to ensure that the columns a
 The tidy DataFrame has been pre-loaded as gapminder. Explore it in the IPython Shell using the .info() method. Notice that the column 'year' is of type object. This is incorrect, so you'll need to use the pd.to_numeric() function to convert it to a numeric data type.
 
 NumPy and pandas have been pre-imported as np and pd.
+'''
 
+import pandas as pd
+import numpy as np
+
+'''
 INSTRUCTIONS
 
 *   Convert the year column of gapminder using pd.to_numeric().
@@ -14,8 +19,6 @@ INSTRUCTIONS
 *   Assert that the year column is of type np.int64.
 *   Assert that the life_expectancy column is of type np.float64.
 '''
-
-import pandas as pd
 
 gapminder = pd.read_csv('../datasets/gapminder.csv', index_col=0)
 gapminder = pd.melt(frame=gapminder, id_vars='Life expectancy')

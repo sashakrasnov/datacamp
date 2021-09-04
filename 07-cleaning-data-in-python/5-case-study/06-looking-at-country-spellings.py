@@ -31,7 +31,6 @@ gapminder = pd.read_csv('../datasets/gapminder.csv', index_col=0)
 gapminder = pd.melt(frame=gapminder, id_vars='Life expectancy')
 gapminder.columns = ['country', 'year', 'life_expectancy']
 
-
 # Create the series of countries: countries
 countries = gapminder['country']
 

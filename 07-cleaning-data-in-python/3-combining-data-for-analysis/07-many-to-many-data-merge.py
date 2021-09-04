@@ -8,11 +8,22 @@ Two example DataFrames that share common key values have been pre-loaded: df1 an
 Here, you'll work with the site and visited DataFrames from before, and a new survey DataFrame. Your task is to merge site and visited as you did in the earlier exercises. You will then merge this merged DataFrame with survey.
 
 Begin by exploring the site, visited, and survey DataFrames in the IPython Shell.
+'''
 
+from sqlalchemy import create_engine
+import pandas as pd
+
+con = create_engine('sqlite:///../datasets/survey.db').connect()
+
+site = pd.read_sql('SELECT * FROM Site', con)
+visited = pd.read_sql('SELECT * FROM Visited', con)
+survey = pd.read_sql('SELECT * FROM Survey', con)
+
+'''
 INSTRUCTIONS
 
 *   Merge the site and visited DataFrames on the 'name' column of site and 'site' column of visited, exactly as you did in the previous two exercises. Save the result as m2o.
-*   Merge the m2o and survey DataFrames on the 'ident' column of m2o and 'taken' column of survey.
+*   Merge the m2o and survey DataFrames on the 'id' column of m2o and 'taken' column of survey.
 *   Hit 'Submit Answer' to print the first 20 lines of the merged DataFrame!
 '''
 
@@ -20,7 +31,7 @@ INSTRUCTIONS
 m2o = pd.merge(left=site, right=visited, left_on='name', right_on='site')
 
 # Merge m2o and survey: m2m
-m2m = pd.merge(left=m2o, right=survey, left_on='ident', right_on='taken')
+m2m = pd.merge(left=m2o, right=survey, left_on='id', right_on='taken')
 
 # Print the first 20 lines of m2m
 print(m2m.head(20))
@@ -33,7 +44,7 @@ print(m2m.head(20))
 2  MSK-4 -48.87 -123.40
 
 > visited
-   ident   site       dated
+      id   site       dated
 0    619   DR-1  1927-02-08
 1    622   DR-1  1927-02-10
 2    734   DR-3  1939-01-07
@@ -68,7 +79,7 @@ print(m2m.head(20))
 20    844    roe   rad    11.25
 
 > m2o
-    name     lat     long  ident   site       dated
+    name     lat     long     id   site       dated
 0   DR-1  -49.85  -128.57    619   DR-1  1927-02-08
 1   DR-1  -49.85  -128.57    622   DR-1  1927-02-10
 2   DR-1  -49.85  -128.57    844   DR-1  1932-03-22
@@ -79,7 +90,7 @@ print(m2m.head(20))
 7  MSK-4  -48.87  -123.40    837  MSK-4  1932-01-14
 
 > m2m
-     name     lat     long  ident   site       dated  taken person  quant  reading  
+     name     lat     long     id   site       dated  taken person  quant  reading  
 0    DR-1  -49.85  -128.57    619   DR-1  1927-02-08    619   dyer    rad     9.82  
 1    DR-1  -49.85  -128.57    619   DR-1  1927-02-08    619   dyer    sal     0.13  
 2    DR-1  -49.85  -128.57    622   DR-1  1927-02-10    622   dyer    rad     7.80  

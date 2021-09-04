@@ -8,7 +8,13 @@ Your first task is to load this dataset into a DataFrame and then inspect it usi
 The .shape and .columns attributes let you see the shape of the DataFrame and obtain a list of its columns. From here, you can see which columns are relevant to the questions you'd like to ask of the data. To this end, a new DataFrame, df_subset, consisting only of these relevant columns, has been pre-loaded. This is the DataFrame you'll work with in the rest of the chapter.
 
 Get acquainted with the dataset now by exploring it with pandas! This initial exploratory analysis is a crucial first step of data cleaning.
+'''
 
+import pandas as pd
+
+df_subset = pd.read_csv('../datasets/dob_job_application_filings_subset2.csv')
+
+'''
 INSTRUCTIONS
 
 *   Import pandas as pd.

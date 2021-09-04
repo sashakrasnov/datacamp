@@ -18,7 +18,6 @@ import pandas as pd
 
 airquality = pd.read_csv('../datasets/airquality.csv')
 
-
 # Calculate the mean of the Ozone column: oz_mean
 oz_mean = airquality['Ozone'].mean()
 

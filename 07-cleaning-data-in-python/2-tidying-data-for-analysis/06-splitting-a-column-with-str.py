@@ -17,7 +17,7 @@ INSTRUCTIONS
 
 import pandas as pd
 
-td = pd.read_csv('../datasets/tb.csv')
+tb = pd.read_csv('../datasets/tb.csv')
 
 # Melt tb: tb_melt
 tb_melt = pd.melt(frame=tb, id_vars=['country', 'year'])

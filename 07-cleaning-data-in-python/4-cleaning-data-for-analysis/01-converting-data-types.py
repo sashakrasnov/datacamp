@@ -18,7 +18,6 @@ import pandas as pd
 
 tips = pd.read_csv('../datasets/tips.csv')
 
-
 # Convert the sex column to type 'category'
 tips.sex = tips.sex.astype('category')
 

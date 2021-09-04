@@ -20,8 +20,7 @@ import pandas as pd
 ebola = pd.read_csv('../datasets/ebola.csv')
 
 # Assert that there are no missing values
-assert pd.notnull(ebola).all().all()
-#assert ebola.notnull().all().all()
+assert ebola.notnull().all().all()
 
 # Assert that all values are >= 0
-assert (ebola >= 0).all().all()
+assert (ebola[['Cases_Guinea', 'Cases_Liberia']] >= 0).all().all()

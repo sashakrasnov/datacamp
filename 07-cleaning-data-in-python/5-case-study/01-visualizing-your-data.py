@@ -13,6 +13,7 @@ INSTRUCTIONS
 *   Use the .plot() method on g1800s with kind='scatter' to create a scatter plot with '1800' on the x-axis and '1899' on the y-axis.
 *   Display the plot.
 '''
+
 import pandas as pd
 
 g1800s = pd.read_csv('../datasets/g1800s.csv')
@@ -30,3 +31,5 @@ plt.ylabel('Life Expectancy by Country in 1899')
 # Specify axis limits
 plt.xlim(20, 55)
 plt.ylim(20, 55)
+
+plt.show()

@@ -6,7 +6,17 @@ In a many-to-one (or one-to-many) merge, one of the values will be duplicated an
 Here, the two DataFrames site and visited have been pre-loaded once again. Note that this time, visited has multiple entries for the site column. Confirm this by exploring it in the IPython Shell.
 
 The .merge() method call is the same as the 1-to-1 merge from the previous exercise, but the data and output will be different.
+'''
 
+from sqlalchemy import create_engine
+import pandas as pd
+
+con = create_engine('sqlite:///../datasets/survey.db').connect()
+
+site = pd.read_sql('SELECT * FROM Site', con)
+visited = pd.read_sql('SELECT * FROM Visited', con)
+
+'''
 INSTRUCTIONS
 
 *   Merge the site and visited DataFrames on the 'name' column of site and 'site' column of visited, exactly as you did in the previous exercise.

@@ -16,9 +16,10 @@ INSTRUCTIONS
 import pandas as pd
 
 col_name = 'status_country'
+
 ebola = pd.read_csv('../datasets/ebola.csv')
 
-ebola_melt = pd.melt(frame=e, id_vars=['Date', 'Day']).head()
+ebola_melt = pd.melt(frame=ebola, id_vars=['Date', 'Day'], var_name=col_name)#.head()
 status_country = pd.DataFrame(ebola_melt[col_name].str.split('_').tolist(), columns=col_name.split('_'))
 
 # Concatenate ebola_melt and status_country column-wise: ebola_tidy

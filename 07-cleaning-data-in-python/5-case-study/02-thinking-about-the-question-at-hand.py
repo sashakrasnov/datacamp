@@ -11,7 +11,13 @@ Before continuing, however, it's important to make sure that the following assum
 *   There is only one instance of each country.
 
 You can write a function that you can apply over the entire DataFrame to verify some of these assumptions. Note that spending the time to write such a script will help you when working with other datasets as well.
+'''
 
+import pandas as pd
+
+g1800s = pd.read_csv('../datasets/g1800s.csv')
+
+'''
 INSTRUCTIONS
 
 *   Define a function called check_null_or_valid() that takes in one argument: row_data.
@@ -29,7 +35,9 @@ def check_null_or_valid(row_data):
     '''
     no_na = row_data.dropna()[1:-1]
     numeric = pd.to_numeric(no_na)
+
     ge0 = numeric >= 0
+
     return ge0
 
 # Check whether the first column is 'Life expectancy'

@@ -17,7 +17,7 @@ INSTRUCTIONS
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../datasets/dob_job_application_filings_subset.csv')
+df = pd.read_csv('../datasets/dob_job_application_filings_subset2.csv', low_memory=False)
 
 # Create the boxplot
 df.boxplot(column='initial_cost', by='Borough', rot=90)

@@ -4,7 +4,13 @@ Dropping duplicate data
 Duplicate data causes a variety of problems. From the point of view of performance, they use up unnecessary amounts of memory and cause unneeded calculations to be performed when processing data. In addition, they can also bias any analysis results.
 
 A dataset consisting of the performance of songs on the Billboard charts has been pre-loaded into a DataFrame called billboard. Check out its columns in the IPython Shell. Your job in this exercise is to subset this DataFrame and then drop all duplicate rows.
+'''
 
+import pandas as pd
+
+billboard = pd.read_csv('../datasets/billboard.csv')
+
+'''
 INSTRUCTIONS
 
 *   Create a new DataFrame called tracks that contains the following columns from billboard: 'year', 'artist', 'track', and 'time'.

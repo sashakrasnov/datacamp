@@ -6,7 +6,17 @@ Merging data allows you to combine disparate datasets into a single dataset to d
 Here, you'll be using survey data that contains readings that William Dyer, Frank Pabodie, and Valentina Roerich took in the late 1920 and 1930 while they were on an expedition towards Antarctica. The dataset was taken from a sqlite database from the Software Carpentry SQL lesson.
 
 Two DataFrames have been pre-loaded: site and visited. Explore them in the IPython Shell and take note of their structure and column names. Your task is to perform a 1-to-1 merge of these two DataFrames using the 'name' column of site and the 'site' column of visited.
+'''
 
+from sqlalchemy import create_engine
+import pandas as pd
+
+con = create_engine('sqlite:///../datasets/survey.db').connect()
+
+site = pd.read_sql('SELECT * FROM Site', con).loc[:3]
+visited = pd.read_sql('SELECT * FROM Visited', con).loc[[0, 2, 6], :]
+
+'''
 INSTRUCTIONS
 
 *   Merge the site and visited DataFrames on the 'name' column of site and 'site' column of visited.
@@ -25,15 +35,13 @@ print(o2o)
 0   DR-1 -49.85 -128.57
 1   DR-3 -47.15 -126.72
 2  MSK-4 -48.87 -123.40
-
 > visited
-   ident   site       dated
+   id      site       dated
 0    619   DR-1  1927-02-08
 1    734   DR-3  1939-01-07
 2    837  MSK-4  1932-01-14
-
 > o2o
-    name    lat    long  ident   site       dated
+    name    lat    long     id   site       dated
 0   DR-1 -49.85 -128.57    619   DR-1  1927-02-08
 1   DR-3 -47.15 -126.72    734   DR-3  1939-01-07
 2  MSK-4 -48.87 -123.40    837  MSK-4  1932-01-14

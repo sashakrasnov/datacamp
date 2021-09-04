@@ -8,7 +8,15 @@ Let's say your data collection method accidentally duplicated your dataset. Such
 You'll see that by using .pivot_table() and the aggfunc parameter, you can not only reshape your data, but also remove duplicates. Finally, you can then flatten the columns of the pivoted DataFrame using .reset_index().
 
 NumPy and pandas have been imported as np and pd respectively.
+'''
 
+import pandas as pd
+import numpy as np
+
+airquality = pd.read_csv('../datasets/airquality.csv')
+airquality_dup = airquality.melt(id_vars=['Month', 'Day'], var_name='measurement', value_name='reading')
+
+'''
 INSTRUCTIONS
 
 *   Pivot airquality_dup by using .pivot_table() with the rows indexed by 'Month' and 'Day', the columns indexed by 'measurement', and the values populated with 'reading'. Use np.mean for the aggregation function.

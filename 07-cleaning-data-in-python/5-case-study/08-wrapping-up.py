@@ -20,11 +20,12 @@ INSTRUCTIONS
 '''
 
 import pandas as pd
+import matplotlib.pyplot as plt
 
 gapminder = pd.read_csv('../datasets/gapminder.csv', index_col=0)
 gapminder = pd.melt(frame=gapminder, id_vars='Life expectancy')
-gapminder.columns = ['country', 'year', 'life_expectancy']
 
+gapminder.columns = ['country', 'year', 'life_expectancy']
 
 # Add first subplot
 plt.subplot(2, 1, 1) 

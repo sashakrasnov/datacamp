@@ -24,7 +24,7 @@ import glob
 import pandas as pd
 
 # Write the pattern: pattern
-pattern = '*.csv'
+pattern = '../datasets/*.csv'
 
 # Save all file matches: csv_files
 csv_files = glob.glob(pattern)

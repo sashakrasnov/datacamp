@@ -19,8 +19,9 @@ INSTRUCTIONS
 '''
 
 import pandas as pd
+import matplotlib.pyplot as plt
 
-df = pd.read_csv('../datasets/dob_job_application_filings_subset.csv')
+df = pd.read_csv('../datasets/dob_job_application_filings_subset.csv', low_memory=False)
 
 # Import matplotlib.pyplot
 import matplotlib.pyplot as plt
