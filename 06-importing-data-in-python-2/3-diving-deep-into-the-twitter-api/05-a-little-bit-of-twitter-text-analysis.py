@@ -15,7 +15,23 @@ Now that you have your DataFrame of tweets set up, you're going to do a bit of t
 |       return False
 
 You're going to iterate over the rows of the DataFrame and calculate how many tweets contain each of our keywords! The list of objects for each candidate has been initialized to 0.
+'''
 
+import json
+import pandas as pd
+
+tweets_data_path = '../datasets/tweets3.txt'
+
+tweets_data = []
+
+with open(tweets_data_path, 'r') as tweets_file:
+    for line in tweets_file:
+        tweet = json.loads(line)
+        tweets_data.append(tweet)
+
+df = pd.DataFrame(tweets_data, columns=['text', 'lang'])
+
+'''
 Instructions
 
 *   Within the for loop for index, row in df.iterrows():, the code currently increases the value of clinton by 1 each time a tweet (text row) mentioning 'Clinton' is encountered; complete the code so that the same happens for trump, sanders and cruz.
@@ -30,6 +46,7 @@ def word_in_text(word, tweet):
 
     if match:
         return True
+
     return False
 
 # Initialize list to store tweet counts

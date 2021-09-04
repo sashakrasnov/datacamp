@@ -18,7 +18,7 @@ Instructions
 import requests
 
 # Specify the url: url
-url = "http://www.datacamp.com/teach/documentation"
+url = 'https://docs.python.org/3/'
 
 # Packages the request, send the request and catch the response: r
 r = requests.get(url)

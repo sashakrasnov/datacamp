@@ -17,7 +17,7 @@ Instructions
 from urllib.request import urlopen, Request
 
 # Specify the url
-url = "http://www.datacamp.com/teach/documentation"
+url = 'https://docs.python.org/3/'
 
 # This packages the request: request
 request = Request(url)
