@@ -15,11 +15,11 @@ engine = create_engine('sqlite:///')
 metadata = MetaData()
 
 data = Table('data', metadata,
-             Column('name', String(255)),
-             Column('count', Integer()),
-             Column('amount', Float()),
-             Column('valid', Boolean())
-)
+            Column('name', String(255)),
+            Column('count', Integer()),
+            Column('amount', Float()),
+            Column('valid', Boolean())
+        )
 
 metadata.create_all(engine)
 

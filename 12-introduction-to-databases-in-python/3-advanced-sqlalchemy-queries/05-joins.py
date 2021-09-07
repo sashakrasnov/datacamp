@@ -11,8 +11,8 @@ If you aren't selecting columns from both tables or the two tables don't have a 
 
 from sqlalchemy import create_engine, select, desc, func, Table, MetaData
 
-engine = create_engine('mysql+pymysql://student:datacamp@courses.csrrinzqubik.us-east-1.rds.amazonaws.com:3306/census')
-#engine = create_engine('sqlite:///../datasets/census.sqlite')
+#engine = create_engine('mysql+pymysql://student:datacamp@courses.csrrinzqubik.us-east-1.rds.amazonaws.com:3306/census')
+engine = create_engine('sqlite:///../datasets/census.sqlite')
 
 connection = engine.connect()
 

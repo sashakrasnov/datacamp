@@ -27,8 +27,7 @@ from sqlalchemy import create_engine, select, func, MetaData, Table
 # DataCamp PostgreSQL on AWS does not acceppt remote connections. Permission denied
 # Local MySQL or SQLite may be used instead
 #engine = create_engine('postgresql+psycopg2://student:datacamp@postgresql.csrrinzqubik.us-east-1.rds.amazonaws.com:5432/census')
-engine = create_engine('mysql://root:@localhost:3306/circle')
-#engine = create_engine('sqlite:///../datasets/census.sqlite')
+engine = create_engine('sqlite:///../datasets/census.sqlite')
 
 connection = engine.connect()
 

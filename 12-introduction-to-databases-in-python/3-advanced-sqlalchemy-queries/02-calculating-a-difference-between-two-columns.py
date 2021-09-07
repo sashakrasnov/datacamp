@@ -10,8 +10,8 @@ Let's now find the top 5 states by population growth between 2000 and 2008.
 
 from sqlalchemy import create_engine, select, desc, Table, MetaData
 
-engine = create_engine('mysql+pymysql://student:datacamp@courses.csrrinzqubik.us-east-1.rds.amazonaws.com:3306/census')
-#engine = create_engine('sqlite:///../datasets/census.sqlite')
+#engine = create_engine('mysql+pymysql://student:datacamp@courses.csrrinzqubik.us-east-1.rds.amazonaws.com:3306/census')
+engine = create_engine('sqlite:///../datasets/census.sqlite')
 
 connection = engine.connect()
 
