@@ -20,9 +20,13 @@ ri['stop_datetime'] = pd.to_datetime(combined)
 
 ri.set_index('stop_datetime', inplace=True)
 
-ri.loc[(ri['stop_duration']=='1') | (ri['stop_duration']=='2'), 'stop_duration'] = '0-15 Min'
+ri.loc[(ri['stop_duration'] == '1') | (ri['stop_duration'] == '2'), 'stop_duration'] = '0-15 Min'
 
-mapping = {'0-15 Min': 8, '16-30 Min':23, '30+ Min': 45}
+mapping = {
+    '0-15 Min': 8,
+    '16-30 Min': 23,
+    '30+ Min': 45
+}
 
 ri['stop_minutes'] = ri.stop_duration.map(mapping)
 

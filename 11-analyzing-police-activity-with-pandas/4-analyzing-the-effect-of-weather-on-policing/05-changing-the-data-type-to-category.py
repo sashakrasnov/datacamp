@@ -13,7 +13,18 @@ WT = weather.loc[:, 'WT01':'WT22']
 weather['bad_conditions'] = WT.sum(axis='columns')
 weather['bad_conditions'] = weather.bad_conditions.fillna(0).astype('int')
 
-mapping = {0:'good', 1:'bad', 2:'bad', 3:'bad', 4:'bad', 5:'worse', 6:'worse', 7:'worse', 8:'worse', 9:'worse'}
+mapping = {
+    0: 'good',
+    1: 'bad',
+    2: 'bad',
+    3: 'bad',
+    4: 'bad',
+    5: 'worse',
+    6: 'worse',
+    7: 'worse',
+    8: 'worse',
+    9: 'worse'
+}
 
 weather['rating'] = weather.bad_conditions.map(mapping)
 

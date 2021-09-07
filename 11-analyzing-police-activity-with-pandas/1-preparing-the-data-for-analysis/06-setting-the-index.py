@@ -1,11 +1,5 @@
 '''
 The last step that you'll take in this chapter is to set the stop_datetime column as the DataFrame's index. By replacing the default index with a DatetimeIndex, you'll make it easier to analyze the dataset by date and time, which will come in handy later in the course!
-
-INSTRUCTIONS
-
-*   Set stop_datetime as the DataFrame index.
-*   Examine the index to verify that it is a DatetimeIndex.
-*   Examine the DataFrame columns to confirm that stop_datetime is no longer one of the columns.
 '''
 
 import pandas as pd
@@ -20,7 +14,13 @@ ri['is_arrested'] = ri.is_arrested.astype('bool')
 combined = ri.stop_date.str.cat(ri.stop_time, sep=' ')
 ri['stop_datetime'] = pd.to_datetime(combined)
 
-# ---
+'''
+INSTRUCTIONS
+
+*   Set stop_datetime as the DataFrame index.
+*   Examine the index to verify that it is a DatetimeIndex.
+*   Examine the DataFrame columns to confirm that stop_datetime is no longer one of the columns.
+'''
 
 # Set 'stop_datetime' as the index
 ri.set_index('stop_datetime', inplace=True)

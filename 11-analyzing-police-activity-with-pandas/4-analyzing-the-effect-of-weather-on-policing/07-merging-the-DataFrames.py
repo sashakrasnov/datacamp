@@ -22,7 +22,11 @@ ri.set_index('stop_datetime', inplace=True)
 
 ri.loc[(ri['stop_duration']=='1') | (ri['stop_duration']=='2'), 'stop_duration'] = '0-15 Min'
 
-ri['stop_minutes'] = ri.stop_duration.map({'0-15 Min': 8, '16-30 Min':23, '30+ Min': 45})
+ri['stop_minutes'] = ri.stop_duration.map({
+                        '0-15 Min': 8,
+                        '16-30 Min': 23,
+                        '30+ Min': 45
+                    })
 
 weather = pd.read_csv('../datasets/weather.csv')
 
@@ -31,7 +35,19 @@ WT = weather.loc[:, 'WT01':'WT22']
 weather['bad_conditions'] = WT.sum(axis='columns')
 weather['bad_conditions'] = weather.bad_conditions.fillna(0).astype('int')
 
-mapping = {0:'good', 1:'bad', 2:'bad', 3:'bad', 4:'bad', 5:'worse', 6:'worse', 7:'worse', 8:'worse', 9:'worse'}
+mapping = {
+    0: 'good',
+    1: 'bad',
+    2: 'bad',
+    3: 'bad',
+    4: 'bad',
+    5: 'worse',
+    6: 'worse',
+    7: 'worse',
+    8: 'worse',
+    9: 'worse'
+}
+
 cats = ['good', 'bad', 'worse']
 
 weather['rating'] = pd.Categorical(weather.bad_conditions.map(mapping), ordered=True, categories=cats)
