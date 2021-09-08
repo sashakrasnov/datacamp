@@ -16,17 +16,18 @@ NUMERIC_COLUMNS = ['FTE', 'Total']
 
 # Define combine_text_columns()
 def combine_text_columns(data_frame, to_drop=NUMERIC_COLUMNS + LABELS):
-    """ converts all text in each row of data_frame to single vector """
+    '''Converts all text in each row of data_frame to single vector
+    '''
     
     # Drop non-text columns that are in the df
     to_drop = set(to_drop) & set(data_frame.columns.tolist())
     text_data = data_frame.drop(to_drop, axis=1)
     
     # Replace nans with blanks
-    text_data.fillna("", inplace=True)
+    text_data.fillna('', inplace=True)
     
     # Join all text items in a row that have a space in between
-    return text_data.apply(lambda x: " ".join(x), axis=1)
+    return text_data.apply(lambda x: ' '.join(x), axis=1)
 
 
 df = pd.read_csv('../datasets/school-budgets.csv', index_col=0).loc[:, 'Object_Description':]
@@ -59,4 +60,5 @@ hashed_text = hashing_vec.fit_transform(text_data)
 
 # Create DataFrame and print the head
 hashed_df = pd.DataFrame(hashed_text.data)
+
 print(hashed_df.head())

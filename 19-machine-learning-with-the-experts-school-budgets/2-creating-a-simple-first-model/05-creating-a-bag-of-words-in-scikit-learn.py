@@ -43,7 +43,7 @@ vec_alphanumeric = CountVectorizer(token_pattern=TOKENS_ALPHANUMERIC)
 vec_alphanumeric.fit(df.Position_Extra)
 
 # Print the number of tokens and first 15 tokens
-msg = "There are {} tokens in Position_Extra if we split on non-alpha numeric"
+msg = 'There are {} tokens in Position_Extra if we split on non-alpha numeric'
 print(msg.format(len(vec_alphanumeric.get_feature_names())))
 print(vec_alphanumeric.get_feature_names()[:15])
 

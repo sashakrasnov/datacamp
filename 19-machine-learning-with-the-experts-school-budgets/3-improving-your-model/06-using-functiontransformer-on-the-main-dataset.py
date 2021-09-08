@@ -22,12 +22,12 @@ NUMERIC_COLUMNS = ['FTE', 'Total']
 
 
 def multilabel_sample(y, size=1000, min_count=5, seed=None):
-    """ Takes a matrix of binary labels `y` and returns
+    ''' Takes a matrix of binary labels `y` and returns
         the indices for a sample of size `size` if
         `size` > 1 or `size` * len(y) if size =< 1.
         The sample is guaranteed to have > `min_count` of
         each label.
-    """
+    '''
     try:
         if (np.unique(y).astype(int) != np.array([0, 1])).any():
             raise ValueError()
@@ -41,7 +41,7 @@ def multilabel_sample(y, size=1000, min_count=5, seed=None):
         size = np.floor(y.shape[0] * size)
 
     if y.shape[1] * min_count > size:
-        msg = "Size less than number of columns * min_count, returning {} items instead of {}."
+        msg = 'Size less than number of columns * min_count, returning {} items instead of {}.'
         warn(msg.format(y.shape[1] * min_count, size))
         size = y.shape[1] * min_count
 
@@ -76,10 +76,11 @@ def multilabel_sample(y, size=1000, min_count=5, seed=None):
 
 
 def multilabel_train_test_split(X, Y, size, min_count=5, seed=None):
-    """ Takes a features matrix `X` and a label matrix `Y` and
+    ''' Takes a features matrix `X` and a label matrix `Y` and
         returns (X_train, X_test, Y_train, Y_test) where all
         classes in Y are represented at least `min_count` times.
-    """
+    '''
+
     index = Y.index if isinstance(Y, pd.DataFrame) else np.arange(Y.shape[0])
 
     test_set_idxs = multilabel_sample(Y, size=size, min_count=min_count, seed=seed)
@@ -93,17 +94,18 @@ def multilabel_train_test_split(X, Y, size, min_count=5, seed=None):
 
 # Define combine_text_columns()
 def combine_text_columns(data_frame, to_drop=NUMERIC_COLUMNS + LABELS):
-    """ converts all text in each row of data_frame to single vector """
+    '''Converts all text in each row of data_frame to single vector
+    '''
     
     # Drop non-text columns that are in the df
     to_drop = set(to_drop) & set(data_frame.columns.tolist())
     text_data = data_frame.drop(to_drop, axis=1)
     
     # Replace nans with blanks
-    text_data.fillna("", inplace=True)
+    text_data.fillna('', inplace=True)
     
     # Join all text items in a row that have a space in between
-    return text_data.apply(lambda x: " ".join(x), axis=1)
+    return text_data.apply(lambda x: ' '.join(x), axis=1)
 
 
 df = pd.read_csv('../datasets/school-budgets.csv', index_col=0)
@@ -130,7 +132,10 @@ dummy_labels = pd.get_dummies(df[LABELS])
 NON_LABELS = [c for c in df.columns if c not in LABELS]
 
 # Split into training and test sets
-X_train, X_test, y_train, y_test = multilabel_train_test_split(df[NON_LABELS], dummy_labels, 0.2, seed=123)
+X_train, X_test, y_train, y_test = multilabel_train_test_split(
+        df[NON_LABELS],
+        dummy_labels, 0.2, seed=123
+    )
 
 # Preprocess the text data: get_text_data
 get_text_data = FunctionTransformer(combine_text_columns, validate=False)

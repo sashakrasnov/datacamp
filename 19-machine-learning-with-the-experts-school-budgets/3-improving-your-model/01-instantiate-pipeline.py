@@ -32,9 +32,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.multiclass import OneVsRestClassifier
 
 # Split and select numeric data only, no nans 
-X_train, X_test, y_train, y_test = train_test_split(sample_df[['numeric']],
-                                                    pd.get_dummies(sample_df['label']), 
-                                                    random_state=22)
+X_train, X_test, y_train, y_test = train_test_split(
+        sample_df[['numeric']],
+        pd.get_dummies(sample_df['label']), 
+        random_state=22
+    )
 
 # Instantiate Pipeline object: pl
 pl = Pipeline([
@@ -46,4 +48,4 @@ pl.fit(X_train, y_train)
 
 # Compute and print accuracy
 accuracy = pl.score(X_test, y_test)
-print("\nAccuracy on sample data - numeric, no nans: ", accuracy)
+print('\nAccuracy on sample data - numeric, no nans: ', accuracy)
