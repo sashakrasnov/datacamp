@@ -35,7 +35,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
 # Create training and test set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4,random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
 # Instantiate a k-NN classifier: knn
 knn = KNeighborsClassifier(n_neighbors=6)

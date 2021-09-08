@@ -33,7 +33,11 @@ from sklearn.model_selection import GridSearchCV
 
 # Create the hyperparameter grid
 c_space = np.logspace(-5, 8, 15)
-param_grid = {'C': c_space, 'penalty': ['l1', 'l2']}
+
+param_grid = {
+    'C': c_space,
+    'penalty': ['l1', 'l2']
+}
 
 # Instantiate the logistic regression classifier: logreg
 logreg = LogisticRegression()
@@ -48,6 +52,6 @@ logreg_cv = GridSearchCV(logreg, param_grid, cv=5)
 logreg_cv.fit(X_train, y_train)
 
 # Print the optimal parameters and best score
-print("Tuned Logistic Regression Parameter: {}".format(logreg_cv.best_params_))
-print("Tuned Logistic Regression Accuracy: {}".format(logreg_cv.best_score_))
+print('Tuned Logistic Regression Parameter: {}'.format(logreg_cv.best_params_))
+print('Tuned Logistic Regression Accuracy: {}'.format(logreg_cv.best_score_))
 

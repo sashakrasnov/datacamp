@@ -26,5 +26,7 @@ imp = Imputer(missing_values='NaN', strategy='most_frequent', axis=0)
 clf = SVC()
 
 # Setup the pipeline with the required steps: steps
-steps = [('imputation', imp),
-         ('SVM', clf)]
+steps = [
+    ('imputation', imp),
+    ('SVM', clf)
+]

@@ -38,4 +38,4 @@ cv_scores = cross_val_score(reg, X, y, cv=5)
 # Print the 5-fold cross-validation scores
 print(cv_scores)
 
-print("Average 5-Fold CV Score: {}".format(np.mean(cv_scores)))
+print('Average 5-Fold CV Score: {}'.format(np.mean(cv_scores)))

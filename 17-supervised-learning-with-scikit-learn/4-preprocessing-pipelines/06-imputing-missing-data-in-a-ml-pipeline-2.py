@@ -11,7 +11,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
-df = pd.read_csv('../datasets/house-votes-84.csv', header=None).replace({'y':int(1),'n':int(0), '?':np.nan})
+df = pd.read_csv('../datasets/house-votes-84.csv', header=None).replace({'y': int(1), 'n': int(0), '?':np.nan})
 
 # These lines of code is used to preproces and fill NaN values with column-mean values.
 # But, in this example we use data pipelining to fill missing values
@@ -44,8 +44,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
 
 # Setup the pipeline steps: steps
-steps = [('imputation', Imputer(missing_values='NaN', strategy='most_frequent', axis=0)),
-         ('SVM', SVC())]
+steps = [
+    ('imputation', Imputer(missing_values='NaN', strategy='most_frequent', axis=0)),
+    ('SVM', SVC())
+]
 
 # Create the pipeline: pipeline
 pipeline = Pipeline(steps)

@@ -34,8 +34,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
 # Setup the pipeline steps: steps
-steps = [('scaler', StandardScaler()),
-         ('knn', KNeighborsClassifier())]
+steps = [
+    ('scaler', StandardScaler()),
+    ('knn', KNeighborsClassifier())
+]
         
 # Create the pipeline: pipeline
 pipeline = Pipeline(steps)

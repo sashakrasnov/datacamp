@@ -42,7 +42,7 @@ reg_all.fit(X_train, y_train)
 y_pred = reg_all.predict(X_test)
 
 # Compute and print R^2 and RMSE
-print("R^2: {}".format(reg_all.score(X_test, y_test)))
+print('R^2: {}'.format(reg_all.score(X_test, y_test)))
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-print("Root Mean Squared Error: {}".format(rmse))
+print('Root Mean Squared Error: {}'.format(rmse))
 

@@ -49,9 +49,13 @@ for i, k in enumerate(neighbors):
 
 # Generate plot
 plt.title('k-NN: Varying Number of Neighbors')
+
 plt.plot(neighbors, test_accuracy, label = 'Testing Accuracy')
 plt.plot(neighbors, train_accuracy, label = 'Training Accuracy')
+
 plt.legend()
+
 plt.xlabel('Number of Neighbors')
 plt.ylabel('Accuracy')
+
 plt.show()

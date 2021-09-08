@@ -39,6 +39,7 @@ lasso.fit(X,y)
 
 # Compute and print the coefficients
 lasso_coef = lasso.coef_
+
 print(lasso_coef)
 
 # Plot the coefficients
