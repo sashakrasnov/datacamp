@@ -17,7 +17,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -40,7 +40,7 @@ n_defaults = np.random.binomial(n=100, p=0.05, size=10000)
 bins = np.arange(min(n_defaults), max(n_defaults) + 1.5) - 0.5
 
 # Generate histogram
-_ = plt.hist(n_defaults, normed=True, bins=bins)
+_ = plt.hist(n_defaults, density=True, bins=bins)
 
 # Set margins
 _ = plt.margins(0.02)

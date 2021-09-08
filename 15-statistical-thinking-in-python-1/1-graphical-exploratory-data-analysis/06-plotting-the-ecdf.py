@@ -8,7 +8,7 @@ import pandas as pd
 
 df = pd.read_csv('../datasets/iris.csv')
 
-versicolor_petal_length = df[df.species=='versicolor']['petal length (cm)'].values
+versicolor_petal_length = df.query('species == "versicolor"')['petal length (cm)'].values
 
 '''
 INSTRUCTIONS
@@ -23,7 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -40,7 +40,7 @@ def ecdf(data):
 x_vers, y_vers = ecdf(versicolor_petal_length)
 
 # Generate plot
-_ = plt.plot(x_vers, y_vers, marker = '.', linestyle = 'none')
+_ = plt.plot(x_vers, y_vers, marker='.', linestyle='none')
 
 # Make the margins nice
 plt.margins(0.02)
@@ -48,7 +48,6 @@ plt.margins(0.02)
 # Label the axes
 _ = plt.xlabel('length')
 _ = plt.ylabel('ECDF')
-
 
 # Display the plot
 plt.show()

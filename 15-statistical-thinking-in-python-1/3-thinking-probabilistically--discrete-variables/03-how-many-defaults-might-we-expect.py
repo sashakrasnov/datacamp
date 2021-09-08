@@ -8,8 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def perform_bernoulli_trials(n, p):
-    """Perform n Bernoulli trials with success probability p
-    and return number of successes."""
+    '''Perform n Bernoulli trials with success probability p
+    and return number of successes.'''
     # Initialize number of successes: n_success
     n_success = 0
 
@@ -46,7 +46,7 @@ for i in range(1000):
 
 
 # Plot the histogram with default number of bins; label your axes
-_ = plt.hist(n_defaults, normed=True)
+_ = plt.hist(n_defaults, density=True)
 _ = plt.xlabel('number of defaults out of 100 loans')
 _ = plt.ylabel('probability')
 

@@ -8,7 +8,8 @@ import pandas as pd
 
 df = pd.read_csv('../datasets/iris.csv')
 
-versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
+#versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
+versicolor_petal_length = df.query('species == "versicolor"')['petal length (cm)'].values
 
 '''
 INSTRUCTIONS

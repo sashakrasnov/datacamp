@@ -14,10 +14,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../datasets/iris.csv')
+df = pd.read_csv('../datasets/iris.csv').query('species == "versicolor"')
 
-versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
-versicolor_petal_width = df[df.species == 'versicolor']['petal width (cm)'].values
+versicolor_petal_length = df['petal length (cm)'].values
+versicolor_petal_width = df['petal width (cm)'].values
 
 '''
 INSTRUCTIONS

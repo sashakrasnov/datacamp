@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -24,8 +24,8 @@ def ecdf(data):
     return x, y
 
 def perform_bernoulli_trials(n, p):
-    """Perform n Bernoulli trials with success probability p
-    and return number of successes."""
+    '''Perform n Bernoulli trials with success probability p
+    and return number of successes.'''
     # Initialize number of successes: n_success
     n_success = 0
 

@@ -29,7 +29,7 @@ INSTRUCTIONS
 waiting_times = np.array(successive_poisson(764, 715, 100000))
 
 # Make the histogram
-_ = plt.hist(waiting_times, bins=100, normed=True, histtype='step')
+_ = plt.hist(waiting_times, bins=100, density=True, histtype='step')
 
 # Label axes
 _ = plt.xlabel('x')

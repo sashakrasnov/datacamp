@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -54,4 +54,5 @@ plt.margins(0.02)
 
 # Make a legend and show the plot
 _ = plt.legend(('std = 1', 'std = 3', 'std = 10'), loc='lower right')
+
 plt.show()

@@ -10,9 +10,9 @@ import pandas as pd
 
 df = pd.read_csv('../datasets/iris.csv')
 
-setosa_petal_length = df[df.species == 'setosa']['petal length (cm)'].values
-versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
-virginica_petal_length = df[df.species == 'virginica']['petal length (cm)'].values
+setosa_petal_length = df.query('species == "setosa"')['petal length (cm)'].values
+versicolor_petal_length = df.query('species == "versicolor"')['petal length (cm)'].values
+virginica_petal_length = df.query('species == "virginica"')['petal length (cm)'].values
 
 '''
 INSTRUCTIONS
@@ -26,7 +26,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -45,9 +45,9 @@ x_vers, y_vers = ecdf(versicolor_petal_length)
 x_virg, y_virg = ecdf(virginica_petal_length)
 
 # Plot all ECDFs on the same plot
-_ = plt.plot(x_set, y_set, marker = '.', linestyle = 'none')
-_ = plt.plot(x_vers, y_vers, marker = '.', linestyle = 'none')
-_ = plt.plot(x_virg, y_virg, marker = '.', linestyle = 'none')
+_ = plt.plot(x_set, y_set, marker='.', linestyle='none')
+_ = plt.plot(x_vers, y_vers, marker='.', linestyle='none')
+_ = plt.plot(x_virg, y_virg, marker='.', linestyle='none')
 
 # Make nice margins
 plt.margins(0.02)

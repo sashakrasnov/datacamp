@@ -22,7 +22,7 @@ np.random.seed(42)
 samples_poisson = np.random.poisson(10, size=10000)
 
 # Print the mean and standard deviation
-print('Poisson:     ', np.mean(samples_poisson),
+print('Poisson:', np.mean(samples_poisson),
       np.std(samples_poisson))
 
 # Specify values of n and p to consider for Binomial: n, p

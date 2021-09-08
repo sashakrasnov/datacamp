@@ -29,7 +29,8 @@ percentiles = np.array([2.5, 25, 50, 75, 97.5])
 
 df = pd.read_csv('../datasets/iris.csv')
 
-versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
+#versicolor_petal_length = df[df.species == 'versicolor']['petal length (cm)'].values
+versicolor_petal_length = df.query('species == "versicolor"')['petal length (cm)'].values
 
 ptiles_vers = np.percentile(versicolor_petal_length, percentiles)
 
