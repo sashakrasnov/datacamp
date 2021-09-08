@@ -11,10 +11,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('../datasets/anscombe.csv', header=[0,1])
+df = pd.read_csv('../datasets/anscombe.csv', header=[0, 1])
 
-x = df.loc[:, (slice(None),'x')].values
-y = df.loc[:, (slice(None),'y')].values
+x = df.loc[:, (slice(None), 'x')].values
+y = df.loc[:, (slice(None), 'y')].values
 
 anscombe_x = np.transpose(x)
 anscombe_y = np.transpose(y)

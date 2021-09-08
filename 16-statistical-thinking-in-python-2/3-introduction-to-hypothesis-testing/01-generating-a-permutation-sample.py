@@ -17,7 +17,7 @@ INSTRUCTIONS
 '''
 
 def permutation_sample(data1, data2):
-    """Generate a permutation sample from two data sets."""
+    '''Generate a permutation sample from two data sets.'''
 
     # Concatenate the data sets: data
     data = np.concatenate((data1, data2))

@@ -15,7 +15,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -29,7 +29,7 @@ def ecdf(data):
     return x, y
 
 def permutation_sample(data1, data2):
-    """Generate a permutation sample from two data sets."""
+    '''Generate a permutation sample from two data sets.'''
 
     # Concatenate the data sets: data
     data = np.concatenate((data1, data2))
@@ -82,4 +82,6 @@ _ = plt.plot(x_2, y_2, marker='.', linestyle='none', color='blue')
 plt.margins(0.02)
 _ = plt.xlabel('monthly rainfall (mm)')
 _ = plt.ylabel('ECDF')
+
+# Show the plot
 plt.show()

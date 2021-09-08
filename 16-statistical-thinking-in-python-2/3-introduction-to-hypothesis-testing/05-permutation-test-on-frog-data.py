@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 def draw_perm_reps(data_1, data_2, func, size=1):
-    """Generate multiple permutation replicates."""
+    '''Generate multiple permutation replicates.'''
 
     # Initialize array of replicates: perm_replicates
     perm_replicates = np.empty(size)
@@ -25,7 +25,7 @@ def draw_perm_reps(data_1, data_2, func, size=1):
     return perm_replicates
 
 def permutation_sample(data1, data2):
-    """Generate a permutation sample from two data sets."""
+    '''Generate a permutation sample from two data sets.'''
 
     # Concatenate the data sets: data
     data = np.concatenate((data1, data2))
@@ -57,7 +57,7 @@ INSTRUCTIONS
 '''
 
 def diff_of_means(data_1, data_2):
-    """Difference in means of two arrays."""
+    '''Difference in means of two arrays.'''
 
     # The difference of means of data_1, data_2: diff
     diff = np.mean(data_1) - np.mean(data_2)

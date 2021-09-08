@@ -11,7 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def draw_bs_pairs_linreg(x, y, size=1):
-    """Perform pairs bootstrap for linear regression."""
+    '''Perform pairs bootstrap for linear regression.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -48,7 +48,9 @@ bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(illiteracy, fertility, s
 print(np.percentile(bs_slope_reps, [2.5, 97.5]))
 
 # Plot the histogram
-_ = plt.hist(bs_slope_reps, bins=50, normed=True)
+_ = plt.hist(bs_slope_reps, bins=50, density=True)
 _ = plt.xlabel('slope')
 _ = plt.ylabel('PDF')
+
+# Show the plot
 plt.show()

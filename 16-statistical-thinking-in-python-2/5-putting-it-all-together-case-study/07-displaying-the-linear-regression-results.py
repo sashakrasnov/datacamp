@@ -8,8 +8,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def draw_bs_pairs_linreg(x, y, size=1):
-    """Perform pairs bootstrap for linear regression."""
+    '''Perform pairs bootstrap for linear regression.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -26,6 +27,7 @@ def draw_bs_pairs_linreg(x, y, size=1):
 
     return bs_slope_reps, bs_intercept_reps
 
+
 bd = {}
 bl = {}
 
@@ -36,6 +38,7 @@ for y in [1975, 2012]:
 
     bl[y] = df[scns][2].values
     bd[y] = df[scns][3].values
+
 
 bl_1975 = bl[1975]
 bd_1975 = bd[1975]

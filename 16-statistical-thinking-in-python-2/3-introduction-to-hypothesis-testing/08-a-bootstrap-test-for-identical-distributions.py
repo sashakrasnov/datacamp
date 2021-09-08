@@ -33,4 +33,6 @@ for i in range(10000):
 
 # Compute and print p-value: p
 p = np.sum(bs_replicates >= empirical_diff_means) / len(bs_replicates)
+
+# Print the p-value
 print('p-value =', p)

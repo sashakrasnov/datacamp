@@ -11,8 +11,9 @@ As a reminder, its call signature is draw_bs_pairs_linreg(x, y, size=1), and it 
 import numpy as np
 import pandas as pd
 
+
 def draw_bs_pairs_linreg(x, y, size=1):
-    """Perform pairs bootstrap for linear regression."""
+    '''Perform pairs bootstrap for linear regression.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -39,6 +40,7 @@ for y in [1975, 2012]:
 
     bl[y] = df[scns][2].values
     bd[y] = df[scns][3].values
+
 
 bl_1975 = bl[1975]
 bd_1975 = bd[1975]

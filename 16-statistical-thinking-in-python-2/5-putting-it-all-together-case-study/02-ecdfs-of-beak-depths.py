@@ -11,8 +11,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
+    '''Compute ECDF for a one-dimensional array of measurements.'''
 
     # Number of data points: n
     n = len(data)
@@ -24,6 +25,7 @@ def ecdf(data):
     y = np.arange(1, n+1) / n
 
     return x, y
+
 
 bd = {}
 

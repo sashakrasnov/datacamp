@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 def heritability(parents, offspring):
-    """Compute the heritability from parent and offspring samples."""
+    '''Compute the heritability from parent and offspring samples.'''
     covariance_matrix = np.cov(parents, offspring)
     
     return covariance_matrix[0,1] / covariance_matrix[0,0]

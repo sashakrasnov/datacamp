@@ -56,4 +56,6 @@ bs_replicates = bs_replicates_a - bs_replicates_b
 
 # Compute and print p-value: p
 p = np.sum(bs_replicates >= empirical_diff_means) / len(bs_replicates)
+
+# Print the p-value
 print('p-value =', p)

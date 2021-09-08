@@ -21,7 +21,7 @@ INSTRUCTIONS
 '''
 
 def draw_bs_pairs(x, y, func, size=1):
-    """Perform pairs bootstrap for single statistic."""
+    '''Perform pairs bootstrap for single statistic.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))

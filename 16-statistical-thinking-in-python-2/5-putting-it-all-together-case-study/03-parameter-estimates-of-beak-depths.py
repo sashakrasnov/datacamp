@@ -24,6 +24,7 @@ for y in [1975, 2012]:
 
     bd[y] = df[scns][3].values
 
+
 bd_1975 = bd[1975]
 bd_2012 = bd[2012]
 

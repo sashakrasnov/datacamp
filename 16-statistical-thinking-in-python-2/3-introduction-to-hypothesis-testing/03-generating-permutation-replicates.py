@@ -9,7 +9,7 @@ The function has call signature draw_perm_reps(data_1, data_2, func, size=1). Im
 import numpy as np
 
 def permutation_sample(data1, data2):
-    """Generate a permutation sample from two data sets."""
+    '''Generate a permutation sample from two data sets.'''
 
     # Concatenate the data sets: data
     data = np.concatenate((data1, data2))
@@ -35,7 +35,7 @@ Instructions
 '''
 
 def draw_perm_reps(data_1, data_2, func, size=1):
-    """Generate multiple permutation replicates."""
+    '''Generate multiple permutation replicates.'''
 
     # Initialize array of replicates: perm_replicates
     perm_replicates = np.empty(size)

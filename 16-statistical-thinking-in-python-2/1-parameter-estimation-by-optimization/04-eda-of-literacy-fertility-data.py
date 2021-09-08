@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def pearson_r(x, y):
-    """Compute Pearson correlation coefficient between two arrays."""
+    '''Compute Pearson correlation coefficient between two arrays.'''
     # Compute correlation matrix: corr_mat
     corr_mat = np.corrcoef(x, y)
 

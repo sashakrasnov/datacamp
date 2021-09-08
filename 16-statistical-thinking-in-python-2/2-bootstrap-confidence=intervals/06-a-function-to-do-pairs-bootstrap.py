@@ -20,7 +20,7 @@ INSTRUCTIONS
 '''
 
 def draw_bs_pairs_linreg(x, y, size=1):
-    """Perform pairs bootstrap for linear regression."""
+    '''Perform pairs bootstrap for linear regression.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))

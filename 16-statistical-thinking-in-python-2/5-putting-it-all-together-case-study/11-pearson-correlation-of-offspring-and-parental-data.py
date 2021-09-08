@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 def pearson_r(x, y):
-    """Compute Pearson correlation coefficient between two arrays."""
+    '''Compute Pearson correlation coefficient between two arrays.'''
     # Compute correlation matrix: corr_mat
     corr_mat = np.corrcoef(x, y)
 
@@ -18,7 +18,7 @@ def pearson_r(x, y):
     return corr_mat[0,1]
 
 def draw_bs_pairs(x, y, func, size=1):
-    """Perform pairs bootstrap for single statistic."""
+    '''Perform pairs bootstrap for single statistic.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -58,6 +58,7 @@ r_fortis = pearson_r(bd_parent_fortis, bd_offspring_fortis)
 # Acquire 1000 bootstrap replicates of Pearson r
 bs_replicates_scandens = draw_bs_pairs(
         bd_parent_scandens, bd_offspring_scandens, pearson_r, size=1000)
+
 bs_replicates_fortis = draw_bs_pairs(
         bd_parent_fortis, bd_offspring_fortis, pearson_r, size=1000)
 

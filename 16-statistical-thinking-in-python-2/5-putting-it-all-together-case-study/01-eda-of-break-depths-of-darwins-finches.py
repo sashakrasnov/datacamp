@@ -20,7 +20,8 @@ for y in [1975, 2012]:
 
     scns = (dfy[1] == 'scandens')
 
-    frames.append(dfy[scns][[3,4]])
+    frames.append(dfy[scns][[3, 4]])
+
 
 df = pd.concat(frames).reset_index(drop=True)
 df.columns = ['beak_depth', 'year']

@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 fortis = pd.read_csv('../datasets/fortis_beak_depth_heredity.csv')
 scandens = pd.read_csv('../datasets/scandens_beak_depth_heredity.csv')
 
@@ -27,10 +28,13 @@ INSTRUCTIONS
 '''
 
 # Make scatter plots
-_ = plt.plot(bd_parent_fortis, bd_offspring_fortis,
-             marker='.', linestyle='none', color='blue', alpha=0.5)
-_ = plt.plot(bd_parent_scandens, bd_offspring_scandens,
-             marker='.', linestyle='none', color='red', alpha=0.5)
+_ = plt.plot(
+        bd_parent_fortis, bd_offspring_fortis,
+        marker='.', linestyle='none', color='blue', alpha=0.5)
+
+_ = plt.plot(
+        bd_parent_scandens, bd_offspring_scandens,
+        marker='.', linestyle='none', color='red', alpha=0.5)
 
 # Set margins, make legend, label axes, and show plot
 plt.margins(0.02)

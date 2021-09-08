@@ -9,11 +9,14 @@ Be careful! The hypothesis we are testing is not that the beak depths come from 
 import numpy as np
 import pandas as pd
 
+
 def bootstrap_replicate_1d(data, func):
     return func(np.random.choice(data, size=len(data)))
 
+
 def draw_bs_reps(data, func, size=1):
     return np.array([bootstrap_replicate_1d(data, func) for _ in range(size)])
+
 
 bd = {}
 
@@ -23,6 +26,7 @@ for y in [1975, 2012]:
     scns = (df[1] == 'scandens')
 
     bd[y] = df[scns][3].values
+
 
 bd_1975 = bd[1975]
 bd_2012 = bd[2012]

@@ -49,4 +49,6 @@ for i in range(10000):
 
 # Compute p-value: p
 p = np.sum(perm_replicates >= r_obs) / len(perm_replicates)
+
+# Print the result
 print('p-val =', p)

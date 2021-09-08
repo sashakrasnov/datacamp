@@ -56,4 +56,6 @@ plt.legend(('control', 'treated'), loc='lower right')
 # Label axes and show plot
 plt.xlabel('millions of alive sperm per mL')
 plt.ylabel('ECDF')
+
+# Show the plot
 plt.show()

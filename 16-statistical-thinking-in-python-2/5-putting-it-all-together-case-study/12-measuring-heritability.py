@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 
 def draw_bs_pairs(x, y, func, size=1):
-    """Perform pairs bootstrap for single statistic."""
+    '''Perform pairs bootstrap for single statistic.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -27,6 +27,7 @@ def draw_bs_pairs(x, y, func, size=1):
         bs_replicates[i] = func(bs_x, bs_y)
 
     return bs_replicates
+
 
 fortis = pd.read_csv('../datasets/fortis_beak_depth_heredity.csv')
 scandens = pd.read_csv('../datasets/scandens_beak_depth_heredity.csv')
@@ -48,7 +49,7 @@ INSTRUCTIONS
 '''
 
 def heritability(parents, offspring):
-    """Compute the heritability from parent and offspring samples."""
+    '''Compute the heritability from parent and offspring samples.'''
     covariance_matrix = np.cov(parents, offspring)
     
     return covariance_matrix[0,1] / covariance_matrix[0,0]
@@ -60,6 +61,7 @@ heritability_fortis = heritability(bd_parent_fortis, bd_offspring_fortis)
 # Acquire 1000 bootstrap replicates of heritability
 replicates_scandens = draw_bs_pairs(
         bd_parent_scandens, bd_offspring_scandens, heritability, size=1000)
+
 replicates_fortis = draw_bs_pairs(
         bd_parent_fortis, bd_offspring_fortis, heritability, size=1000)
 

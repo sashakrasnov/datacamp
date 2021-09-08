@@ -9,7 +9,7 @@ To answer this question, you will evaluate the hypothesis that the party of a Ho
 import numpy as np
 
 def permutation_sample(data1, data2):
-    """Generate a permutation sample from two data sets."""
+    '''Generate a permutation sample from two data sets.'''
 
     # Concatenate the data sets: data
     data = np.concatenate((data1, data2))
@@ -24,7 +24,7 @@ def permutation_sample(data1, data2):
     return perm_sample_1, perm_sample_2
 
 def draw_perm_reps(data_1, data_2, func, size=1):
-    """Generate multiple permutation replicates."""
+    '''Generate multiple permutation replicates.'''
 
     # Initialize array of replicates: perm_replicates
     perm_replicates = np.empty(size)
@@ -52,7 +52,7 @@ dems = np.array([True] * 153 + [False] * 91)
 reps = np.array([True] * 136 + [False] * 35)
 
 def frac_yea_dems(dems, reps):
-    """Compute fraction of Democrat yea votes."""
+    '''Compute fraction of Democrat yea votes.'''
     frac = np.sum(dems) / len(dems)
     return frac
 
@@ -61,4 +61,6 @@ perm_replicates = draw_perm_reps(dems, reps, frac_yea_dems, 10000)
 
 # Compute and print p-value: p
 p = np.sum(perm_replicates <= 153/244) / len(perm_replicates)
+
+# Print the result
 print('p-value =', p)

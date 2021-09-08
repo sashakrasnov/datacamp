@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def draw_bs_pairs_linreg(x, y, size=1):
-    """Perform pairs bootstrap for linear regression."""
+    '''Perform pairs bootstrap for linear regression.'''
 
     # Set up array of indices to sample from: inds
     inds = np.arange(len(x))
@@ -49,8 +49,9 @@ x = np.array([0, 100])
 
 # Plot the bootstrap lines
 for i in range(100):
-    _ = plt.plot(x, bs_slope_reps[i] * x + bs_intercept_reps[i],
-                 linewidth=0.5, alpha=0.2, color='red')
+    _ = plt.plot(
+            x, bs_slope_reps[i] * x + bs_intercept_reps[i],
+            linewidth=0.5, alpha=0.2, color='red')
 
 # Plot the data
 _ = plt.plot(illiteracy, fertility, marker='.', linestyle='none')
@@ -59,4 +60,6 @@ _ = plt.plot(illiteracy, fertility, marker='.', linestyle='none')
 _ = plt.xlabel('illiteracy')
 _ = plt.ylabel('fertility')
 plt.margins(0.02)
+
+# Show the plot
 plt.show()

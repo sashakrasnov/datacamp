@@ -9,11 +9,14 @@ Remember, the data are stored in bd_1975, bd_2012, bl_1975, and bl_2012.
 import numpy as np
 import pandas as pd
 
+
 def bootstrap_replicate_1d(data, func):
     return func(np.random.choice(data, size=len(data)))
 
+
 def draw_bs_reps(data, func, size=1):
     return np.array([bootstrap_replicate_1d(data, func) for _ in range(size)])
+
 
 bd = {}
 bl = {}
@@ -25,6 +28,7 @@ for y in [1975, 2012]:
 
     bl[y] = df[scns][2].values
     bd[y] = df[scns][3].values
+
 
 bl_1975 = bl[1975]
 bd_1975 = bd[1975]
