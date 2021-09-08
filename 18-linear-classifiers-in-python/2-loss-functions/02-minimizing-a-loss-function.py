@@ -37,4 +37,5 @@ print(w_fit)
 
 # Compare with scikit-learn's LinearRegression coefficients
 lr = LinearRegression(fit_intercept=False).fit(X,y)
+
 print(lr.coef_)

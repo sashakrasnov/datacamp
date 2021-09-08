@@ -10,11 +10,15 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from scipy.sparse import hstack, vstack
 
-X_train = vstack((sps.load_npz('../datasets/X_train.csr.npz'),
-                  sps.load_npz('../datasets/X_test.csr.npz')))
+X_train = vstack((
+    sps.load_npz('../datasets/X_train.csr.npz'),
+    sps.load_npz('../datasets/X_test.csr.npz')
+))
 
-y_train = hstack((sps.load_npz('../datasets/y_train.csr.npz'),
-                  sps.load_npz('../datasets/y_test.csr.npz'))).data
+y_train = hstack((
+    sps.load_npz('../datasets/y_train.csr.npz'),
+    sps.load_npz('../datasets/y_test.csr.npz')
+)).data
 
 '''
 INSTRUCTIONS
@@ -28,14 +32,15 @@ INSTRUCTIONS
 lr = LogisticRegression(penalty='l1')
 
 # Instantiate the GridSearchCV object and run the search
-searcher = GridSearchCV(lr, {'C':[0.001, 0.01, 0.1, 1, 10]})
+searcher = GridSearchCV(lr, {'C': [0.001, 0.01, 0.1, 1, 10]})
 searcher.fit(X_train, y_train)
 
 # Report the best parameters
-print("Best CV params", searcher.best_params_)
+print('Best CV params', searcher.best_params_)
 
 # Find the number of nonzero coefficients (selected features)
 best_lr = searcher.best_estimator_
 coefs = best_lr.coef_
-print("Total number of features:", coefs.size)
-print("Number of selected features:", np.count_nonzero(coefs))
+
+print('Total number of features:', coefs.size)
+print('Number of selected features:', np.count_nonzero(coefs))

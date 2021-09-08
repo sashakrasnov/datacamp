@@ -10,16 +10,17 @@ from sklearn import datasets
 from sklearn.linear_model import LogisticRegression
 
 def show_digit(i, lr=None):
-    plt.imshow(np.reshape(X[i], (8,8)), cmap='gray', vmin = 0, vmax = 16, interpolation=None)
+    plt.imshow(np.reshape(X[i], (8, 8)), cmap='gray', vmin=0, vmax=16, interpolation=None)
+
     plt.xticks(())
     plt.yticks(())
 
     if lr is None:
-        plt.title("class label = %d" % y[i])
+        plt.title('class label = %d' % y[i])
     else:
         pred = lr.predict(X[i][None])
         pred_prob = lr.predict_proba(X[i][None])[0,pred]
-        plt.title("label=%d, prediction=%d, proba=%.2f" % (y[i], pred, pred_prob))
+        plt.title('label=%d, prediction=%d, proba=%.2f' % (y[i], pred, pred_prob))
     
     plt.show()
 
@@ -43,7 +44,7 @@ lr.fit(X,y)
 proba = lr.predict_proba(X)
 
 # Sort the example indices by their maximum probability
-proba_inds = np.argsort(np.max(proba,axis=1))
+proba_inds = np.argsort(np.max(proba, axis=1))
 
 # Show the most confident (least ambiguous) digit
 show_digit(proba_inds[-1], lr)

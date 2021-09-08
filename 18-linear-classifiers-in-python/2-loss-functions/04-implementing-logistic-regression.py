@@ -16,10 +16,10 @@ def log_loss(raw_model_output):
 
 bc = datasets.load_breast_cancer()
 
-X = preprocessing.StandardScaler().fit_transform(bc.data[:,:10])
+X = preprocessing.StandardScaler().fit_transform(bc.data[:, :10])
 y = bc.target
 
-y[y==0] = -1
+y[y == 0] = -1
 
 '''
 INSTRUCTIONS
@@ -42,4 +42,5 @@ print(w_fit)
 
 # Compare with scikit-learn's LogisticRegression
 lr = LogisticRegression(fit_intercept=False, C=1000000).fit(X,y)
+
 print(lr.coef_)
