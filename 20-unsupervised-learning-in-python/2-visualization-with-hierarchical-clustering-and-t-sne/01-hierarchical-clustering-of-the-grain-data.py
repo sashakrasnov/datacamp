@@ -8,8 +8,13 @@ import pandas as pd
 
 df = pd.read_csv('../datasets/seeds.csv', header=None)
 
-samples = df.iloc[1::5,:7].values
-varieties = df.iloc[1::5,7].replace({1:'Kama wheat', 2:'Rosa wheat', 3:'Canadian wheat'}).tolist()
+samples = df.iloc[1::5, :7].values
+
+varieties = df.iloc[1::5, 7].replace({
+        1: 'Kama wheat',
+        2: 'Rosa wheat',
+        3: 'Canadian wheat'
+    }).tolist()
 
 '''
 INSTRUCTIONS

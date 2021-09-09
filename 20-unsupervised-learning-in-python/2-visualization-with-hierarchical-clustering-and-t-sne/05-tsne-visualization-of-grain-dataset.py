@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 
 data = np.loadtxt('../datasets/seeds.csv', delimiter=',')
 
-samples = data[:,:7]
-variety_numbers = data[:,7].astype(int).tolist()
+samples = data[:, :7]
+variety_numbers = data[:, 7].astype(int).tolist()
 
 '''
 INSTRUCTIONS
@@ -33,10 +33,10 @@ model = TSNE(learning_rate=200)
 tsne_features = model.fit_transform(samples)
 
 # Select the 0th feature: xs
-xs = tsne_features[:,0]
+xs = tsne_features[:, 0]
 
 # Select the 1st feature: ys
-ys = tsne_features[:,1]
+ys = tsne_features[:, 1]
 
 # Scatter plot, coloring by variety_numbers
 plt.scatter(xs, ys, c=variety_numbers)

@@ -38,7 +38,10 @@ from scipy.cluster.hierarchy import fcluster
 labels = fcluster(mergings, 6, criterion='distance')
 
 # Create a DataFrame with labels and varieties as columns: df
-df = pd.DataFrame({'labels': labels, 'varieties': varieties})
+df = pd.DataFrame({
+        'labels': labels,
+        'varieties': varieties
+    })
 
 # Create crosstab: ct
 ct = pd.crosstab(df['labels'], df['varieties'])

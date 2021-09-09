@@ -7,6 +7,14 @@ When investigating the features, notice that for both actors, the NMF feature 3 
 '''
 
 from sklearn.decomposition import NMF
+from scipy.sparse import csc_matrix
+
+import pandas as pd
+
+documents = pd.read_csv('../datasets/wikipedia-vectors.csv', index_col=0)
+
+titles = documents.columns
+articles = csc_matrix(documents.values).T
 
 model = NMF(n_components=6)
 

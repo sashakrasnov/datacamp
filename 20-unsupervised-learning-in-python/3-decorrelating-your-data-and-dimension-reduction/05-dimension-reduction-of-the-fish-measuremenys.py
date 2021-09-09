@@ -10,7 +10,7 @@ import numpy as np
 
 from sklearn.preprocessing import StandardScaler
 
-samples = np.loadtxt('../datasets/fish.csv', delimiter=',', usecols=[1,2,3,4,5,6])
+samples = np.loadtxt('../datasets/fish.csv', delimiter=',', usecols=[1, 2, 3, 4, 5, 6])
 
 scaled_samples = StandardScaler().fit_transform(samples)
 

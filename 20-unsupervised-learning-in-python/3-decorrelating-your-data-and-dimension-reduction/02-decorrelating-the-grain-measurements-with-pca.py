@@ -7,7 +7,9 @@ You observed in the previous exercise that the width and length measurements of 
 import numpy as np
 import matplotlib.pyplot as plt
 
-grains = np.loadtxt('../datasets/seeds.csv', delimiter=',', usecols=[4,3])
+from scipy.stats import pearsonr
+
+grains = np.loadtxt('../datasets/seeds.csv', delimiter=',', usecols=[4, 3])
 
 '''
 INSTRUCTIONS
@@ -28,10 +30,10 @@ model = PCA()
 pca_features = model.fit_transform(grains)
 
 # Assign 0th column of pca_features: xs
-xs = pca_features[:,0]
+xs = pca_features[:, 0]
 
 # Assign 1st column of pca_features: ys
-ys = pca_features[:,1]
+ys = pca_features[:, 1]
 
 # Scatter plot xs vs ys
 plt.scatter(xs, ys)

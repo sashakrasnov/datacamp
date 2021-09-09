@@ -13,8 +13,12 @@ from sklearn.cluster import KMeans
 
 df = pd.read_csv('../datasets/seeds.csv', header=None)
 
-samples = df.loc[:,:6].values
-varieties = df[7].replace({1:'Kama wheat', 2:'Rosa wheat', 3:'Canadian wheat'}).values
+samples = df.loc[:, :6].values
+varieties = df[7].replace({
+        1: 'Kama wheat',
+        2: 'Rosa wheat',
+        3: 'Canadian wheat'
+    }).values
 
 '''
 INSTRUCTIONS
@@ -33,7 +37,10 @@ model = KMeans(n_clusters=3)
 labels = model.fit_predict(samples)
 
 # Create a DataFrame with labels and varieties as columns: df
-df = pd.DataFrame({'labels': labels, 'varieties': varieties})
+df = pd.DataFrame({
+        'labels': labels,
+        'varieties': varieties
+    })
 
 # Create crosstab: ct
 ct = pd.crosstab(df['labels'], df['varieties'])

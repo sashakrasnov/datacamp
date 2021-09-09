@@ -23,7 +23,7 @@ INSTRUCTIONS
 from matplotlib import pyplot as plt
 
 # Select the 0th row: digit
-digit = samples[0,:]
+digit = samples[0, :]
 
 # Print digit
 print(digit)

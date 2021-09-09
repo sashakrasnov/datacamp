@@ -16,12 +16,14 @@ import numpy as np
 
 from matplotlib import pyplot as plt
 
+
 def show_as_image(sample):
     bitmap = sample.reshape((13, 8))
     plt.figure()
     plt.imshow(bitmap, cmap='gray', interpolation='nearest')
     plt.colorbar()
     plt.show()
+
 
 samples = np.loadtxt('../datasets/lcd-digits.csv', delimiter=',')
 
@@ -50,7 +52,7 @@ for component in model.components_:
     show_as_image(component)
 
 # Assign the 0th row of features: digit_features
-digit_features = features[0,:]
+digit_features = features[0, :]
 
 # Print digit_features
 print(digit_features)

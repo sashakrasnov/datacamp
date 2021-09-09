@@ -6,7 +6,7 @@ You are given an array grains giving the width and length of samples of grain. Y
 
 import numpy as np
 
-grains = np.loadtxt('../datasets/seeds.csv', delimiter=',', usecols=[4,3])
+grains = np.loadtxt('../datasets/seeds.csv', delimiter=',', usecols=[4, 3])
 
 '''
 INSTRUCTIONS
@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 
 # Assign the 0th column of grains: width
-width = grains[:,0]
+width = grains[:, 0]
 
 # Assign the 1st column of grains: length
-length = grains[:,1]
+length = grains[:, 1]
 
 # Scatter plot width vs length
 plt.scatter(width, length)

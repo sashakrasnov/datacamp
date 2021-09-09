@@ -44,7 +44,10 @@ pipeline.fit(samples)
 labels = pipeline.predict(samples)
 
 # Create a DataFrame with labels and species as columns: df
-df = pd.DataFrame({'labels': labels, 'species': species})
+df = pd.DataFrame({
+        'labels': labels,
+        'species': species
+    })
 
 # Create crosstab: ct
 ct = pd.crosstab(df['labels'], df['species'])

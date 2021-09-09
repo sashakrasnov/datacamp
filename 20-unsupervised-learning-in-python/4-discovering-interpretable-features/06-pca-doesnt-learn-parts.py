@@ -10,12 +10,14 @@ import numpy as np
 
 from matplotlib import pyplot as plt
 
+
 def show_as_image(sample):
     bitmap = sample.reshape((13, 8))
     plt.figure()
     plt.imshow(bitmap, cmap='gray', interpolation='nearest')
     plt.colorbar()
     plt.show()
+
 
 samples = np.loadtxt('../datasets/lcd-digits.csv', delimiter=',')
 
@@ -40,4 +42,3 @@ features = model.fit_transform(samples)
 # Call show_as_image on each component
 for component in model.components_:
     show_as_image(component)
-    

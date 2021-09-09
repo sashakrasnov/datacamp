@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.cluster import KMeans
 
-samples = pd.read_csv('../datasets/seeds.csv', header=None).loc[:,:6].values
+samples = pd.read_csv('../datasets/seeds.csv', header=None).loc[:, :6].values
 
 '''
 INSTRUCTIONS

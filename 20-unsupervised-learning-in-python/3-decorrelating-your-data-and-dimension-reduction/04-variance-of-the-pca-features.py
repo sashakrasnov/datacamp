@@ -6,7 +6,7 @@ The fish dataset is 6-dimensional. But what is its intrinsic dimension? Make a p
 
 import numpy as np
 
-samples = np.loadtxt('../datasets/fish.csv', delimiter=',', usecols=[1,2,3,4,5,6])
+samples = np.loadtxt('../datasets/fish.csv', delimiter=',', usecols=[1, 2, 3, 4, 5, 6])
 
 '''
 INSTRUCTIONS

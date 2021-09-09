@@ -9,68 +9,14 @@ A solution to the previous exercise has been pre-loaded for you, so a Pipeline p
 from sklearn.decomposition import TruncatedSVD
 from sklearn.cluster import KMeans
 from sklearn.pipeline import make_pipeline
+from scipy.sparse import csc_matrix
 
-titles = [
-    'HTTP 404',
-    'Alexa Internet',
-    'Internet Explorer',
-    'HTTP cookie',
-    'Google Search',
-    'Tumblr',
-    'Hypertext Transfer Protocol',
-    'Social search',
-    'Firefox',
-    'LinkedIn',
-    'Global warming',
-    'Nationally Appropriate Mitigation Action',
-    'Nigel Lawson',
-    'Connie Hedegaard',
-    'Climate change',
-    'Kyoto Protocol',
-    '350.org',
-    'Greenhouse gas emissions by the United States',
-    '2010 United Nations Climate Change Conference',
-    '2007 United Nations Climate Change Conference',
-    'Angelina Jolie',
-    'Michael Fassbender',
-    'Denzel Washington',
-    'Catherine Zeta-Jones',
-    'Jessica Biel',
-    'Russell Crowe',
-    'Mila Kunis',
-    'Dakota Fanning',
-    'Anne Hathaway',
-    'Jennifer Aniston',
-    'France national football team',
-    'Cristiano Ronaldo',
-    'Arsenal F.C.',
-    'Radamel Falcao',
-    'Zlatan Ibrahimović',
-    'Colombia national football team',
-    '2014 FIFA World Cup qualification',
-    'Football',
-    'Neymar',
-    'Franck Ribéry',
-    'Tonsillitis',
-    'Hepatitis B',
-    'Doxycycline',
-    'Leukemia',
-    'Gout',
-    'Hepatitis C',
-    'Prednisone',
-    'Fever',
-    'Gabapentin',
-    'Lymphoma',
-    'Chad Kroeger',
-    'Nate Ruess',
-    'The Wanted',
-    'Stevie Nicks',
-    'Arctic Monkeys',
-    'Black Sabbath',
-    'Skrillex',
-    'Red Hot Chili Peppers',
-    'Sepsis',
-    'Adam Levine']
+import pandas as pd
+
+documents = pd.read_csv('../datasets/wikipedia-vectors.csv', index_col=0)
+
+titles = documents.columns
+articles = csc_matrix(documents.values).T
 
 svd = TruncatedSVD(n_components=50)
 
@@ -99,7 +45,10 @@ pipeline.fit(articles)
 labels = pipeline.predict(articles)
 
 # Create a DataFrame aligning labels and titles: df
-df = pd.DataFrame({'label': labels, 'article': titles})
+df = pd.DataFrame({
+        'label': labels,
+        'article': titles
+    })
 
 # Display df sorted by cluster label
 print(df.sort_values('label'))

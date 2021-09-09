@@ -9,6 +9,16 @@ After you are done, take a moment to recognise the topic that the articles about
 '''
 
 from sklearn.decomposition import NMF
+from scipy.sparse import csc_matrix
+
+import pandas as pd
+
+documents = pd.read_csv('../datasets/wikipedia-vectors.csv', index_col=0)
+
+articles = csc_matrix(documents.values).T
+
+with open('../datasets/wikipedia-vocabulary.txt', 'r', encoding='utf-8') as f:
+    words = f.read().split()
 
 model = NMF(n_components=6)
 
@@ -18,7 +28,8 @@ model.fit(articles)
 INSTRUCTIONS
 
 *   Import pandas as pd.
-*   Create a DataFrame components_df from model.components_, setting columns=words so that columns are *    labeled by the words.
+*   Create a DataFrame components_df from model.components_, setting columns=words so that columns are
+    *    labeled by the words.
 *   Print components_df.shape to check the dimensions of the DataFrame.
 *   Use the .iloc[] accessor on the DataFrame components_df to select row 3. Assign the result to component.
 *   Call the .nlargest() method of component, and print the result. This gives the five words with the highest values for that component.

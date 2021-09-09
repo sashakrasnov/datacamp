@@ -25,7 +25,6 @@ INSTRUCTIONS
 *   Plot a dendrogram of the hierarchical clustering, using the list companies of company names as the labels. In addition, specify the leaf_rotation=90, and leaf_font_size=6 keyword arguments as you did in the previous exercise.
 '''
 
-
 # Import normalize
 from sklearn.preprocessing import normalize
 
@@ -37,4 +36,5 @@ mergings = linkage(normalized_movements, method='complete')
 
 # Plot the dendrogram
 dendrogram(mergings, labels=companies, leaf_rotation=90, leaf_font_size=6)
+
 plt.show()
