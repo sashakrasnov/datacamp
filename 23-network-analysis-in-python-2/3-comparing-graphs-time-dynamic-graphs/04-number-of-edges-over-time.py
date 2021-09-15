@@ -15,6 +15,7 @@ months = range(4, 11)
 
 # Initialize an empty list: Gs
 Gs = [] 
+
 for month in months:
     # Instantiate a new undirected graph: G
     G = nx.Graph()

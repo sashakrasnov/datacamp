@@ -32,7 +32,10 @@ G_sub = nx.Graph()
 G_sub.add_nodes_from(G.nodes(data=True))
 
 # Add edges using a list comprehension with one conditional on the edge dates, that the date of the edge is earlier than 2004-05-16.
-G_sub.add_edges_from([(u, v, d) for u, v, d in G.edges(data=True) if d['date'] < datetime(2004, 5, 16)])
+G_sub.add_edges_from([
+    (u, v, d) for u, v, d in G.edges(data=True)
+        if d['date'] < datetime(2004, 5, 16)
+])
 
 '''
 INSTRUCTIONS
@@ -49,6 +52,7 @@ import matplotlib.pyplot as plt
 
 # Compute degree centrality scores of each node
 dcs = nx.bipartite.degree_centrality(G, nodes=forum_nodes)
+
 for n, d in G_sub.nodes(data=True):
     G_sub.node[n]['dc'] = dcs[n]
 

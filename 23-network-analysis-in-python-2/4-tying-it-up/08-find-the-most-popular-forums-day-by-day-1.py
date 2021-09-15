@@ -52,6 +52,7 @@ td = timedelta(days=1)
 while curr_day < lastday:  
     if curr_day.day == 1: 
         print(curr_day) 
+
     # Instantiate new graph: G_sub
     G_sub = nx.Graph()
     
@@ -59,7 +60,10 @@ while curr_day < lastday:
     G_sub.add_nodes_from(G.nodes(data=True))
     
     # Add in edges from the original graph G that fulfill the criteria
-    G_sub.add_edges_from([(u, v, d) for u, v, d in G.edges(data=True) if d['date'] >= curr_day and d['date'] < curr_day + td])
+    G_sub.add_edges_from([
+        (u, v, d) for u, v, d in G.edges(data=True)
+            if curr_day + td > d['date'] >= curr_day
+    ])
     
     # CODE CONTINUES ON NEXT EXERCISE
     curr_day += td

@@ -22,6 +22,7 @@ months = range(4, 11)
 
 # Initialize an empty list: Gs
 Gs = [] 
+
 for month in months:
     # Instantiate a new undirected graph: G
     G = nx.Graph()
@@ -56,6 +57,7 @@ top_dcs = sorted(set(nx.degree_centrality(G).values()), reverse=True)[:5]
 
 # Create list of nodes that have the top 5 highest overall degree centralities
 top_connected = []
+
 for n, dc in nx.degree_centrality(G).items():
     if dc in top_dcs:
         top_connected.append(n)

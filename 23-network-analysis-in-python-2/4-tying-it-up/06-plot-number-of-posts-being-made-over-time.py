@@ -47,11 +47,15 @@ td = timedelta(days=2)
 
 # Initialize an empty list of posts by day
 n_posts = []
+
 while curr_day < lastday:
     if curr_day.day == 1:
         print(curr_day) 
     # Filter edges such that they are within the sliding time window: edges
-    edges = [(u, v, d) for u, v, d in G.edges(data=True) if d['date'] >= curr_day and d['date'] < curr_day + td]
+    edges = [
+        (u, v, d) for u, v, d in G.edges(data=True)
+            if d['date'] >= curr_day and d['date'] < curr_day + td
+    ]
     
     # Append number of edges to the n_posts list
     n_posts.append(len(edges))

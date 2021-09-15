@@ -16,25 +16,29 @@ from networkx import Graph
 def get_nodes_from_partition(G, partition):
     # Initialize an empty list for nodes to be returned
     nodes = []
+
     # Iterate over each node in the graph G
     for n in G.nodes():
         # Check that the node belongs to the particular partition
         if G.node[n]['bipartite'] == partition:
             # If so, append it to the list of nodes
             nodes.append(n)
+
     return nodes
 
 
 # Reading Graph v1 pickle data
-with open('../datasets/github_subgraph.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/github_subgraph.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/github_subgraph.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/github_subgraph.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 '''
 INSTRUCTIONS

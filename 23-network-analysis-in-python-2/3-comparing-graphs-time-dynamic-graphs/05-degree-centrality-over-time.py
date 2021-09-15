@@ -22,6 +22,7 @@ months = range(4, 11)
 
 # Initialize an empty list: Gs
 Gs = [] 
+
 for month in months:
     # Instantiate a new undirected graph: G
     G = nx.Graph()
@@ -55,14 +56,17 @@ import matplotlib.pyplot as plt
 
 # Create a list of degree centrality scores month-by-month
 cents = []
+
 for G in Gs:
     cent = nx.degree_centrality(G)
     cents.append(cent)
 
 # Plot ECDFs over time
 fig = plt.figure()
+
 for i in range(len(cents)):
     x, y = ECDF(cents[i].values()) 
     plt.plot(x, y, label='Month {0}'.format(i+1)) 
+
 plt.legend()   
 plt.show()

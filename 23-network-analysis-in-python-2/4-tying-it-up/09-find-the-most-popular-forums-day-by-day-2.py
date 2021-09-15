@@ -55,17 +55,31 @@ td = timedelta(days=1)
 while curr_day < lastday:  
     if curr_day.day == 1:  
         print(curr_day)  
+
     G_sub = nx.Graph()
     G_sub.add_nodes_from(G.nodes(data=True))   
-    G_sub.add_edges_from([(u, v, d) for u, v, d in G.edges(data=True) if d['date'] >= curr_day and d['date'] < curr_day + td])
+    G_sub.add_edges_from([
+        (u, v, d) for u, v, d in G.edges(data=True)
+            if curr_day + td > d['date'] >= curr_day
+    ])
     
     # Get the degree centrality 
     dc = nx.bipartite.degree_centrality(G_sub, nodes=forum_nodes)
+
     # Filter the dictionary such that there's only forum degree centralities
-    forum_dcs = {n:dc for n, dc in dc.items() if n in forum_nodes}
+    forum_dcs = {
+        n: dc for n, dc in dc.items()
+            if n in forum_nodes
+    }
+
     # Identify the most popular forum(s) 
-    most_popular_forum = [n for n, dc in forum_dcs.items() if dc == max(forum_dcs.values()) and dc != 0] 
+    most_popular_forum = [
+        n for n, dc in forum_dcs.items()
+            if dc == max(forum_dcs.values()) and dc != 0
+    ]
+
     most_popular_forums.append(most_popular_forum) 
+
     # Store the highest dc values in highest_dcs
     highest_dcs.append(max(forum_dcs.values()))
     

@@ -26,6 +26,7 @@ months = range(4, 11)
 
 # Initialize an empty list: Gs
 Gs = [] 
+
 for month in months:
     # Instantiate a new undirected graph: G
     G = nx.Graph()
@@ -50,6 +51,7 @@ top_dcs = sorted(set(nx.degree_centrality(G).values()), reverse=True)[:5]
 
 # Create list of nodes that have the top 5 highest overall degree centralities
 top_connected = []
+
 for n, dc in nx.degree_centrality(G).items():
     if dc in top_dcs:
         top_connected.append(n)
@@ -69,13 +71,16 @@ from collections import defaultdict
 
 # Create a defaultdict in which the keys are nodes and the values are a list of connectivity scores over time
 connectivity = defaultdict(list)
+
 for n in top_connected:
     for g in Gs:
-        connectivity[n].append(len(g.neighbors(n)))
+        connectivity[n].append(len(list(g.neighbors(n))))
 
 # Plot the connectivity for each node
 fig = plt.figure() 
+
 for n, conn in connectivity.items(): 
     plt.plot(conn, label=n) 
+
 plt.legend()  
 plt.show()

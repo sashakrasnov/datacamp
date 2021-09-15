@@ -13,15 +13,17 @@ import networkx as nx
 from networkx import Graph
 
 # Reading Graph v1 pickle data
-with open('../datasets/github.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/github.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/github.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/github.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 '''
 INSTRUCTIONS

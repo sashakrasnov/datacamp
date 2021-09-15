@@ -14,15 +14,17 @@ import networkx as nx
 from networkx import Graph
 
 # Reading Graph v1 pickle data
-with open('../datasets/github_subgraph.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/github_subgraph.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/github_subgraph.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/github_subgraph.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 '''
 INSTRUCTIONS
@@ -46,6 +48,7 @@ def shared_partition_nodes(G, node1, node2):
 
     # Compute the overlap using set intersections
     overlap = set(nbrs1).intersection(nbrs2)
+
     return overlap
 
 # Print the number of shared repositories between users 'u7909' and 'u2148'

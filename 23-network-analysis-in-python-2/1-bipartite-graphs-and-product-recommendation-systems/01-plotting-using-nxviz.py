@@ -23,15 +23,17 @@ from networkx import Graph
 from nxviz import CircosPlot
 
 # Reading Graph v1 pickle data
-with open('../datasets/github_subgraph.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/github_subgraph.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/github_subgraph.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/github_subgraph.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 dcs = nx.degree_centrality(G)
 

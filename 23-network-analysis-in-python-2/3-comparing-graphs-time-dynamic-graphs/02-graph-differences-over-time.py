@@ -13,6 +13,7 @@ months = range(4, 11)
 
 # Initialize an empty list: Gs
 Gs = [] 
+
 for month in months:
     # Instantiate a new undirected graph: G
     G = nx.Graph()
@@ -41,10 +42,13 @@ INSTRUCTIONS
 '''
 
 import networkx as nx  
+
 # Instantiate a list of graphs that show edges added: added
 added = []
+
 # Instantiate a list of graphs that show edges removed: removed
 removed = []
+
 # Here's the fractional change over time
 fractional_changes = []
 window = 1  

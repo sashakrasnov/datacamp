@@ -10,15 +10,17 @@ import pickle
 import networkx as nx
 
 # Reading Graph v1 pickle data
-with open('../datasets/american-revolution.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/american-revolution.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/american-revolution.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = nx.Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/american-revolution.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = nx.Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 '''
 INSTRUCTIONS

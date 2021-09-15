@@ -14,25 +14,29 @@ import networkx as nx
 def get_nodes_from_partition(G, partition):
     # Initialize an empty list for nodes to be returned
     nodes = []
+
     # Iterate over each node in the graph G
     for n in G.nodes():
         # Check that the node belongs to the particular partition
         if G.node[n]['bipartite'] == partition:
             # If so, append it to the list of nodes
             nodes.append(n)
+
     return nodes
 
 
 # Reading Graph v1 pickle data
-with open('../datasets/american-revolution.p', 'rb') as f:
-    G = pickle.load(f)
+#with open('../datasets/american-revolution.p', 'rb') as f:
+#    G = pickle.load(f)
 
 # Reading Graph v2 pickle data
-#with open('../datasets/american-revolution.p2', 'rb') as f:
-#    nodes, edges = pickle.load(f)
-#    G = nx.Graph()
-#    G.add_nodes_from(nodes)
-#    G.add_edges_from(edges)
+with open('../datasets/american-revolution.p2', 'rb') as f:
+    nodes, edges = pickle.load(f)
+
+    G = nx.Graph()
+
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
 
 # Get the list of people and list of clubs from the graph: people_nodes, clubs_nodes
 people_nodes = get_nodes_from_partition(G, 'people')
@@ -62,8 +66,10 @@ import numpy as np
 # Find out the names of people who were members of the most number of clubs
 diag = user_matrix.diagonal()
 indices = np.where(diag == diag.max())[0]  
+
 print('Number of clubs: {0}'.format(diag.max()))
 print('People with the most number of memberships:')
+
 for i in indices:
     print('- {0}'.format(people_nodes[i]))
 
@@ -73,6 +79,8 @@ users_coo = user_matrix.tocoo()
 
 # Find pairs of users who shared membership in the most number of clubs
 indices = np.where(users_coo.data == users_coo.data.max())[0]
+
 print('People with most number of shared memberships:')
+
 for idx in indices:
     print('- {0}, {1}'.format(people_nodes[users_coo.row[idx]], people_nodes[users_coo.col[idx]]))  
