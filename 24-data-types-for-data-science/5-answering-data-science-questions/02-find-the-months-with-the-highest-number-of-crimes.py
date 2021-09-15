@@ -3,7 +3,7 @@ Find the Months with the Highest Number of Crimes
 
 Using the crime_data list from the prior exercise, you'll answer a common question that arises when dealing with crime data: How many crimes are committed each month?
 
-Feel free to use the IPython Shell to explore the crime_data list - it has been pre-loaded for you. For example, crime_data[0][0] will show you the first column of the first row which, in this case, is the date and time time that the crime occurred.
+Feel free to use the IPython Shell to explore the crime_data list -- it has been pre-loaded for you. For example, crime_data[0][0] will show you the first column of the first row which, in this case, is the date and time time that the crime occurred.
 '''
 
 import csv

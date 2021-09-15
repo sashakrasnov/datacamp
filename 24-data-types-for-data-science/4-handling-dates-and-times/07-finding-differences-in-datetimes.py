@@ -12,7 +12,7 @@ from datetime import datetime
 
 slice = 30
 
-with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_summary_totals.csv', 'r') as csvfile:
     daily_summaries = [
         datetime.strptime(row['service_date'], '%m/%d/%Y') for row in csv.DictReader(csvfile)
     ][slice-1::slice]

@@ -11,7 +11,7 @@ import csv
 from datetime import datetime
 from collections import defaultdict
 
-with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_summary_totals.csv', 'r') as csvfile:
     daily_summaries = [
         tuple(row.values())
             for row in csv.DictReader(csvfile)

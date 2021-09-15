@@ -14,7 +14,7 @@ from datetime import datetime
 
 review_dates = [datetime(2013, 12, d) for d in range(22, 32)]
 
-with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_summary_totals.csv', 'r') as csvfile:
     daily_summaries = {
         datetime.strptime(row['service_date'], '%m/%d/%Y'): {
             'day_type': row['day_type'],
@@ -29,8 +29,8 @@ INSTRUCTIONS
 *   Build a timedelta of 30 days called glanceback using timedelta().
 *   Iterate over the review_dates, using date as your iterator variable.
     *   Calculate the date 30 days back by subtracting glanceback from date.
-    *   Print the date, along with 'day_type' and 'total_ridership' from daily_summaries for that date.
-    *   Print the prior_period_dt, along with 'day_type' and 'total_ridership' from daily_summaries for that date (prior_period_dt).
+    *   Print the date, along with "day_type" and "total_ridership" from daily_summaries for that date.
+    *   Print the prior_period_dt, along with "day_type" and "total_ridership' from daily_summaries for that date (prior_period_dt).
 '''
 
 # Import timedelta from the datetime module

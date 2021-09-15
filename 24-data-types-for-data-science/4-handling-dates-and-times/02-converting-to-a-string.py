@@ -12,7 +12,7 @@ import csv
 
 from datetime import datetime
 
-with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_summary_totals.csv', 'r') as csvfile:
     dates_list = [
         row['service_date']
             for row in csv.DictReader(csvfile)
@@ -24,7 +24,7 @@ datetimes_list = [datetime.strptime(date_str, '%m/%d/%Y') for date_str in dates_
 INSTRUCTIONS
 
 *   Loop over the first 10 items of the datetimes_list, using item as your iterator variable.
-    *   Print out the item as a string in the format of 'MM/DD/YYYY'. For this, the format string is '%m/%d/%Y'.
+    *   Print out the item as a string in the format of "MM/DD/YYYY". For this, the format string is '%m/%d/%Y'.
     *   Print out the item as an ISO standard string.
 '''
 

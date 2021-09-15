@@ -32,6 +32,7 @@ csvfile.readline()
 for row in csv.reader(csvfile):
     # Print each row 
     print(row)
+
     # Add the rank and name to the dictionary
     baby_names[row[5]] = row[3]
 

@@ -29,6 +29,7 @@ csvfile = open('../datasets/baby_names.csv' ,'r')
 for row in csv.DictReader(csvfile):
     # Print each row 
     print(row)
+
     # Add the rank and name to the dictionary: baby_names
     baby_names[row['RANK']] = row['NAME']
 

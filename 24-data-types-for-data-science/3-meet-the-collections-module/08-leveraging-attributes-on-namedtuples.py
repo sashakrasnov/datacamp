@@ -8,7 +8,7 @@ Here, you'll use the tuples you made in the previous exercise to see how this wo
 
 import csv
 
-with open('../datasets/cta_daily_station_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_station_totals.csv', 'r') as csvfile:
     entries = [
         (row['date'], row['stationname'], row['rides'])
             for row in csv.DictReader(csvfile)

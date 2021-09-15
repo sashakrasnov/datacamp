@@ -1,7 +1,8 @@
 '''
-Find the Most Common Crimes by Location Type by Month in 2016
+Reading your Data with DictReader and Establishing your Data Containers
+Your data file, crime_sampler.csv contains in positional order: the date, block where it occurred, primary type of the crime, description of the crime, description of the location, if an arrest was made, was it a domestic case, and city district.
 
-Using the locations_by_month dictionary from the prior exercise, you'll now determine common crimes by month and location type. Because your dataset is so large, it's a good idea to use Counter to look at an aspect of it in an easier to manageable size and learn more about it.
+You'll now use a DictReader to load up a dictionary to hold your data with the district as the key and the rest of the data in a list. The csv, defaultdict, and datetime modules have already been imported for you.
 '''
 
 import csv
@@ -12,11 +13,11 @@ from datetime import datetime
 '''
 INSTRUCTIONS
 
-*   Import Counter from collections.
-*   Loop over the items from your dictionary, using tuple expansion to unpack locations_by_month.items() into month and locations.
-    *   Make a Counter of the locations called location_count.
-    *   Print the month.
-    *   Print the five most common crime locations.
+*   Create a Python file object in read mode for crime_sampler.csv called csvfile.
+*   Create a dictionary that defaults to a list called crimes_by_district.
+*   Loop over a DictReader of the CSV file:
+    *   Pop 'District' from each row and store it as district.
+    *   Append the rest of the data (row) to the district key of crimes_by_district.
 '''
 
 # Create the CSV file: csvfile

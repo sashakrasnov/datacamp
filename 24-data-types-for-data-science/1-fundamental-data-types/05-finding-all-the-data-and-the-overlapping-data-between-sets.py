@@ -7,7 +7,7 @@ Your job in this exercise is to find the union and intersection in the names fro
 
 One quirk in the baby names dataset is that names in 2011 and 2012 are all in upper case, while names in 2013 and 2014 are in title case (where the first letter of each name is capitalized). Consequently, if you were to compare the 2011 and 2014 data in this form, you would find no overlapping names between the two years! To remedy this, we converted the names in 2011 to title case using Python's .title() method.
 
-Real-world data can often come with quirks like this - it's important to catch them to ensure your results are meaningful.
+Real-world data can often come with quirks like this -- it's important to catch them to ensure your results are meaningful.
 '''
 
 baby_names_2011 = set()

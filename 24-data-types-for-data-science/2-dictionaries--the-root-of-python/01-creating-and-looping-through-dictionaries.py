@@ -15,6 +15,7 @@ female_baby_names_2012 = set()
 with open('../datasets/baby_names.csv') as f:
     # Skipping header
     _ = f.readline()
+
     # Iterating over lines
     for row in f:
         year, sex, _, name, count, _ = row.strip().split(',')

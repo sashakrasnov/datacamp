@@ -29,7 +29,7 @@ for row in crime_data:
     
     # If the year is 2016 
     if date.year == 2016:
-        # Set the dictionary key to the month and add the location (fifth element) to the values list
+       # Set the dictionary key to the month and add the location (fifth element) to the values list
        locations_by_month[date.month].append(row[4])
 
 '''

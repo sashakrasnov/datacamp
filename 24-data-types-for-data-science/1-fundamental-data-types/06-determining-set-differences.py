@@ -20,7 +20,7 @@ INSTRUCTIONS
 
 *   Create an empty set called baby_names_2011. You can do this using set().
 *   Use a for loop to iterate over each row in records:
-    *   If the first column of each row in records is '2011', add its fourth column to baby_names_2011. Remember that Python is 0-indexed!
+    *   If the first column of each row in records is "2011", add its fourth column to baby_names_2011. Remember that Python is 0-indexed!
 *   Find the difference between baby_names_2011 and baby_names_2014. Store the result as differences.
 *   Print the differences. This has been done for you, so hit 'Submit Answer' to see the result!
 '''

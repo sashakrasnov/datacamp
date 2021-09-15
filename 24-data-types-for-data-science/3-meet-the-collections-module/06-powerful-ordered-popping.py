@@ -8,7 +8,7 @@ Here, you'll use the ridership_date OrderedDict you created in the previous exer
 
 import csv
 
-with open('../datasets/cta_daily_station_totals.csv' ,'r') as csvfile:
+with open('../datasets/cta_daily_station_totals.csv', 'r') as csvfile:
     entries = [
         (row['date'], int(row['rides']))
             for row in csv.DictReader(csvfile)

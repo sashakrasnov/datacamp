@@ -17,7 +17,7 @@ INSTRUCTIONS
 *   Loop over a csv reader on the file object :
     *   Inside the loop, append the date (first element), type of crime (third element), location description (fifth element), and arrest (sixth element) to the crime_data list.
 *   Remove the first element (headers) from the crime_data list.
-*   Print the first 10 records of the crime_data list. This has been done for you, so hit 'Submit Answer' to see the result!
+*   Print the first 10 records of the crime_data list. This has been done for you, so hit "Submit Answer" to see the result!
 '''
 
 # Import the csv module

@@ -24,8 +24,8 @@ for row in csv.DictReader(csvfile):
 '''
 INSTRUCTIONS
 
-*   Create a unique list of crimes for the '001XX N STATE ST' block called n_state_st_crimes and print it.
-*   Create a unique list of crimes for the '0000X W TERMINAL ST' block called w_terminal_st_crimes and print it.
+*   Create a unique list of crimes for the "001XX N STATE ST" block called n_state_st_crimes and print it.
+*   Create a unique list of crimes for the "0000X W TERMINAL ST" block called w_terminal_st_crimes and print it.
 *   Find the crimes committed on 001XX N STATE ST but not 0000X W TERMINAL ST. Store the result as crime_differences and print it.
 '''
 
