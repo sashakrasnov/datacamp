@@ -53,9 +53,11 @@ def find_nodes_with_highest_deg_cent(G):
             nodes.add(k)
             
     return nodes
+
     
 # Find the node(s) that has the highest degree centrality in T: top_dc
 top_dc = find_nodes_with_highest_deg_cent(T)
+
 print(top_dc)
 
 # Write the assertion statement

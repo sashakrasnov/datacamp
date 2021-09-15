@@ -58,4 +58,3 @@ T_conv = nx.from_numpy_matrix(A, create_using=nx.DiGraph())
 # Check that the `category` metadata field is lost from each node
 for n, d in T_conv.nodes(data=True):
     assert 'category' not in d.keys()
-    

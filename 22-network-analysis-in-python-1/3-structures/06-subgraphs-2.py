@@ -17,7 +17,9 @@ import matplotlib.pyplot as plt
 # Reading Graph v2 pickle data
 with open('../datasets/ego-twitter-subsampled.p2', 'rb') as f:
     nodes, edges = pickle.load(f)
+
     T = nx.Graph()
+
     T.add_nodes_from(nodes)
     T.add_edges_from(edges)
 
@@ -54,4 +56,5 @@ T_sub = T.subgraph(nodeset)
 
 # Draw T_sub to the screen
 nx.draw(T_sub, with_labels=True)
+
 plt.show()

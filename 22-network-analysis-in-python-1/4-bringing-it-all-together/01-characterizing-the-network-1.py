@@ -15,7 +15,9 @@ from networkx import Graph
 # Reading Graph v2 pickle data
 with open('../datasets/github_users.p2', 'rb') as f:
     nodes, edges = pickle.load(f)
+
     G = Graph()
+
     G.add_nodes_from(nodes)
     G.add_edges_from(edges)
 

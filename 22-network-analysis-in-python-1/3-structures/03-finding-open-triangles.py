@@ -35,9 +35,9 @@ from itertools import combinations
 
 # Define node_in_open_triangle()
 def node_in_open_triangle(G, n):
-    """
-    Checks whether pairs of neighbors of node `n` in graph `G` are in an 'open triangle' relationship with node `n`.
-    """
+    '''Checks whether pairs of neighbors of node `n` in graph `G` are in an 'open triangle' relationship with node `n`.
+    '''
+
     in_open_triangle = False
     
     # Iterate over all possible triangle relationship combinations
@@ -51,6 +51,7 @@ def node_in_open_triangle(G, n):
             break
             
     return in_open_triangle
+
 
 # Compute the number of open triangles in T
 num_open_triangles = 0

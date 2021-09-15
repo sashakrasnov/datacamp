@@ -33,7 +33,6 @@ INSTRUCTIONS
 
 # Define find_node_with_highest_bet_cent()
 def find_node_with_highest_bet_cent(G):
-
     # Compute betweenness centrality: bet_cent
     bet_cent = nx.betweenness_centrality(G)
     
@@ -52,6 +51,7 @@ def find_node_with_highest_bet_cent(G):
             nodes.add(k)
             
     return nodes
+
 
 # Use that function to find the node(s) that has the highest betweenness centrality in the network: top_bc
 top_bc = find_node_with_highest_bet_cent(T)

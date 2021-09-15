@@ -17,7 +17,9 @@ import matplotlib.pyplot as plt
 # Reading Graph v2 pickle data
 with open('../datasets/ego-twitter.p2', 'rb') as f:
     nodes, edges = pickle.load(f)
+
     T = nx.Graph()
+
     T.add_nodes_from(nodes)
     T.add_edges_from(edges)
 
@@ -34,9 +36,9 @@ INSTRUCTIONS
 
 # Define nodes_with_m_nbrs()
 def nodes_with_m_nbrs(G, m):
-    """
-    Returns all nodes in graph G that have m neighbors.
-    """
+    '''Returns all nodes in graph G that have m neighbors.
+    '''
+
     nodes = set()
     
     # Iterate over all nodes in G
@@ -52,7 +54,9 @@ def nodes_with_m_nbrs(G, m):
     # Return the nodes with m neighbors
     return nodes
 
+
 # Compute and print all nodes in T that have 6 neighbors
 six_nbrs = nodes_with_m_nbrs(T, 6)
+
 print(six_nbrs)
 

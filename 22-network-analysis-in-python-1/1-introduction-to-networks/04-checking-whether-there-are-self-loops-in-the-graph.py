@@ -11,7 +11,7 @@ To begin, use the .number_of_selfloops() method on T in the IPython Shell to get
 '''
 
 from pickle import load
-from networkx import Graph
+from networkx import Graph, number_of_selfloops
 
 # Reading Graph v1 pickle data
 #with open('../datasets/ego-twitter.p', 'rb') as f:
@@ -37,9 +37,9 @@ INSTRUCTIONS
 
 # Define find_selfloop_nodes()
 def find_selfloop_nodes(G):
-    """
-    Finds all nodes that have self-loops in the graph G.
-    """
+    '''Finds all nodes that have self-loops in the graph G.
+    '''
+
     nodes_in_selfloops = []
     
     # Iterate over all the edges of G
@@ -53,5 +53,6 @@ def find_selfloop_nodes(G):
             
     return nodes_in_selfloops
 
+
 # Check whether number of self loops equals the number of nodes in self loops
-assert T.number_of_selfloops() == len(find_selfloop_nodes(T))
+assert number_of_selfloops(T) == len(find_selfloop_nodes(T))

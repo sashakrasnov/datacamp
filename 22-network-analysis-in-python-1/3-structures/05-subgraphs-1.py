@@ -17,7 +17,9 @@ import matplotlib.pyplot as plt
 # Reading Graph v2 pickle data
 with open('../datasets/ego-twitter-subsampled.p2', 'rb') as f:
     nodes, edges = pickle.load(f)
+
     T = nx.Graph()
+
     T.add_nodes_from(nodes)
     T.add_edges_from(edges)
 
@@ -37,9 +39,9 @@ nodes_of_interest = [29, 38, 42]  # provided.
 
 # Define get_nodes_and_nbrs()
 def get_nodes_and_nbrs(G, nodes_of_interest):
-    """
-    Returns a subgraph of the graph `G` with only the `nodes_of_interest` and their neighbors.
-    """
+    '''Returns a subgraph of the graph `G` with only the `nodes_of_interest` and their neighbors.
+    '''
+
     nodes_to_draw = []
     
     # Iterate over the nodes of interest
@@ -55,6 +57,7 @@ def get_nodes_and_nbrs(G, nodes_of_interest):
             nodes_to_draw.append(nbr)
             
     return G.subgraph(nodes_to_draw)
+
 
 # Extract the subgraph with the nodes of interest: T_draw
 T_draw = get_nodes_and_nbrs(T, nodes_of_interest)
