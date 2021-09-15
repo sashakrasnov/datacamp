@@ -11,7 +11,7 @@ We have already imported pandas as pd, and loaded the listings data set with lis
 import pandas as pd
 import matplotlib.pyplot as plt
 
-listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheetname='nyse', na_values='n/a')
+listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheet_name='nyse', na_values='n/a')
 
 '''
 INSTRUCTIONS

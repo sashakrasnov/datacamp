@@ -19,6 +19,7 @@ We have already imported pandas as pd and matplotlib.pyplot as plt.
 
 # Import and inspect ozone data here
 data = pd.read_csv('../datasets/air_quality_data/ozone_nyc.csv', index_col='date', parse_dates=['date'])
+
 print(data.info())
 
 # Calculate 90d and 360d rolling mean for the last price

@@ -7,7 +7,7 @@ Now you'll use the stock symbols for the companies you selected in the last exer
 import pandas as pd
 import matplotlib.pyplot as plt
 
-listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheetname='nyse', na_values='n/a')
+listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheet_name='nyse', na_values='n/a')
 
 listings.set_index('Stock Symbol', inplace=True)
 
@@ -36,6 +36,7 @@ print(tickers)
 
 # Import prices and inspect result
 stock_prices = pd.read_csv('../datasets/stock_data/stock_data.csv', index_col='Date', parse_dates=['Date'])
+
 print(stock_prices.info())
 
 # Calculate the returns    

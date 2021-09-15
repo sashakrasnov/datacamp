@@ -31,7 +31,7 @@ def multi_period_return(period_returns):
 daily_returns = data.pct_change()
 
 # Calculate rolling_annual_returns
-rolling_annual_returns = daily_returns.rolling('360D').apply(multi_period_return)
+rolling_annual_returns = daily_returns.rolling('360D').apply(multi_period_return, raw=True)
 
 # Plot rolling_annual_returns
 rolling_annual_returns.mul(100).plot()

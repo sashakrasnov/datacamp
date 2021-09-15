@@ -52,6 +52,7 @@ print(stock_prices.info())
 
 # Join index to stock_prices, and inspect the result
 data = stock_prices.join(index)
+
 print(data.info())
 
 # Create index & stock price returns

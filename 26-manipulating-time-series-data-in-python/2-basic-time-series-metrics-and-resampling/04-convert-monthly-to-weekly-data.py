@@ -28,6 +28,7 @@ monthly_dates = pd.date_range(start=start, end=end, freq='M')
 
 # Create and print monthly here
 monthly = pd.Series(data=[1, 2], index=monthly_dates)
+
 print(monthly)
 
 # Create weekly_dates here

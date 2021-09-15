@@ -42,6 +42,7 @@ We have already imported pandas as pd and matplotlib.pyplot as plt for you. We h
 
 # Select the number of shares
 no_shares = components['Number of Shares']
+
 print(no_shares.sort_values())
 
 # Create the series of market cap per ticker

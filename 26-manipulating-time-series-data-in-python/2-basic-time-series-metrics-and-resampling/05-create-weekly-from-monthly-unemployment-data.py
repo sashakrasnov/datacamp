@@ -32,6 +32,7 @@ print(data.asfreq('W', method='bfill').head())
 
 # Create weekly series with ffill option and show first five rows
 weekly_ffill = data.asfreq('W', method='ffill')
+
 print(weekly_ffill.head())
 
 # Plot weekly_fill starting 2015 here 

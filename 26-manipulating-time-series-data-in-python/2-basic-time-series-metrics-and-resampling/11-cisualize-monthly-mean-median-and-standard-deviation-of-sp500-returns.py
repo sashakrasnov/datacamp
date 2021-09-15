@@ -22,6 +22,7 @@ As usual, we have imported pandas as pd and matplotlib.pyplot as plt for you.
 
 # Import data here
 sp500 = pd.read_csv('../datasets/stock_data/sp500.csv', index_col='date', parse_dates=['date'])
+
 print(sp500.info())
 
 # Calculate daily returns here

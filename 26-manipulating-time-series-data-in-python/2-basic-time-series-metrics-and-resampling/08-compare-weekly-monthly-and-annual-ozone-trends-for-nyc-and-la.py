@@ -21,6 +21,7 @@ We have again imported pandas as pd and matplotlib.pyplot as plt for you.
 
 # Import and inspect data here
 ozone = pd.read_csv('../datasets/air_quality_data/ozone_nyla.csv', index_col='date', parse_dates=['date'])
+
 print(ozone.info())
 
 # Calculate and plot the weekly average ozone trend

@@ -31,6 +31,7 @@ dow_jones = pd.read_csv('../datasets/stock_data/dow_jones.csv', index_col='date'
 
 # Concatenate data and inspect result here
 data = pd.concat([stocks, dow_jones], axis=1)
+
 print(data.info())
 
 # Normalize and plot your data here

@@ -18,6 +18,7 @@ We have again imported pandas as pd and matplotlib.pyplot as plt for you.
 
 # Import and inspect data here
 stocks = pd.read_csv('../datasets/stock_data/goog_fb.csv', index_col='date', parse_dates=['date'])
+
 print(stocks.info())
 
 # Calculate and plot the monthly averages

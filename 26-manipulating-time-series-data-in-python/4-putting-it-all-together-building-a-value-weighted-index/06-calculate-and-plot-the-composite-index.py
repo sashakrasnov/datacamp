@@ -43,10 +43,12 @@ We have already imported pandas as pd and matplotlib.pyplot as plt for you. We h
 
 # Aggregate and print the market cap per trading day
 raw_index = market_cap_series.sum(axis=1)
+
 print(raw_index)
 
 # Normalize the aggregate market cap here 
 index = raw_index.div(raw_index.iloc[0]).mul(100)
+
 print(index)
 
 # Plot the index here

@@ -25,6 +25,7 @@ We have already imported pandas as pd and matplotlib.pyplot as plt. We have also
 
 # Resample, interpolate and inspect ozone data here
 data = data.resample('D').interpolate()
+
 print(data.info())
 
 # Create the rolling window

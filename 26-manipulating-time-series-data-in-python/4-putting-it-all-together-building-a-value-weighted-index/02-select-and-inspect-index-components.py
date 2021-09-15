@@ -9,7 +9,7 @@ You'll also have the opportunity to take a closer look at the components, their 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheetname='nyse', na_values='n/a')
+listings = pd.read_excel('../datasets/stock_data/listings.xlsx', sheet_name='nyse', na_values='n/a')
 
 listings.set_index('Stock Symbol', inplace=True)
 
@@ -38,8 +38,10 @@ print(components.sort_values(ascending=False))
 
 # Select stock symbols and print the result
 tickers = components.index.get_level_values('Stock Symbol')
+
 print(tickers)
 
 # Print company name, market cap, and last price for each component 
 info_cols = ['Company Name', 'Market Capitalization', 'Last Sale']
+
 print(listings.loc[tickers,info_cols].sort_values('Market Capitalization', ascending=False))

@@ -24,10 +24,11 @@ We have already imported pandas as pd, and matplotlib.pyplot as plt.
 
 # Import and inspect ozone data here
 data = pd.read_csv('../datasets/air_quality_data/ozone_nyc.csv', index_col='date', parse_dates=['date']).dropna()
+
 print(data.info())
 
 # Calculate the rolling mean and std here
-rolling_stats = data.Ozone.rolling(360).agg(['mean','std'])
+rolling_stats = data.Ozone.rolling(360).agg(['mean', 'std'])
 
 # Join rolling_stats with ozone data
 stats = data.join(rolling_stats)

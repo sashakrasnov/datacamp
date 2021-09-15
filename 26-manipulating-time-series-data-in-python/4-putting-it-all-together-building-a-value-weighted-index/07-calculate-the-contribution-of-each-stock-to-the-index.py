@@ -48,6 +48,7 @@ We have already imported pandas as pd and matplotlib.pyplot as plt for you. We h
 
 # Calculate and print the index return here
 index_return = (index.iloc[-1] / index.iloc[0] - 1) * 100
+
 print(index_return)
 
 # Select the market capitalization
@@ -58,6 +59,7 @@ total_market_cap = market_cap.sum()
 
 # Calculate the component weights, and print the result
 weights = market_cap / total_market_cap
+
 print(weights.sort_values())
 
 # Calculate and plot the contribution by component

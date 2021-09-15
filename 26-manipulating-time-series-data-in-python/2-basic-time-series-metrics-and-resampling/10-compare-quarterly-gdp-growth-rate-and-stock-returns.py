@@ -24,10 +24,12 @@ As usual, we have imported pandas as pd and matplotlib.pyplot as plt for you.
 
 # Import and inspect gdp_growth here
 gdp_growth = pd.read_csv('../datasets/stock_data/gdp_growth.csv', index_col='date', parse_dates=['date'])
+
 print(gdp_growth.info())
 
 # Import and inspect djia here
 djia = pd.read_csv('../datasets/stock_data/djia.csv', index_col='date', parse_dates=['date'])
+
 print(djia.info())
 
 # Calculate djia quarterly returns here 

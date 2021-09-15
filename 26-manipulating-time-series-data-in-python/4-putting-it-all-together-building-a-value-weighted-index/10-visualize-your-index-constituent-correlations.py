@@ -31,6 +31,7 @@ returns = stock_prices.pct_change()
 
 # Calculate and print the pairwise correlations
 correlations = returns.corr()
+
 print(correlations)
 
 # Plot a heatmap of daily return correlations
