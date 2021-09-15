@@ -43,12 +43,14 @@ seasonality_df = pd.DataFrame.from_dict(jobs_seasonal)
 seasonality_df.index.name = None
 
 # Create a faceted plot of the seasonality_df DataFrame
-seasonality_df.plot(subplots=True,
-                   layout=(4,4),
-                   sharey=False,
-                   fontsize=2,
-                   linewidth=0.3,
-                   legend=False)
+seasonality_df.plot(
+    subplots = True,
+    layout = (4, 4),
+    sharey = False,
+    fontsize = 2,
+    linewidth = 0.3,
+    legend = False
+)
 
 # Show plot
 plt.show()

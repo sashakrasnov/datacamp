@@ -22,7 +22,7 @@ INSTRUCTIONS 1/2
 print(meat[['beef', 'pork']].corr(method='spearman'))
 
 # Print the correlation between beef and pork columns
-print(meat[['beef', 'pork']].corr(method='spearman').iloc[0,1])
+print(meat[['beef', 'pork']].corr(method='spearman').iloc[0, 1])
 
 '''
 INSTRUCTIONS 2/2
@@ -37,10 +37,10 @@ INSTRUCTIONS 2/2
 print(meat[['pork', 'veal', 'turkey']].corr(method='pearson'))
 
 # Print the correlation between veal and pork columns
-print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[0,1])
+print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[0, 1])
 
 # Print the correlation between veal and turkey columns
-print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[1,2])
+print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[1, 2])
 
 # Print the correlation between pork and turkey columns
-print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[0,2])
+print(meat[['pork', 'veal', 'turkey']].corr(method='pearson').iloc[0, 2])

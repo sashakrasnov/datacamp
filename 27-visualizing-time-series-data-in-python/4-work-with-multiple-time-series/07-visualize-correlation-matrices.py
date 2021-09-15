@@ -34,10 +34,14 @@ import seaborn as sns
 corr_meat = meat.corr(method='spearman')
 
 # Customize the heatmap of the corr_meat correlation matrix
-sns.heatmap(corr_meat,
-            annot=True,
-            linewidths=0.4,
-            annot_kws={"size": 10})
+sns.heatmap(
+    corr_meat,
+    annot = True,
+    linewidths = 0.4,
+    annot_kws = {
+        'size': 10
+    }
+)
 
 plt.xticks(rotation=90)
 plt.yticks(rotation=0) 

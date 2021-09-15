@@ -23,12 +23,14 @@ jobs_subset = jobs[['Finance', 'Information', 'Manufacturing', 'Construction']]
 print(jobs_subset.head(5))
 
 # Create a facetted graph with 2 rows and 2 columns
-ax = jobs_subset.plot(subplots=True,
-                      layout=(2,2),
-                      sharex=False,
-                      sharey=False,
-                      linewidth=0.7,
-                      fontsize=3,
-                      legend=False)
+ax = jobs_subset.plot(
+    subplots = True,
+    layout = (2, 2),
+    sharex = False,
+    sharey = False,
+    linewidth = 0.7,
+    fontsize = 3,
+    legend = False
+)
 
 plt.show()

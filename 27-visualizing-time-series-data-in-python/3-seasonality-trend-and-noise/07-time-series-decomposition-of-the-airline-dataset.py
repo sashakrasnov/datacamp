@@ -28,6 +28,9 @@ decomposition = sm.tsa.seasonal_decompose(airline)
 trend = decomposition.trend
 seasonal = decomposition.seasonal
 
+airline_decomposed = pd.concat([trend, seasonal], axis=1)
+airline_decomposed.columns = ['trend', 'seasonal']
+
 '''
 INSTRUCTIONS 2/2
 

@@ -45,7 +45,7 @@ INSTRUCTIONS
 seasonality_corr = seasonality_df.corr(method='spearman')
 
 # Customize the clustermap of the seasonality_corr correlation matrix
-fig = sns.clustermap(seasonality_corr, annot=True, annot_kws={"size": 4}, linewidths=.4, figsize=(15, 10))
+fig = sns.clustermap(seasonality_corr, annot=True, annot_kws={'size': 4}, linewidths=.4, figsize=(15, 10))
 plt.setp(fig.ax_heatmap.yaxis.get_majorticklabels(), rotation=0)
 plt.setp(fig.ax_heatmap.xaxis.get_majorticklabels(), rotation=90)
 plt.show()
