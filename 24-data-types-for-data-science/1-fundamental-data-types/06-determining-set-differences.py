@@ -10,6 +10,7 @@ baby_names_2014 = set()
 
 with open('../datasets/baby_names.csv') as f:
     records = [r.strip().split(',') for r in f]
+
     for row in records:
        if row[0] == '2014':
             baby_names_2014.add(row[3])

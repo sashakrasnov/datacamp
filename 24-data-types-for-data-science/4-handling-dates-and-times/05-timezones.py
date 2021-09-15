@@ -15,7 +15,13 @@ from pytz import timezone
 from random import randint
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    daily_summaries = [(datetime.strptime(row['service_date'], '%m/%d/%Y').replace(hour=randint(0,23), minute=randint(0,59)), row['rail_boardings']) for row in csv.DictReader(csvfile)]
+    daily_summaries = [(
+        datetime.strptime(row['service_date'], '%m/%d/%Y').replace(
+            hour = randint(0, 23),
+            minute = randint(0, 59)
+        ),
+        row['rail_boardings']) for row in csv.DictReader(csvfile)
+    ]
 
 '''
 INSTRUCTIONS

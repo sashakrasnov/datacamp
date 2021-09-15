@@ -13,16 +13,19 @@ from statsmodels.tsa.arima_process import ArmaProcess
 
 ar1 = np.array([1, -0.9])
 ma1 = np.array([1])
+
 AR_object1 = ArmaProcess(ar1, ma1)
 simulated_data_1 = AR_object1.generate_sample(nsample=1000)
 
 ar2 = np.array([1, +0.9])
 ma2 = np.array([1])
+
 AR_object2 = ArmaProcess(ar2, ma2)
 simulated_data_2 = AR_object2.generate_sample(nsample=1000)
 
 ar3 = np.array([1, -0.3])
 ma3 = np.array([1])
+
 AR_object3 = ArmaProcess(ar3, ma3)
 simulated_data_3 = AR_object3.generate_sample(nsample=1000)
 

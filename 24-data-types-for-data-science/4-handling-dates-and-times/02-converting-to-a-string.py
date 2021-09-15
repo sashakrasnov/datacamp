@@ -13,7 +13,10 @@ import csv
 from datetime import datetime
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    dates_list = [row['service_date'] for row in csv.DictReader(csvfile)]
+    dates_list = [
+        row['service_date']
+            for row in csv.DictReader(csvfile)
+    ]
 
 datetimes_list = [datetime.strptime(date_str, '%m/%d/%Y') for date_str in dates_list[::30]]
 

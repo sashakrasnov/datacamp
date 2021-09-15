@@ -16,7 +16,9 @@ import pendulum
 slice = 30
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    daily_summaries = [row['service_date'] for row in csv.DictReader(csvfile)][slice-1::slice]
+    daily_summaries = [
+        row['service_date'] for row in csv.DictReader(csvfile)
+    ][slice-1::slice]
 
 date_ranges = zip(daily_summaries[0::2], daily_summaries[1::2])
 
@@ -32,7 +34,6 @@ INSTRUCTIONS
 
 # Iterate over date_ranges
 for start_date, end_date in date_ranges:
-
     # Convert the start_date string to a pendulum date: start_dt 
     start_dt = pendulum.parse(start_date, strict=False)
     

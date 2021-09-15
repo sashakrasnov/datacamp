@@ -29,7 +29,8 @@ returns = np.random.normal(loc=0.02, scale=0.05, size=1000)
 # Print out the mean and standard deviation of returns
 mean = np.mean(returns)
 std = np.std(returns)
-print("The mean is %5.3f and the standard deviation is %5.3f" %(mean,std))
+
+print('The mean is %5.3f and the standard deviation is %5.3f' % (mean, std))
 
 # Plot returns series
 plt.plot(returns)

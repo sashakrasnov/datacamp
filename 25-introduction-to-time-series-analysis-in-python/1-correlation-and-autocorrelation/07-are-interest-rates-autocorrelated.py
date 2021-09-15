@@ -24,7 +24,8 @@ daily_data['change_rates'] = daily_data.diff()
 
 # Compute and print the autocorrelation of daily changes
 autocorrelation_daily = daily_data['change_rates'].autocorr()
-print("The autocorrelation of daily interest rate changes is %4.2f" %(autocorrelation_daily))
+
+print('The autocorrelation of daily interest rate changes is %4.2f' % (autocorrelation_daily))
 
 # Convert the daily data to annual data
 #annual_data = daily_data['US10Y'].resample(rule='A', how='last') # old, deprecated syntax
@@ -33,4 +34,5 @@ annual_data = daily_data['US10Y'].resample(rule='A').last() # new syntax
 # Repeat above for annual data
 annual_data['diff_rates'] = annual_data.diff()
 autocorrelation_annual = annual_data['diff_rates'].autocorr()
-print("The autocorrelation of annual interest rate changes is %4.2f" %(autocorrelation_annual))
+
+print('The autocorrelation of annual interest rate changes is %4.2f' % (autocorrelation_annual))

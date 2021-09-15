@@ -9,10 +9,10 @@ Stocks trade at discrete one-cent increments (although a small percentage of tra
 import pandas as pd
 import matplotlib.pyplot as plt
 
-intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0,1])
+intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0, 1])
 
-intraday.iloc[0,0] = 0
-intraday.columns = ['DATE','CLOSE']
+intraday.iloc[0, 0] = 0
+intraday.columns = ['DATE', 'CLOSE']
 intraday['DATE'] = pd.to_numeric(intraday['DATE'])
 intraday = intraday.set_index('DATE')
 
@@ -27,10 +27,10 @@ INSTRUCTIONS
 '''
 
 # Notice that some rows are missing
-print("The length of the DataFrame is: ", len(intraday))
+print('The length of the DataFrame is: ', len(intraday))
 
 # Find the missing rows
-print("Missing rows: ", set(range(391)) - set(intraday.index))
+print('Missing rows: ', set(range(391)) - set(intraday.index))
 
 # Fill in the missing rows
 intraday = intraday.reindex(range(391), method='ffill')

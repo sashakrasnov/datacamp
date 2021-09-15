@@ -16,7 +16,7 @@ The datetime module has already been imported for you.
 
 import pandas as pd
 
-intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0,1])
+intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0, 1])
 
 '''
 INSTRUCTIONS
@@ -32,10 +32,10 @@ INSTRUCTIONS
 import datetime
 
 # Change the first date to zero
-intraday.iloc[0,0] = 0
+intraday.iloc[0, 0] = 0
 
 # Change the column headers to 'DATE' and 'CLOSE'
-intraday.columns = ['DATE','CLOSE']
+intraday.columns = ['DATE', 'CLOSE']
 
 # Examine the data types for each column
 print(intraday.dtypes)

@@ -9,7 +9,10 @@ Let's create a dictionary of all the stop times by route and rider, then use it 
 import csv
 
 with open('../datasets/cta_daily_station_totals.csv' ,'r') as csvfile:
-    entries = [(row['date'], int(row['rides'])) for row in csv.DictReader(csvfile)]
+    entries = [
+        (row['date'], int(row['rides']))
+            for row in csv.DictReader(csvfile)
+    ]
 
 '''
 INSTRUCTIONS

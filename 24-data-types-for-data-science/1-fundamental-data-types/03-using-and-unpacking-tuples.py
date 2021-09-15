@@ -16,13 +16,16 @@ boy_names = []
 with open('../datasets/baby_names.csv') as f:
     # Skipping header
     _ = f.readline()
+
     # Iterating over lines
     for row in f:
         _, sex, _, name, _, _ = row.strip().split(',')
+
         n = name.capitalize()
 
         if sex == 'FEMALE' and n not in girl_names:
             girl_names.append(n)
+
         if sex == 'MALE' and n not in boy_names:
             boy_names.append(n)
 
@@ -43,5 +46,6 @@ pairs = zip(girl_names, boy_names)
 for idx, pair in enumerate(pairs):
     # Unpack pair: girl_name, boy_name
     girl_name, boy_name = pair
+
     # Print the rank and names associated with each rank
     print('Rank {}: {} and {}'.format(idx, girl_name, boy_name))

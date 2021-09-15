@@ -16,12 +16,14 @@ baby_names_2014 = set()
 with open('../datasets/baby_names.csv') as f:
     # Skipping header
     _ = f.readline()
+
     # Iterating over lines
     for row in f:
         year, sex, _, name, _, _ = row.strip().split(',')
 
         if year == '2011':
             baby_names_2011.add(name.title())
+
         if year == '2014':
             baby_names_2014.add(name)
 

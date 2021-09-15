@@ -26,6 +26,7 @@ from statsmodels.graphics.tsaplots import plot_pacf
 # Simulate AR(1) with phi=+0.6
 ma = np.array([1])
 ar = np.array([1, -0.6])
+
 AR_object = ArmaProcess(ar, ma)
 simulated_data_1 = AR_object.generate_sample(nsample=5000)
 

@@ -9,7 +9,10 @@ You'll be using the datetime column from the Chicago Transist Authority data, wh
 import csv
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    dates_list = [row['service_date'] for row in csv.DictReader(csvfile)]
+    dates_list = [
+        row['service_date']
+            for row in csv.DictReader(csvfile)
+    ]
 
 '''
 INSTRUCTIONS

@@ -13,6 +13,7 @@ from statsmodels.tsa.arima_process import ArmaProcess
 
 ar1 = np.array([1, -0.9])
 ma1 = np.array([1])
+
 AR_object1 = ArmaProcess(ar1, ma1)
 simulated_data_1 = AR_object1.generate_sample(nsample=1000)
 
@@ -30,7 +31,10 @@ INSTRUCTIONS
 from statsmodels.tsa.arima_model import ARMA
 
 # Forecast the first AR(1) model
-mod = ARMA(simulated_data_1, order=(1,0))
+mod = ARMA(simulated_data_1, order=(1, 0))
+
 res = mod.fit()
+
 res.plot_predict(start=990, end=1010)
+
 plt.show()

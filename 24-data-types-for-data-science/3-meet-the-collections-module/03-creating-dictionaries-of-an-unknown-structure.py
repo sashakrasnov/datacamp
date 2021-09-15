@@ -9,7 +9,10 @@ You'll be working with a list of entries that contains ridership details on the 
 import csv
 
 with open('../datasets/cta_daily_station_totals.csv' ,'r') as csvfile:
-    entries = [(row['date'], row['stationname'], row['rides']) for row in csv.DictReader(csvfile)]
+    entries = [
+        (row['date'], row['stationname'], row['rides'])
+            for row in csv.DictReader(csvfile)
+    ]
 
 '''
 INSTRUCTIONS
@@ -30,6 +33,7 @@ for date, stop, riders in entries:
     if date not in ridership:
         # Create an empty list for any missing date
         ridership[date] = []
+
     # Append the stop and riders as a tuple to the date keys list
     ridership[date].append((stop, riders))
     

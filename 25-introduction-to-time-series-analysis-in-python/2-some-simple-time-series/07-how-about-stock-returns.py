@@ -28,4 +28,5 @@ AMZN_ret = AMZN_ret.dropna()
 
 # Run the ADF test on the return series and print out the p-value
 results = adfuller(AMZN_ret['Adj Close'])
-print('The p-value of the test on returns is: ' + str(results[1]))
+
+print('The p-value of the test on returns is:', results[1])

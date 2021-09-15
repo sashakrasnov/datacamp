@@ -32,6 +32,8 @@ result = sm.OLS(BTC,ETH).fit()
 
 # Compute ADF
 b = result.params[1]
-adf_stats = adfuller(BTC['Price'] - b*ETH['Price'])
-print("The p-value for the ADF test is ", adf_stats[1])
+adf_stats = adfuller(BTC['Price'] - b * ETH['Price'])
+
+print('The p-value for the ADF test is', adf_stats[1])
+
 # The data suggests that Bitcoin and Ethereum are cointegrated

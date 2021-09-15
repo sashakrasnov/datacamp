@@ -9,10 +9,10 @@ The first step is to compute minute-by-minute returns from the prices in intrada
 import pandas as pd
 import matplotlib.pyplot as plt
 
-intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0,1])
+intraday = pd.read_csv('../datasets/Sprint_Intraday.txt', header=None, usecols=[0, 1])
 
-intraday.iloc[0,0] = 0
-intraday.columns = ['DATE','CLOSE']
+intraday.iloc[0, 0] = 0
+intraday.columns = ['DATE', 'CLOSE']
 intraday['DATE'] = pd.to_numeric(intraday['DATE'])
 intraday = intraday.set_index('DATE')
 
@@ -43,6 +43,7 @@ plot_acf(returns, lags=60)
 plt.show()
 
 # Fit the data to an MA(1) model
-mod = ARMA(returns, order=(0,1))
+mod = ARMA(returns, order=(0, 1))
 res = mod.fit()
+
 print(res.params)

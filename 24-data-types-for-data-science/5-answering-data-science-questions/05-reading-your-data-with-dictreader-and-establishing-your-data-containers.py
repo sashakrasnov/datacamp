@@ -29,5 +29,6 @@ crimes_by_district = defaultdict(list)
 for row in csv.DictReader(csvfile):
     # Pop the district from each row: district
     district = row.pop('District')
+
     # Append the rest of the data to the list for proper district in crimes_by_district
     crimes_by_district[district].append(row)

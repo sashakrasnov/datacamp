@@ -25,19 +25,23 @@ from statsmodels.tsa.arima_model import ARMA
 # Fit the data to an AR(1) model and print AIC:
 mod = ARMA(chg_temp, order=(1,0))
 res = mod.fit()
-print("The AIC for an AR(1) is: ", res.aic)
+
+print('The AIC for an AR(1) is:', res.aic)
 
 # Fit the data to an AR(2) model and print AIC:
 mod = ARMA(chg_temp, order=(2,0))
 res = mod.fit()
-print("The AIC for an AR(2) is: ", res.aic)
+
+print('The AIC for an AR(2) is:', res.aic)
 
 # Fit the data to an MA(1) model and print AIC:
 mod = ARMA(chg_temp, order=(0,1))
 res = mod.fit()
-print("The AIC for an MA(1) is: ", res.aic)
+
+print('The AIC for an MA(1) is:', res.aic)
 
 # Fit the data to an ARMA(1,1) model and print AIC:
 mod = ARMA(chg_temp, order=(1,1))
 res = mod.fit()
-print("The AIC for an ARMA(1,1) is: ", res.aic)
+
+print('The AIC for an ARMA(1,1) is:', res.aic)

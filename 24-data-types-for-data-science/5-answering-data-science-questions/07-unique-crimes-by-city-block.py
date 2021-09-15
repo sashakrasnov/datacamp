@@ -21,9 +21,6 @@ for row in csv.DictReader(csvfile):
     block = row.pop('Block')
     crimes_by_block[block].append(row['Primary Type'])
 
-#print(crimes_by_block)
-#quit()
-
 '''
 INSTRUCTIONS
 

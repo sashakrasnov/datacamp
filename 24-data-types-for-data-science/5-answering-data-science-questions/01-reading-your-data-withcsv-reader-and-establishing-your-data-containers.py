@@ -31,7 +31,6 @@ crime_data = []
 
 # Loop over a csv reader on the file object
 for row in csv.reader(csvfile):
-
     # Append the date, type of crime, location description, and arrest
     crime_data.append((row[0], row[2], row[4], row[5]))
     

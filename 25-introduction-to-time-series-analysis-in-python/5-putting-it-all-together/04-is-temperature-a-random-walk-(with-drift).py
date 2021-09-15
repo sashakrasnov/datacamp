@@ -31,4 +31,5 @@ plt.show()
 
 # Compute and print ADF p-value
 result = adfuller(temp_NY['TAVG'])
-print("The p-value for the ADF test is ", result[1])
+
+print('The p-value for the ADF test is', result[1])

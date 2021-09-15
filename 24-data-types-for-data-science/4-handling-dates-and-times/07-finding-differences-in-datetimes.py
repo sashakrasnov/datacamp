@@ -13,7 +13,9 @@ from datetime import datetime
 slice = 30
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    daily_summaries = [datetime.strptime(row['service_date'], '%m/%d/%Y') for row in csv.DictReader(csvfile)][slice-1::slice]
+    daily_summaries = [
+        datetime.strptime(row['service_date'], '%m/%d/%Y') for row in csv.DictReader(csvfile)
+    ][slice-1::slice]
 
 date_ranges = zip(daily_summaries[1::2], daily_summaries[0::2])
 
@@ -29,5 +31,6 @@ INSTRUCTIONS
 for start_date, end_date in date_ranges:
     # Print the End and Start Date
     print(end_date, start_date)
+
     # Print the difference between each end and start date
     print(end_date - start_date)

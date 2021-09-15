@@ -25,6 +25,7 @@ from statsmodels.graphics.tsaplots import plot_acf
 
 # Compute the acf array of HRB
 acf_array = acf(HRB)
+
 print(acf_array)
 
 # Plot the acf function

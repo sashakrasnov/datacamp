@@ -37,7 +37,6 @@ crimes_by_month = Counter()
 
 # Loop over the crime_data list
 for crime in crime_data:
-    
     # Convert the first element of each item into a Python Datetime Object: date
     date = datetime.strptime(crime[0], '%m/%d/%Y %I:%M:%S %p')
     

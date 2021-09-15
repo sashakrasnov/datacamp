@@ -26,7 +26,8 @@ import statsmodels.api as sm
 
 # Compute correlation of x and y
 correlation = x.corr(y)
-print("The correlation between x and y is %4.2f" %(correlation))
+
+print('The correlation between x and y is %4.2f' % (correlation))
 
 # Convert the Series x to a DataFrame and name the column x
 x = pd.DataFrame(x)

@@ -12,10 +12,15 @@ import csv
 
 from datetime import datetime
 
-review_dates = [datetime(2013, 12, d) for d in range(22,32)]
+review_dates = [datetime(2013, 12, d) for d in range(22, 32)]
 
 with open('../datasets/cta_daily_summary_totals.csv' ,'r') as csvfile:
-    daily_summaries = {datetime.strptime(row['service_date'], '%m/%d/%Y'):{'day_type': row['day_type'], 'total_ridership': row['total_rides']} for row in csv.DictReader(csvfile)}
+    daily_summaries = {
+        datetime.strptime(row['service_date'], '%m/%d/%Y'): {
+            'day_type': row['day_type'],
+            'total_ridership': row['total_rides']
+        } for row in csv.DictReader(csvfile)
+    }
 
 '''
 INSTRUCTIONS

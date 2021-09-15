@@ -12,6 +12,7 @@ from statsmodels.tsa.arima_process import ArmaProcess
 
 ar1 = np.array([1, -0.9])
 ma1 = np.array([1])
+
 AR_object1 = ArmaProcess(ar1, ma1)
 simulated_data_1 = AR_object1.generate_sample(nsample=1000)
 
@@ -36,5 +37,5 @@ res = mod.fit()
 print(res.summary())
 
 # Print out the estimate for the constant and for phi
-print("When the true phi=0.9, the estimate of phi (and the constant) are:")
+print('When the true phi=0.9, the estimate of phi (and the constant) are:')
 print(res.params)

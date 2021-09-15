@@ -29,7 +29,7 @@ INSTRUCTIONS
 from statsmodels.tsa.arima_model import ARIMA
 
 # Forecast interest rates using an AR(1) model
-mod = ARIMA(temp_NY, order=(1,1,1))
+mod = ARIMA(temp_NY, order=(1, 1, 1))
 res = mod.fit()
 
 # Plot the original series and the forecasted series
