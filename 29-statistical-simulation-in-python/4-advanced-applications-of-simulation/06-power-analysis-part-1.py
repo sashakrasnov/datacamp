@@ -32,4 +32,5 @@ treatment_time_spent = np.random.normal(loc=control_mean*(1+effect_size), scale=
 
 # Run the t-test and get the p_value
 t_stat, p_value = st.ttest_ind(treatment_time_spent, control_time_spent)
-print("P-value: {}, Statistically Significant? {}".format(p_value, p_value < effect_size))
+
+print('P-value: {}, Statistically Significant? {}'.format(p_value, p_value < effect_size))

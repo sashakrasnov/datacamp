@@ -36,8 +36,9 @@ reg_fit = sm.OLS(df['y'], df.iloc[:,1:]).fit()
 for i in range(sims):
     # First create a bootstrap sample with replacement with n=df.shape[0]
     bootstrap = df.sample(n=df.shape[0], replace=True)
+
     # Fit the regression and append the r square to rsquared_boot
     rsquared_boot.append(sm.OLS(bootstrap['y'],bootstrap.iloc[:,1:]).fit().rsquared)
 
 # Calculate 95% CI on rsquared_boot
-print("R Squared 95% CI = {}".format(np.percentile(rsquared_boot, [2.5, 97.5])))
+print('R Squared 95% CI = {}'.format(np.percentile(rsquared_boot, [2.5, 97.5])))

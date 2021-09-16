@@ -32,4 +32,4 @@ for _ in range(sims):
         coincidences += 1
 
 # Calculate probability of winning
-print("Probability of winning = {}".format(1-coincidences/sims))
+print('Probability of winning = {}'.format(1-coincidences/sims))

@@ -23,7 +23,7 @@ INSTRUCTIONS
 '''
 
 # Initialize model parameters & simulate dice throw
-die, probabilities, num_dice = [1,2,3,4,5,6], [1/6]*6, 2
+die, probabilities, num_dice = [1, 2, 3, 4, 5, 6], [1/6] * 6, 2
 sims, wins = 100, 0
 
 for i in range(sims):
@@ -32,4 +32,4 @@ for i in range(sims):
     if outcomes[0] == outcomes[1]: 
         wins = wins + 1 
 
-print("In {} games, you win {} times".format(sims, wins))
+print('In {} games, you win {} times'.format(sims, wins))

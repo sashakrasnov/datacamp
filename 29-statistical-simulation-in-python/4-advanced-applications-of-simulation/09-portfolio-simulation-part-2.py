@@ -19,8 +19,10 @@ np.random.seed(123)
 def portfolio_return(yrs, avg_return, volatility, principal):
     rates = np.random.normal(loc=avg_return, scale=volatility, size=yrs)
     end_return = principal
+
     for x in rates:
-        end_return = end_return * (1+x)
+        end_return = end_return * (1 + x)
+
     return end_return
 
 
@@ -37,10 +39,7 @@ sims = 1000
 rets = []
 
 for i in range(sims):
-    rets.append(portfolio_return(yrs = 10,
-                                 avg_return = 0.07, 
-                                 volatility = 0.3, 
-                                 principal = 10000))
+    rets.append(portfolio_return(yrs=10, avg_return=0.07, volatility=0.3, principal=10000))
 
 # Calculate the 95% CI
-print("95% CI of Returns: Lower = {}, Upper = {}".format(np.percentile(rets, 2.5), np.percentile(rets, 97.5)))
+print('95% CI of Returns: Lower = {}, Upper = {}'.format(np.percentile(rets, 2.5), np.percentile(rets, 97.5)))

@@ -29,8 +29,9 @@ urn = ['w']*7 + ['b']*6
 for _ in range(sims):
     # Draw 4 balls without replacement
     draw = np.random.choice(urn, replace=False, size=4)
+
     # Count the number of successes
-    if draw[0]==draw[2]=='w' and draw[1]==draw[3]=='b':
+    if draw[0] == draw[2] == 'w' and draw[1] == draw[3] == 'b':
         success += 1
 
-print("Probability of success = {}".format(success/sims))
+print('Probability of success = {}'.format(success/sims))

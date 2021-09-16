@@ -19,8 +19,10 @@ np.random.seed(123)
 def portfolio_return(yrs, avg_return, volatility, principal):
     rates = np.random.normal(loc=avg_return, scale=volatility, size=yrs)
     end_return = principal
+
     for x in rates:
-        end_return = end_return * (1+x)
+        end_return = end_return * (1 + x)
+
     return end_return
 
 
@@ -44,4 +46,5 @@ for i in range(sims):
 # Calculate the 25th percentile of the distributions and the amount you'd lose or gain
 rets_stock_perc = np.percentile(rets_stock, 25)
 rets_bond_perc = np.percentile(rets_bond, 25)
-print("Sticking to stocks gets you an additional return of {}".format(rets_stock_perc - rets_bond_perc))
+
+print('Sticking to stocks gets you an additional return of {}'.format(rets_stock_perc - rets_bond_perc))

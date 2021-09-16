@@ -31,10 +31,11 @@ INSTRUCTIONS
 
 # Sample with replacement and calculate quantities of interest
 sims, data_size, height_medians, hw_corr = 1000, df.shape[0], [], []
+
 for i in range(sims):
     tmp_df = df.sample(n=data_size, replace=True)
     height_medians.append(tmp_df.heights.median())
     hw_corr.append(tmp_df.corr()['heights']['weights'])
 
 # Calculate confidence intervals
-print("Height Median CI = {} \nHeight Weight Correlation CI = {}".format(np.percentile(height_medians, [2.5, 97.5]) , np.percentile(hw_corr, [2.5, 97.5])))
+print('Height Median CI = {} \nHeight Weight Correlation CI = {}'.format(np.percentile(height_medians, [2.5, 97.5]) , np.percentile(hw_corr, [2.5, 97.5])))

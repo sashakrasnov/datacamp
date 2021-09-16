@@ -28,10 +28,12 @@ for i in range(sims):
     # Sample with and without replacement & increment success counters
     sample_rep = np.random.choice(bowl, size=3, replace=True)
     sample_no_rep = np.random.choice(bowl, size=3, replace=False)
+
     if (sample_rep[0] == 'b') & (sample_rep[1] == 'g') & (sample_rep[2] == 'y'): 
         success_rep += 1
+
     if (sample_no_rep[0] == 'b') & (sample_no_rep[1] == 'g') & (sample_no_rep[2] == 'y'): 
         success_no_rep += 1
 
 # Calculate probabilities
-print("Probability with replacement = {}, without replacement = {}".format(success_rep/sims, success_no_rep/sims))
+print('Probability with replacement = {}, without replacement = {}'.format(success_rep/sims, success_no_rep/sims))

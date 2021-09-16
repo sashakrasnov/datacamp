@@ -26,4 +26,5 @@ np.random.shuffle(deck_of_cards)
 
 # Print out the top three cards
 card_choices_after_shuffle = deck_of_cards[:3]
+
 print(card_choices_after_shuffle)

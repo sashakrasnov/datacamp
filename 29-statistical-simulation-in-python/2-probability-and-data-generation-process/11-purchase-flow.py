@@ -12,10 +12,12 @@ import numpy as np
 
 def get_signups(cost, ct_rate, su_rate, sims):
     lam = np.random.normal(loc=100000, scale=2000, size=sims)
+
     # Simulate impressions(poisson), clicks(binomial) and signups(binomial)
     impressions = np.random.poisson(lam=lam)
     clicks = np.random.binomial(impressions, p=ct_rate[cost])
     signups = np.random.binomial(clicks, p=su_rate[cost])
+
     return signups
 
 
@@ -23,8 +25,21 @@ def get_signups(cost, ct_rate, su_rate, sims):
 np.random.seed(123)
 
 # Initialize click-through rate and signup rate dictionaries
-ct_rate = {'low':0.01, 'high':np.random.uniform(low=0.01, high=1.2*0.01)}
-su_rate = {'low':0.20, 'high':np.random.uniform(low=0.20, high=1.2*0.20)}
+ct_rate = {
+    'low': 0.01,
+    'high': np.random.uniform(
+        low = 0.01,
+        high = 1.2 * 0.01
+    )
+}
+
+su_rate = {
+    'low': 0.20,
+    'high': np.random.uniform(
+        low = 0.20,
+        high = 1.2 * 0.20
+    )
+}
 
 '''
 INSTRUCTIONS
@@ -37,6 +52,7 @@ INSTRUCTIONS
 def get_revenue(signups):
     rev = []
     np.random.seed(123)
+
     for s in signups:
         # Model purchases as binomial, purchase_values as exponential
         purchases = np.random.binomial(s, p=0.1)
@@ -44,6 +60,7 @@ def get_revenue(signups):
         
         # Append to revenue the sum of all purchase values.
         rev.append(sum(purchase_values))
+
     return rev
 
-print("Simulated Revenue = ${}".format(get_revenue(get_signups('low', ct_rate, su_rate, 1))[0]))
+print('Simulated Revenue = ${}'.format(get_revenue(get_signups('low', ct_rate, su_rate, 1))[0]))

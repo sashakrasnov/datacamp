@@ -33,4 +33,4 @@ for _ in range(sims):
     outcomes.append(election.mean())
 
 # Calculate probability of Red winning in less than 45% of the states
-print("Probability of Red winning in less than 45% of the states = {}".format(sum(np.array(outcomes) < 0.45)/sims))
+print('Probability of Red winning in less than 45% of the states = {}'.format(sum(np.array(outcomes) < 0.45)/sims))

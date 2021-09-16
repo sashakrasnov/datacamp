@@ -10,14 +10,16 @@ import numpy as np
 
 # Corn production model
 def corn_produced(rain, cost):
-  mean_corn = 100 * (cost**0.1) * (rain**0.2)
-  corn = np.random.poisson(mean_corn)
-  return corn
+    mean_corn = 100 * (cost**0.1) * (rain**0.2)
+    corn = np.random.poisson(mean_corn)
+
+    return corn
 
 
 def corn_demanded(price):
-    mean_corn = 1000 - 8*price
+    mean_corn = 1000 - 8 * price
     corn = np.random.poisson(abs(mean_corn))
+
     return corn
 
 
@@ -28,11 +30,14 @@ def profits(cost):
     supply = corn_produced(rain, cost)
     demand = corn_demanded(price)
     equil_short = supply <= demand
+
     if equil_short == True:
-        tmp = supply*price - cost
+        tmp = supply * price - cost
+
         return tmp
     else:
-        tmp2 = demand*price - cost
+        tmp2 = demand * price - cost
+
         return tmp2
 
 
@@ -55,9 +60,11 @@ cost_levels = np.arange(100, 5100, 100)
 # For each cost level, simulate profits and store mean profit
 for cost in cost_levels:
     tmp_profits = []
+
     for i in range(sims):
         tmp_profits.append(profits(cost))
+
     results[cost] = np.mean(tmp_profits)
-    
+
 # Get the cost that maximizes average profit
-print("Average profit is maximized when cost = {}".format([x for x in results.keys() if results[x] == max(results.values())][0]))
+print('Average profit is maximized when cost = {}'.format([x for x in results.keys() if results[x] == max(results.values())][0]))

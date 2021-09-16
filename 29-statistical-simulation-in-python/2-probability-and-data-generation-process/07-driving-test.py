@@ -28,13 +28,14 @@ INSTRUCTIONS 1/2
     *   Based on the weather, return 'pass' or 'fail'.
 '''
 
-sims, outcomes, p_rain, p_pass = 1000, [], 0.40, {'sun':0.9, 'rain':0.3}
+sims, outcomes, p_rain, p_pass = 1000, [], 0.40, {'sun': 0.9, 'rain': 0.3}
 
 def test_outcome(p_rain):
     # Simulate whether it will rain or not
-    weather = np.random.choice(['rain', 'sun'], p=[p_rain, 1-p_rain])
+    weather = np.random.choice(['rain', 'sun'], p=[p_rain, 1 - p_rain])
+
     # Simulate and return whether you will pass or fail
-    return np.random.choice(['pass', 'fail'], p=[p_pass[weather], 1-p_pass[weather]])
+    return np.random.choice(['pass', 'fail'], p=[p_pass[weather], 1 - p_pass[weather]])
 
 '''
 INSTRUCTIONS 2/2
@@ -46,4 +47,4 @@ for _ in range(sims):
     outcomes.append(test_outcome(p_rain))
 
 # Calculate fraction of outcomes where you pass
-print("Probability of Passing the driving test = {}".format(outcomes.count('pass')/sims))
+print('Probability of Passing the driving test = {}'.format(outcomes.count('pass') / sims))

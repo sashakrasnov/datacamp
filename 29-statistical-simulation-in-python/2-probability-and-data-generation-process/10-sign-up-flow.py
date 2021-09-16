@@ -22,15 +22,30 @@ INSTRUCTIONS
 '''
 
 # Initialize click-through rate and signup rate dictionaries
-ct_rate = {'low':0.01, 'high':np.random.uniform(low=0.01, high=1.2*0.01)}
-su_rate = {'low':0.20, 'high':np.random.uniform(low=0.20, high=1.2*0.20)}
+ct_rate = {
+    'low': 0.01,
+    'high': np.random.uniform(
+        low = 0.01,
+        high = 1.2 * 0.01
+    )
+}
+
+su_rate = {
+    'low': 0.20,
+    'high': np.random.uniform(
+        low = 0.20,
+        high = 1.2 * 0.20
+    )
+}
 
 def get_signups(cost, ct_rate, su_rate, sims):
     lam = np.random.normal(loc=100000, scale=2000, size=sims)
+
     # Simulate impressions(poisson), clicks(binomial) and signups(binomial)
     impressions = np.random.poisson(lam=lam)
     clicks = np.random.binomial(impressions, p=ct_rate[cost])
     signups = np.random.binomial(clicks, p=su_rate[cost])
+
     return signups
 
-print("Simulated Signups = {}".format(get_signups('high', ct_rate, su_rate, 1)))
+print('Simulated Signups = {}'.format(get_signups('high', ct_rate, su_rate, 1)))

@@ -35,8 +35,10 @@ while 1:
     
     # Power is the fraction of times in the simulation when the p-value was less than 0.05
     power = (p < 0.05).sum()/sims
+
     if power >= 0.8: 
         break
     else: 
         sample_size += 10
-print("For 80% power, sample size required = {}".format(sample_size))
+
+print('For 80% power, sample size required = {}'.format(sample_size))

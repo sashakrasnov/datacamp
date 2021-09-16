@@ -10,14 +10,16 @@ import numpy as np
 
 # Corn production model
 def corn_produced(rain, cost):
-  mean_corn = 100 * (cost**0.1) * (rain**0.2)
-  corn = np.random.poisson(mean_corn)
-  return corn
+    mean_corn = 100 * (cost**0.1) * (rain**0.2)
+    corn = np.random.poisson(mean_corn)
+
+    return corn
 
 
 def corn_demanded(price):
-    mean_corn = 1000 - 8*price
+    mean_corn = 1000 - 8 * price
     corn = np.random.poisson(abs(mean_corn))
+
     return corn
 
 
@@ -43,11 +45,17 @@ def profits(cost):
     supply = corn_produced(rain, cost)
     demand = corn_demanded(price)
     equil_short = supply <= demand
+
     if equil_short == True:
-        tmp = supply*price - cost
+        tmp = supply * price - cost
+
         return tmp
     else:
-        tmp2 = demand*price - cost
+        tmp2 = demand * price - cost
+
         return tmp2
+
+
 result = profits(cost)
-print("Simulated profit = {}".format(result))
+
+print('Simulated profit = {}'.format(result))
