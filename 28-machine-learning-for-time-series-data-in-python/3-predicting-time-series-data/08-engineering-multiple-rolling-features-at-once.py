@@ -15,6 +15,7 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
@@ -27,6 +28,7 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     series[this_mask] = np.nanmedian(series)
+
     return series
 
 prices = pd.read_csv('../datasets/prices_messy.csv', index_col=0, parse_dates=True)
@@ -52,7 +54,9 @@ features_to_calculate = [np.min, np.max, np.mean, np.std]
 features = prices_perc_rolling.aggregate(features_to_calculate)
 
 # Plot the results
-ax = features.loc[:"2011-01"].plot()
-prices_perc.loc[:"2011-01"].plot(ax=ax, color='k', alpha=.2, lw=3)
+ax = features.loc[:'2011-01'].plot()
+
+prices_perc.loc[:'2011-01'].plot(ax=ax, color='k', alpha=.2, lw=3)
 ax.legend(loc=(1.01, .6))
+
 plt.show()

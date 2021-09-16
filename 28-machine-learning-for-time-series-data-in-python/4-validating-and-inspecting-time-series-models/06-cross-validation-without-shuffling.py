@@ -24,9 +24,11 @@ def visualize_predictions(results):
 
         # Plot the predictions of the model according to how time was ordered
         axs[1].scatter(indices, prediction)
-    axs[0].legend(loc="best")
-    axs[0].set(xlabel="Test prediction number", title="Predictions ordered by test prediction number")
-    axs[1].set(xlabel="Time", title="Predictions ordered by time")
+
+    axs[0].legend(loc='best')
+    axs[0].set(xlabel='Test prediction number', title='Predictions ordered by test prediction number')
+    axs[1].set(xlabel='Time', title='Predictions ordered by time')
+
     plt.show()
 
 
@@ -45,10 +47,12 @@ INSTRUCTIONS
 
 # Create KFold cross-validation object
 from sklearn.model_selection import KFold
-cv = KFold(n_splits=10, shuffle=False, random_state=1)
+
+cv = KFold(n_splits=10, shuffle=False)
 
 # Iterate through CV splits
 results = []
+
 for tr, tt in cv.split(X, y):
     # Fit the model on training data
     model.fit(X[tr], y[tr])

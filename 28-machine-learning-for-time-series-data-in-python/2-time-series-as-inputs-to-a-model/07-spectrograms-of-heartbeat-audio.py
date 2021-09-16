@@ -46,4 +46,5 @@ spec_db = amplitude_to_db(spec)
 fig, axs = plt.subplots(2, 1, figsize=(10, 10), sharex=True)
 axs[0].plot(time, audio)
 specshow(spec_db, sr=sfreq, x_axis='time', y_axis='hz', hop_length=HOP_LENGTH)
+
 plt.show()

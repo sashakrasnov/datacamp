@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 
 def show_plot_and_make_titles():
-    axs[0, 0].set(title="Normal Heartbeats")
-    axs[0, 1].set(title="Abnormal Heartbeats")
+    axs[0, 0].set(title='Normal Heartbeats')
+    axs[0, 1].set(title='Abnormal Heartbeats')
     plt.tight_layout()
     plt.show()
 
@@ -41,8 +41,11 @@ mean_abnormal = np.mean(abnormal, axis=1)
 
 # Plot each average over time
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 3), sharey=True)
+
 ax1.plot(time, mean_normal)
-ax1.set(title="Normal Data")
+ax1.set(title='Normal Data')
+
 ax2.plot(time, mean_abnormal)
-ax2.set(title="Abnormal Data")
+ax2.set(title='Abnormal Data')
+
 plt.show()

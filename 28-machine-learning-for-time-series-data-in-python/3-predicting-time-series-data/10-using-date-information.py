@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def percent_change(series):
     # Collect all *but* the last value of this window, then the final value
     previous_values = series[:-1]
@@ -17,16 +18,17 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
 def replace_outliers(series):
-
     # Calculate a mask for values that are > 3 standard deviations after centering
     this_mask = np.abs(series - np.mean(series)) > (np.std(series) * 3)
     
     # Replace these values with the median accross the data
     #series[this_mask] = np.nanmedian(series)
+
     return series
 
 

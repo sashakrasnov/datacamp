@@ -17,6 +17,7 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
@@ -27,6 +28,7 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     #series[this_mask] = np.nanmedian(series)
+
     return series
 
 
@@ -47,7 +49,7 @@ INSTRUCTIONS
 shifts = np.arange(1, 11).astype(int)
 
 # Use a dictionary comprehension to create name: value pairs, one pair per shift
-shifted_data = {"lag_{}_day".format(day_shift): prices_perc.shift(day_shift) for day_shift in shifts}
+shifted_data = {'lag_{}_day'.format(day_shift): prices_perc.shift(day_shift) for day_shift in shifts}
 
 # Convert into a DataFrame for subsequent use
 prices_perc_shifted = pd.DataFrame(shifted_data)

@@ -41,6 +41,7 @@ INSTRUCTIONS 1/2
 
 # Calculate the tempo of the sounds
 tempos = []
+
 for col, i_audio in audio.items():
     tempos.append(lr.beat.tempo(i_audio.values, sr=sfreq, hop_length=2**6, aggregate=None))
 
@@ -65,4 +66,5 @@ y = labels.reshape([-1, 1])
 
 # Fit the model and score on testing data
 percent_score = cross_val_score(model, X, y, cv=5)
+
 print(np.mean(percent_score))

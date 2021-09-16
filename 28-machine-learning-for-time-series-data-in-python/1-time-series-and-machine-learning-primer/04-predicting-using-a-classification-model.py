@@ -19,7 +19,7 @@ data = pd.DataFrame(data=iris.data, columns=iris.feature_names)[50:]
 data['target'] = iris['target'][50:]
 
 # Construct data for the model
-X = data[["petal length (cm)", "petal width (cm)"]]
+X = data[['petal length (cm)', 'petal width (cm)']]
 y = data['target']
 
 # Fit the model
@@ -45,5 +45,5 @@ print(predictions)
 # Visualize predictions and actual values
 plt.scatter(X_predict['petal length (cm)'], X_predict['petal width (cm)'],
             c=predictions, cmap=plt.cm.coolwarm)
-plt.title("Predicted class values")
+plt.title('Predicted class values')
 plt.show()

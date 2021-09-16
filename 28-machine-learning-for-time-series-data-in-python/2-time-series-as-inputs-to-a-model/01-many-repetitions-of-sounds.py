@@ -13,8 +13,8 @@ import numpy as np
 import pandas as pd
 
 def show_plot_and_make_titles():
-    axs[0, 0].set(title="Normal Heartbeats")
-    axs[0, 1].set(title="Abnormal Heartbeats")
+    axs[0, 0].set(title='Normal Heartbeats')
+    axs[0, 1].set(title='Abnormal Heartbeats')
     plt.tight_layout()
     plt.show()
 
@@ -45,4 +45,5 @@ stacked_audio = np.hstack([normal, abnormal]).T
 # .T.ravel() transposes the array, then unravels it into a 1-D vector for looping
 for iaudio, ax in zip(stacked_audio, axs.T.ravel()):
     ax.plot(time, iaudio)
+
 show_plot_and_make_titles()

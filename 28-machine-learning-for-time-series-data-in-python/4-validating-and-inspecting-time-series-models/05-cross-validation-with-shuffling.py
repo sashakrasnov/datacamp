@@ -20,13 +20,16 @@ def visualize_predictions(results):
     for ii, (prediction, score, indices) in enumerate(results):
         # Plot the predictions of the model in the order they were generated
         offset = len(prediction) * ii
+
         axs[0].scatter(np.arange(len(prediction)) + offset, prediction, label='Iteration {}'.format(ii))
         
         # Plot the predictions of the model according to how time was ordered
         axs[1].scatter(indices, prediction)
-    axs[0].legend(loc="best")
-    axs[0].set(xlabel="Test prediction number", title="Predictions ordered by test prediction number")
-    axs[1].set(xlabel="Time", title="Predictions ordered by time")
+
+    axs[0].legend(loc='best')
+    axs[0].set(xlabel='Test prediction number', title='Predictions ordered by test prediction number')
+    axs[1].set(xlabel='Time', title='Predictions ordered by time')
+
     plt.show()
 
 

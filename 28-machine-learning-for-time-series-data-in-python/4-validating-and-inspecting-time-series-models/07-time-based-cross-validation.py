@@ -29,9 +29,11 @@ cv = TimeSeriesSplit(n_splits=10)
 
 # Iterate through CV splits
 fig, ax = plt.subplots()
+
 for ii, (tr, tt) in enumerate(cv.split(X, y)):
     # Plot the training data on each iteration, to see the behavior of the CV
     ax.plot(tr, ii + y[tr])
 
 ax.set(title='Training data on each CV iteration', ylabel='CV iteration')
+
 plt.show()

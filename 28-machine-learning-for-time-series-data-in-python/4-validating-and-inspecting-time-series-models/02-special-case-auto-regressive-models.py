@@ -19,6 +19,7 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
@@ -29,6 +30,7 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     #series[this_mask] = np.nanmedian(series)
+
     return series
 
 
@@ -56,4 +58,5 @@ y = prices_perc.fillna(np.nanmedian(prices_perc))
 
 # Fit the model
 model = Ridge()
+
 model.fit(X, y)

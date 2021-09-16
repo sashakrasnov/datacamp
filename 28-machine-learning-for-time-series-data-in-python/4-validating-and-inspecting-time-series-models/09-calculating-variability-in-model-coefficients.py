@@ -17,9 +17,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import TimeSeriesSplit
 
 def bootstrap_interval(data, percentiles=(2.5, 97.5), n_boots=100):
-    """Bootstrap a confidence interval for the mean of columns of a 2-D dataset."""
+    '''Bootstrap a confidence interval for the mean of columns of a 2-D dataset.
+    '''
+
     # Create our empty array to fill the results
     bootstrap_means = np.zeros([n_boots, data.shape[-1]])
+
     for ii in range(n_boots):
         # Generate random indices for our data *with* replacement, then take the sample mean
         random_sample = resample(data)
@@ -27,15 +30,18 @@ def bootstrap_interval(data, percentiles=(2.5, 97.5), n_boots=100):
         
     # Compute the percentiles of choice for the bootstrapped means
     percentiles = np.percentile(bootstrap_means, percentiles, axis=0)
+
     return percentiles
 
 
 X = np.loadtxt('../datasets/X.csv', delimiter=',')
 y = np.loadtxt('../datasets/y.csv', delimiter=',')
 
-feature_names = ['AAPL_lag_1_day', 'YHOO_lag_1_day', 'NVDA_lag_1_day', 'AAPL_lag_2_day',
-                 'YHOO_lag_2_day', 'NVDA_lag_2_day', 'AAPL_lag_3_day', 'YHOO_lag_3_day',
-                 'NVDA_lag_3_day', 'AAPL_lag_4_day']
+feature_names = [
+    'AAPL_lag_1_day', 'YHOO_lag_1_day', 'NVDA_lag_1_day', 'AAPL_lag_2_day',
+    'YHOO_lag_2_day', 'NVDA_lag_2_day', 'AAPL_lag_3_day', 'YHOO_lag_3_day',
+    'NVDA_lag_3_day', 'AAPL_lag_4_day'
+]
 
 model = LinearRegression()
 
@@ -72,8 +78,11 @@ bootstrapped_interval = bootstrap_interval(coefficients)
 
 # Plot it
 fig, ax = plt.subplots()
+
 ax.scatter(feature_names, bootstrapped_interval[0], marker='_', lw=3)
 ax.scatter(feature_names, bootstrapped_interval[1], marker='_', lw=3)
 ax.set(title='95% confidence interval for model coefficients')
+
 plt.setp(ax.get_xticklabels(), rotation=45, horizontalalignment='right')
+
 plt.show()

@@ -42,5 +42,7 @@ y = labels#.reshape([-1, 1])
 
 # Fit the model and score on testing data
 from sklearn.model_selection import cross_val_score
+
 percent_score = cross_val_score(model, X, y, cv=5)
+
 print(np.mean(percent_score))

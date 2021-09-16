@@ -15,12 +15,13 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
 prices = pd.read_csv('../datasets/prices_messy.csv', index_col=0, parse_dates=True)
 
-prices_perc = prices.rolling(20).apply(percent_change)
+prices_perc = prices.rolling(20).apply(percent_change, raw=True)
 
 '''
 INSTRUCTIONS
@@ -40,9 +41,11 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     series[this_mask] = np.nanmedian(series)
+
     return series
 
 # Apply your preprocessing function to the timeseries and plot the results
 prices_perc = prices_perc.apply(replace_outliers)
-prices_perc.loc["2014":"2015"].plot()
+prices_perc.loc['2014':'2015'].plot()
+
 plt.show()

@@ -15,6 +15,7 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
@@ -25,6 +26,7 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     #series[this_mask] = np.nanmedian(series)
+
     return series
 
 
@@ -44,6 +46,7 @@ INSTRUCTIONS
 
 # Import partial from functools
 from functools import partial
+
 percentiles = [1, 10, 25, 50, 75, 90, 99]
 
 # Use a list comprehension to create a partial function for each quantile
@@ -51,11 +54,15 @@ percentile_functions = [partial(np.percentile, q=percentile) for percentile in p
 
 # Calculate each of these quantiles on the data using a rolling window
 prices_perc_rolling = prices_perc.rolling(20, min_periods=5, closed='right')
+
 print(percentile_functions)
+
 features_percentiles = prices_perc_rolling.aggregate(percentile_functions)
 
 print(features_percentiles)
+
 # Plot a subset of the result
-ax = features_percentiles.loc[:"2011-01"].plot(cmap=plt.cm.viridis)
+ax = features_percentiles.loc[:'2011-01'].plot(cmap=plt.cm.viridis)
 ax.legend(percentiles, loc=(1.01, .5))
+
 plt.show()

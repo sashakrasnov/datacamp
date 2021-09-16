@@ -21,7 +21,6 @@ INSTRUCTIONS 1/4
 
 # Create a function we'll use to interpolate and plot
 def interpolate_and_plot(prices, interpolation):
-
     # Create a boolean mask for missing values
     missing_values = prices.isna()
 

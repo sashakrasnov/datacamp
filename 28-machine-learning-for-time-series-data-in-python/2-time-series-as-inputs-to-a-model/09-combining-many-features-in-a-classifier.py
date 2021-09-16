@@ -17,17 +17,20 @@ from sklearn.model_selection import cross_val_score
 
 sfreq = 2205
 
-spectrograms = np.loadtxt('../datasets/spectrograms.csv', delimiter=',').reshape((60,65,552))
-labels = np.array(['normal', 'normal', 'normal', 'murmur', 'normal', 'normal',
-                   'normal', 'murmur', 'normal', 'murmur', 'normal', 'normal',
-                   'normal', 'murmur', 'murmur', 'normal', 'normal', 'murmur',
-                   'murmur', 'normal', 'murmur', 'murmur', 'murmur', 'murmur',
-                   'normal', 'normal', 'murmur', 'normal', 'normal', 'murmur',
-                   'murmur', 'murmur', 'murmur', 'murmur', 'murmur', 'normal',
-                   'normal', 'murmur', 'murmur', 'murmur', 'normal', 'murmur',
-                   'murmur', 'normal', 'normal', 'normal', 'murmur', 'murmur',
-                   'murmur', 'normal', 'normal', 'normal', 'normal', 'murmur',
-                   'normal', 'normal', 'murmur', 'murmur', 'murmur', 'murmur'])
+spectrograms = np.loadtxt('../datasets/spectrograms.csv', delimiter=',').reshape((60, 65, 552))
+
+labels = np.array([
+    'normal', 'normal', 'normal', 'murmur', 'normal', 'normal',
+    'normal', 'murmur', 'normal', 'murmur', 'normal', 'normal',
+    'normal', 'murmur', 'murmur', 'normal', 'normal', 'murmur',
+    'murmur', 'normal', 'murmur', 'murmur', 'murmur', 'murmur',
+    'normal', 'normal', 'murmur', 'normal', 'normal', 'murmur',
+    'murmur', 'murmur', 'murmur', 'murmur', 'murmur', 'normal',
+    'normal', 'murmur', 'murmur', 'murmur', 'normal', 'murmur',
+    'murmur', 'normal', 'normal', 'normal', 'murmur', 'murmur',
+    'murmur', 'normal', 'normal', 'normal', 'normal', 'murmur',
+    'normal', 'normal', 'murmur', 'murmur', 'murmur', 'murmur'
+])
 
 model = LinearSVC()
 
@@ -80,4 +83,5 @@ y = labels.reshape([-1, 1])
 
 # Fit the model and score on testing data
 percent_score = cross_val_score(model, X, y, cv=5)
+
 print(np.mean(percent_score))

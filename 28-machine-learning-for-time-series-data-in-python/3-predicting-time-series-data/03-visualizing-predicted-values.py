@@ -6,16 +6,20 @@ When dealing with time series data, it's useful to visualize model predictions o
 In this exercise, after splitting the data (stored in the variables X and y) into training and test sets, you'll build a model and then visualize the model's predictions on top of the testing data in order to estimate the model's performance.
 '''
 
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import cross_val_score
+from pandas.plotting import register_matplotlib_converters
+
+register_matplotlib_converters()
 
 all_prices = pd.read_csv('../datasets/all_prices.csv', index_col=0, parse_dates=True).iloc[:775]
 
-X = all_prices[["EBAY", "NVDA", "YHOO"]]
-y = all_prices[["AAPL"]]
+X = all_prices[['EBAY', 'NVDA', 'YHOO']]
+y = all_prices[['AAPL']]
 
 '''
 INSTRUCTIONS 1/2
@@ -36,6 +40,7 @@ model = Ridge()
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 score = r2_score(y_test, predictions)
+
 print(score)
 
 '''
@@ -46,6 +51,8 @@ INSTRUCTIONS 2/2
 
 # Visualize our predictions along with the "true" values, and print the score
 fig, ax = plt.subplots(figsize=(15, 5))
+
 ax.plot(y_test, color='k', lw=3)
 ax.plot(list(y_test.index), predictions, color='r', lw=2)
+
 plt.show()

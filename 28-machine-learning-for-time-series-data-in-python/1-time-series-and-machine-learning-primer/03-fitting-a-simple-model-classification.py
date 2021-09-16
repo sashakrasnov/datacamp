@@ -31,7 +31,7 @@ INSTRUCTIONS 2/2
 from sklearn.svm import LinearSVC
 
 # Construct data for the model
-X = data[["petal length (cm)", "petal width (cm)"]]
+X = data[['petal length (cm)', 'petal width (cm)']]
 y = data['target']
 
 # Fit the model

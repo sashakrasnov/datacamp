@@ -29,9 +29,11 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 # Apply your custom function and plot
-prices_perc = prices.rolling(20).apply(percent_change)
-prices_perc.loc["2014":"2015"].plot()
+prices_perc = prices.rolling(20).apply(percent_change, raw=True)
+prices_perc.loc['2014':'2015'].plot()
+
 plt.show()

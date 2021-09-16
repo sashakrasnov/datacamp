@@ -21,6 +21,7 @@ def percent_change(series):
 
     # Calculate the % difference between the last value and the mean of earlier values
     percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+
     return percent_change
 
 
@@ -31,6 +32,7 @@ def replace_outliers(series):
     
     # Replace these values with the median accross the data
     #series[this_mask] = np.nanmedian(series)
+
     return series
 
 
@@ -63,6 +65,7 @@ def visualize_coefficients(coefs, names, ax):
     
     # Set formatting so it looks nice
     plt.setp(ax.get_xticklabels(), rotation=45, horizontalalignment='right')
+
     return ax
 
 '''
@@ -73,8 +76,10 @@ INSTRUCTIONS 2/2
 
 # Visualize the output data up to "2011-01"
 fig, axs = plt.subplots(2, 1, figsize=(10, 5))
+
 y.loc[:'2011-01'].plot(ax=axs[0])
 
 # Run the function to visualize model's coefficients
 visualize_coefficients(model.coef_, prices_perc_shifted.columns.tolist(), ax=axs[1])
+
 plt.show()
