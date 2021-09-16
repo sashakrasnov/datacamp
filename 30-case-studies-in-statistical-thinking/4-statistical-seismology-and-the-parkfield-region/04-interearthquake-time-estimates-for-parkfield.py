@@ -8,7 +8,9 @@ import numpy as np
 import dc_stat_think as dcst
 import matplotlib.pyplot as plt
 
-time_gap = np.array([24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512])
+time_gap = np.array([
+    24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512
+])
 
 '''
 INSTRUCTIONS
@@ -47,6 +49,7 @@ _ = plt.legend(('Exp.', 'Norm.'), loc='upper left')
 _ = plt.xlabel('time gap (years)')
 _ = plt.ylabel('ECDF')
 _ = plt.xlim(-10, 50)
+
 plt.show()
 
 '''

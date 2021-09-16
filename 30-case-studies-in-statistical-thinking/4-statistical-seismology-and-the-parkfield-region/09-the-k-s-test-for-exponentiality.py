@@ -7,7 +7,9 @@ Test the null hypothesis that the interearthquake times of the Parkfield sequenc
 import numpy as np
 import dc_stat_think as dcst
 
-time_gap = np.array([24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512])
+time_gap = np.array([
+    24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512
+])
 
 # Compute the mean time gap: mean_time_gap
 mean_time_gap = np.mean(time_gap)
@@ -36,6 +38,7 @@ reps = dcst.draw_ks_reps(len(time_gap), np.random.exponential,
 
 # Compute and print p-value
 p_val = np.sum(reps >= d) / 10000
+
 print('p =', p_val)
 
 '''

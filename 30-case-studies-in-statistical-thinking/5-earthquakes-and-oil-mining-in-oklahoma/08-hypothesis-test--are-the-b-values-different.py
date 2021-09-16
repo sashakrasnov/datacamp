@@ -39,6 +39,7 @@ perm_reps = dcst.draw_perm_reps(mags_post, mags_pre, func=dcst.diff_of_means, si
 
 # Compute and print p-value
 p_val = np.sum(perm_reps < diff_obs) / 10000
+
 print('p =', p_val)
 
 '''

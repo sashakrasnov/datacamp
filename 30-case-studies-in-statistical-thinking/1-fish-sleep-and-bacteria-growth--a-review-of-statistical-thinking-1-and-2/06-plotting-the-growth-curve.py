@@ -40,4 +40,5 @@ for i in range(100):
 # Label axes and show plot
 _ = plt.xlabel('time (hr)')
 _ = plt.ylabel('area (sq. µm)')
+
 plt.show()

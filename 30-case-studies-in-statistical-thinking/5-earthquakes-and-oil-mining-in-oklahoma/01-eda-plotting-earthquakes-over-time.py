@@ -27,4 +27,5 @@ _ = plt.plot(time, mags, marker='.', linestyle='none', alpha=0.1)
 # Label axes and show the plot
 _ = plt.xlabel('time (year)')
 _ = plt.ylabel('magnitude')
+
 plt.show()

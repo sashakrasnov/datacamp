@@ -33,6 +33,7 @@ _ = plt.plot(*dcst.ecdf(mags_post), marker='.', linestyle='none')
 # Label axes and show plot
 _ = plt.xlabel('magnitude')
 _ = plt.ylabel('ECDF')
+
 plt.legend(('1980 though 2009', '2010 through mid-2017'), loc='upper left')
 plt.show()
 

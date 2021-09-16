@@ -11,7 +11,9 @@ import dc_stat_think as dcst
 import matplotlib.pyplot as plt
 
 def b_value(mags, mt, perc=[2.5, 97.5], n_reps=None):
-    """Compute the b-value and optionally its confidence interval."""
+    '''Compute the b-value and optionally its confidence interval.
+    '''
+
     # Extract magnitudes above completeness threshold: m
     m = mags[mags >= mt]
 
@@ -63,6 +65,7 @@ _ = plt.plot(*dcst.ecdf(mags[mags >= mt]), marker='.', linestyle='none')
 _ = plt.xlabel('magnitude')
 _ = plt.ylabel('ECDF')
 _ = plt.xlim(2.8, 6.2)
+
 plt.show()
 
 # Report the results

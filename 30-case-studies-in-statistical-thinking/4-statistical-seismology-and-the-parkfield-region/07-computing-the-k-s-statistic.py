@@ -28,7 +28,7 @@ def ks_stat(data1, data2):
     D_top = y - cdf
 
     # Compute distance between convex corners and CDF
-    D_bottom = cdf - y +1/len(data1)
+    D_bottom = cdf - y +1 / len(data1)
 
     return np.max((D_top, D_bottom))
 

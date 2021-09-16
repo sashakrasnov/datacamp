@@ -7,7 +7,10 @@ The last big earthquake in the Parkfield region was on the evening of September 
 import numpy as np
 import dc_stat_think as dcst
 
-time_gap = np.array([24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512])
+time_gap = np.array([
+    24.06570842, 20.07665982, 21.01848049, 12.24640657, 32.05475702, 38.2532512
+])
+
 today = 2019.0204192439246
 last_quake = 2004.74
 

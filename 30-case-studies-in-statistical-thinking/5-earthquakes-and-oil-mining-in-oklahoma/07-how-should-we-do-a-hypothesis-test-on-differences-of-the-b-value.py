@@ -9,7 +9,9 @@ import pandas as pd
 import dc_stat_think as dcst
 
 def b_value(mags, mt, perc=[2.5, 97.5], n_reps=None):
-    """Compute the b-value and optionally its confidence interval."""
+    '''Compute the b-value and optionally its confidence interval.
+    '''
+
     # Extract magnitudes above completeness threshold: m
     m = mags[mags >= mt]
 

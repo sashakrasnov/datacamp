@@ -27,4 +27,5 @@ plt.plot(*dcst.ecdf(mags), marker='.', linestyle='none')
 # Label axes and show plot
 _ = plt.xlabel('magnitude')
 _ = plt.ylabel('ECDF')
+
 plt.show()

@@ -10,8 +10,8 @@ import numpy as np
 
 df = pd.read_csv('../datasets/gandhi_et_al_bouts.csv', comment='#')
 
-bout_lengths_wt  = df[df.genotype=='wt'].bout_length.values
-bout_lengths_mut = df[df.genotype=='mut'].bout_length.values
+bout_lengths_wt  = df[df.genotype == 'wt'].bout_length.values
+bout_lengths_mut = df[df.genotype == 'mut'].bout_length.values
 
 '''
 INSTRUCTIONS

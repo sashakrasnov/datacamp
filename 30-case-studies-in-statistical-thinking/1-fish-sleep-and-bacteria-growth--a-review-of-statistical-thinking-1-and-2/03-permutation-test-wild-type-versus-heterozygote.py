@@ -10,8 +10,8 @@ import numpy as np
 
 df = pd.read_csv('../datasets/gandhi_et_al_bouts.csv', comment='#')
 
-bout_lengths_wt  = df[df.genotype=='wt'].bout_length.values
-bout_lengths_het = df[df.genotype=='het'].bout_length.values
+bout_lengths_wt  = df[df.genotype == 'wt'].bout_length.values
+bout_lengths_het = df[df.genotype == 'het'].bout_length.values
 
 '''
 INSTRUCTIONS
@@ -27,7 +27,7 @@ diff_means_exp = np.mean(bout_lengths_het) - np.mean(bout_lengths_wt)
 #diff_means_exp = dcst.diff_of_means(bout_lengths_het, bout_lengths_wt)
 
 # Draw permutation replicates: perm_reps
-perm_reps = dcst.draw_perm_reps(bout_lengths_het, bout_lengths_wt, 
+perm_reps = dcst.draw_perm_reps(bout_lengths_het, bout_lengths_wt,
                                dcst.diff_of_means, size=10000)
 
 # Compute the p-value: p-val

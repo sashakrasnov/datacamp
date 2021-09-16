@@ -10,8 +10,8 @@ import numpy as np
 
 df = pd.read_csv('../datasets/gandhi_et_al_bouts.csv', comment='#')
 
-bout_lengths_wt  = df[df.genotype=='wt'].bout_length.values
-bout_lengths_het = df[df.genotype=='het'].bout_length.values
+bout_lengths_wt  = df[df.genotype == 'wt'].bout_length.values
+bout_lengths_het = df[df.genotype == 'het'].bout_length.values
 
 # Compute the difference of means: diff_means_exp
 diff_means_exp = np.mean(bout_lengths_het) - np.mean(bout_lengths_wt)
@@ -46,4 +46,5 @@ bs_reps = bs_reps_het - bs_reps_wt
 
 # Compute and print p-value: p
 p = np.sum(bs_reps >= diff_means_exp) / len(bs_reps)
+
 print('p-value =', p)
