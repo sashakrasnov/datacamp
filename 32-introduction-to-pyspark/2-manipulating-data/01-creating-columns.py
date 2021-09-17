@@ -15,12 +15,18 @@ The above code creates a DataFrame with the same columns as df plus a new column
 To overwrite an existing column, just pass the name of the column as the first argument!
 
 Remember, a SparkSession called spark is already in your workspace.
+'''
 
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+'''
 INSTRUCTIONS
-100 XP
-Use the spark.table() method with the argument "flights" to create a DataFrame containing the values of the flights table in the .catalog. Save it as flights.
-Print the output of flights.show(). The column air_time contains the duration of the flight in minutes.
-Update flights to include a new column called duration_hrs, that contains the duration of each flight in hours.
+
+*   Use the spark.table() method with the argument "flights" to create a DataFrame containing the values of the flights table in the .catalog. Save it as flights.
+*   Print the output of flights.show(). The column air_time contains the duration of the flight in minutes.
+*   Update flights to include a new column called duration_hrs, that contains the duration of each flight in hours.
 '''
 
 # Create the DataFrame flights

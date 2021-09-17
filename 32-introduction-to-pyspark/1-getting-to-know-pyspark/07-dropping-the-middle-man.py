@@ -6,17 +6,23 @@ Luckily, your SparkSession has a .read attribute which has several methods for r
 The variable file_path is a string with the path to the file airports.csv. This file contains information about different airports all over the world.
 
 A SparkSession named spark is available in your workspace.
+'''
 
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+'''
 INSTRUCTIONS
-100 XP
-Use the .read.csv() method to create a Spark DataFrame called airports
-The first argument is file_path
-Pass the argument header=True so that Spark knows to take the column names from the first line of the file.
-Print out this DataFrame by calling .show().
+
+*   Use the .read.csv() method to create a Spark DataFrame called airports
+*   The first argument is file_path
+*   Pass the argument header=True so that Spark knows to take the column names from the first line of the file.
+*   Print out this DataFrame by calling .show().
 '''
 
 # Don't change this file path
-file_path = "/usr/local/share/datasets/airports.csv"
+file_path = '/usr/local/share/datasets/airports.csv'
 
 # Read in the airports data
 airports = spark.read.csv(file_path, header=True)

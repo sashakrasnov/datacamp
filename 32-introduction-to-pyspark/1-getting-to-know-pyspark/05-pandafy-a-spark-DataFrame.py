@@ -6,16 +6,22 @@ Sometimes it makes sense to then take that table and work with it locally using 
 This time the query counts the number of flights to each airport from SEA and PDX.
 
 Remember, there's already a SparkSession called spark in your workspace!
+'''
 
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+'''
 INSTRUCTIONS
-100 XP
-Run the query using the .sql() method. Save the result in flight_counts.
-Use the .toPandas() method on flight_counts to create a pandas DataFrame called pd_counts.
-Print the .head() of pd_counts to the console.
+
+*   Run the query using the .sql() method. Save the result in flight_counts.
+*   Use the .toPandas() method on flight_counts to create a pandas DataFrame called pd_counts.
+*   Print the .head() of pd_counts to the console.
 '''
 
 # Don't change this query
-query = "SELECT origin, dest, COUNT(*) as N FROM flights GROUP BY origin, dest"
+query = 'SELECT origin, dest, COUNT(*) as N FROM flights GROUP BY origin, dest'
 
 # Run the query
 flight_counts = spark.sql(query)

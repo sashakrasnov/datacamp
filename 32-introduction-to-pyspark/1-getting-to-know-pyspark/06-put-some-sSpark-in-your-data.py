@@ -14,14 +14,23 @@ There is also the method .createOrReplaceTempView(). This safely creates a new t
 Check out the diagram to see all the different ways your Spark data structures interact with each other.
 
 There's already a SparkSession called spark in your workspace, numpy has been imported as np, and pandas as pd.
+'''
 
+import pandas as pd
+import numpy as np
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+'''
 INSTRUCTIONS
-100 XP
-The code to create a pandas DataFrame of random numbers has already been provided and saved under pd_temp.
-Create a Spark DataFrame called spark_temp by calling the .createDataFrame() method with pd_temp as the argument.
-Examine the list of tables in your Spark cluster and verify that the new DataFrame is not present. Remember you can use spark.catalog.listTables() to do so.
-Register spark_temp as a temporary table named "temp" using the .createOrReplaceTempView() method. Rememeber that the table name is set including it as the only argument!
-Examine the list of tables again!
+
+*   The code to create a pandas DataFrame of random numbers has already been provided and saved under pd_temp.
+*   Create a Spark DataFrame called spark_temp by calling the .createDataFrame() method with pd_temp as the argument.
+*   Examine the list of tables in your Spark cluster and verify that the new DataFrame is not present. Remember you can use spark.catalog.listTables() to do so.
+*   Register spark_temp as a temporary table named "temp" using the .createOrReplaceTempView() method. Rememeber that the table name is set including it as the only argument!
+*   Examine the list of tables again!
 '''
 
 # Create pd_temp

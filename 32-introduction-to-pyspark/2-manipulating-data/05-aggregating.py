@@ -7,11 +7,19 @@ This creates a GroupedData object (so you can use the .min() method), then finds
 Now you're ready to do some aggregating of your own!
 
 A SparkSession called spark is already in your workspace, along with the Spark DataFrame flights.
+'''
 
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+flights = spark.table('flights')
+
+'''
 INSTRUCTIONS
-100 XP
-Find the length of the shortest (in terms of distance) flight that left PDX by first .filter()ing and using the .min() method. Perform the filtering by refrencing the column directly, not passing a SQL string.
-Find the length of the longest (in terms of time) flight that left SEA by filter()ing and using the .max() method. Perform the filtering by refrencing the column directly, not passing a SQL string.
+
+*   Find the length of the shortest (in terms of distance) flight that left PDX by first .filter()ing and using the .min() method. Perform the filtering by refrencing the column directly, not passing a SQL string.
+*   Find the length of the longest (in terms of time) flight that left SEA by filter()ing and using the .max() method. Perform the filtering by refrencing the column directly, not passing a SQL string.
 '''
 
 # Find the shortest flight from PDX in terms of distance
