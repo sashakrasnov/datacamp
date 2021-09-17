@@ -7,8 +7,18 @@ The four values that have been calculated previously have been loaded for you (c
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+import scipy.stats as sci
+
+def get_ci(value, cl, sd):
+    loc = sci.norm.ppf(1 - cl/2)
+    rng_val = sci.norm.cdf(loc - value/sd)
+
+    lwr_bnd = value - rng_val
+    upr_bnd = value + rng_val 
+
+    return_val = (lwr_bnd, upr_bnd)
+
+    return(return_val)
 
 '''
 INSTRUCTIONS
@@ -28,6 +38,7 @@ lift_sd = lift_variance**0.5
 
 # Find the confidence intervals with cl = 0.95
 confidence_interval = get_ci(lift_mean, 0.95, lift_sd)
+
 print(confidence_interval)
 
 '''

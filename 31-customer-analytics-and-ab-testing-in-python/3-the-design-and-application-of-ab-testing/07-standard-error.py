@@ -6,9 +6,20 @@ Previously we observed how to calculate the standard error using the .std() meth
 Loaded for you is our inner merged dataset user_purchases as well as the computed conversion_rate value.
 '''
 
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+
+purchase_data = pd.read_csv(
+    '../datasets/user_purchases.csv',
+        parse_dates = ['date'],
+        index_col = 0,
+        dtype = {
+            'uid': 'int',
+            'first_week_purchases': 'bool',
+            'age': 'int8'
+        }
+    ).rename(columns={'first_week_purchases': 'purchase'})
+
+conversion_rate = 0.01
 
 '''
 INSTRUCTIONS

@@ -10,7 +10,8 @@ Before getting started, it's good practice to explore this purchase_data DataFra
 
 import pandas as pd 
 
-customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date':'date'})
+customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date': 'date'})
+
 app_purchases = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
 
 purchase_data = app_purchases.merge(customer_data, on=['uid'], how='inner')
@@ -46,7 +47,10 @@ INSTRUCTIONS 3/3
 '''
 
 # Calculate the mean and median of price and age
-purchase_summary = purchase_data.agg({'price': ['mean', 'median'], 'age': ['mean', 'median']})
+purchase_summary = purchase_data.agg({
+    'price': ['mean', 'median'],
+    'age': ['mean', 'median']
+})
 
 # Examine the output 
 print(purchase_summary)

@@ -8,17 +8,16 @@ Following this, you'll compare the values across these subsets, which will give 
 The purchase_data DataFrame from the previous exercise has been pre-loaded for you. As a reminder, it contains purchases merged with user demographics.
 '''
 
-import pandas as pd 
+import pandas as pd
 
 from datetime import timedelta
 
-#customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date':'date'})
-customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date'])
+customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).astype({'reg_date': 'datetime64[ns]'})
 app_purchases = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
 
 purchase_data = app_purchases.merge(customer_data, on=['uid'], how='inner')
 
-current_date = pd.Timestamp(2018,3,17)
+current_date = pd.Timestamp(2018, 3, 17)
 
 '''
 INSTRUCTIONS 1/4
@@ -54,9 +53,9 @@ max_purchase_date = current_date - timedelta(days=28)
 purchase_data_filt = purchase_data[purchase_data.reg_date < max_purchase_date]
 
 # Filter to contain only purchases within the first 28 days of registration
-purchase_data_filt = purchase_data_filt[(purchase_data_filt.date <
-                        purchase_data_filt.reg_date + 
-                        timedelta(days=28))]
+purchase_data_filt = purchase_data_filt[
+    purchase_data_filt.date < purchase_data_filt.reg_date + timedelta(days=28)
+]
 
 '''
 INSTRUCTIONS 4/4

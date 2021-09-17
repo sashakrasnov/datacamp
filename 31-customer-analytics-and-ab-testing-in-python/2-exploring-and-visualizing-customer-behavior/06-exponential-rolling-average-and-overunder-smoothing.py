@@ -10,6 +10,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+daily_revenue = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date']).groupby('date').sum().rename(columns={'price': 'revenue'}).reset_index()
+
 '''
 INSTRUCTIONS
 
@@ -31,4 +33,5 @@ daily_revenue['large_scale'] = daily_revenue.revenue.ewm(span=500).mean()
 # Plot 'date' on the x-axis and, our three averages and 'revenue'
 # on the y-axis
 daily_revenue.plot(x='date', y =['revenue', 'small_scale', 'medium_scale', 'large_scale'])
+
 plt.show()

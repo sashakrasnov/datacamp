@@ -5,8 +5,6 @@ In this exercise, you'll develop your intuition for how various parameter values
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
 import scipy.stats as sci
 
 def get_ci(value, cl, sd):

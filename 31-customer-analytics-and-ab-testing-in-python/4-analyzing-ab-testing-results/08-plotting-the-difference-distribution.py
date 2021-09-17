@@ -30,9 +30,10 @@ lift_line = np.linspace(lift_mean - 3 * lift_sd, lift_mean + 3 * lift_sd, 100)
 plt.plot(lift_line, mlab.normpdf(lift_line, lift_mean, lift_sd))
 
 # Add the annotation lines
-plt.axvline(x = lift_mean, color = 'green')
-plt.axvline(x = lwr_ci, color = 'red')
-plt.axvline(x = upr_ci, color = 'red')
+plt.axvline(x=lift_mean, color='green')
+plt.axvline(x=lwr_ci, color='red')
+plt.axvline(x=upr_ci, color='red')
+
 plt.show()
 
 '''

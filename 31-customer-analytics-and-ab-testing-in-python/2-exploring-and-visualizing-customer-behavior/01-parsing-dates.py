@@ -21,6 +21,7 @@ Saturday January 27, 2017
 
 # Provide the correct format for the date
 date_data_one = pd.to_datetime(date_data_one, format='%A %B %d, %Y')
+
 print(date_data_one)
 
 '''
@@ -33,6 +34,7 @@ Saturday January 27, 2017
 
 # Provide the correct format for the date
 date_data_two = pd.to_datetime(date_data_two, format='%Y-%m-%d')
+
 print(date_data_two)
 
 '''
@@ -45,6 +47,7 @@ INSTRUCTIONS 3/4
 
 # Provide the correct format for the date
 date_data_three = pd.to_datetime(date_data_three, format='%m/%d/%Y')
+
 print(date_data_three)
 
 '''
@@ -57,4 +60,5 @@ INSTRUCTIONS 4/4
 
 # Provide the correct format for the date
 date_data_four = pd.to_datetime(date_data_four, format='%Y %B %d %H:%M')
+
 print(date_data_four)

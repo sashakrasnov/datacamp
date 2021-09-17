@@ -4,7 +4,7 @@ Examining the different cohorts
 To finish this lesson, you're now going to plot by 'country' and then by 'device' and examine the results. Hopefully you will see the observed lift across all groups as designed. This would point to the change being the cause of the lift, not some other event impacting the purchase rate.
 '''
 
-import pandas as pd 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -12,9 +12,13 @@ user_purchases_country = pd.read_csv('../datasets/user_purchases_country.csv', p
 user_purchases_device = pd.read_csv('../datasets/user_purchases_device.csv', parse_dates=['reg_date'])
 
 country_pivot = pd.pivot_table(user_purchases_country, values=['first_week_purchases'], columns=['country'], index=['reg_date'])
+country_pivot.columns = country_pivot.columns.droplevel()
+
 print(country_pivot.head())
 
 device_pivot = pd.pivot_table(user_purchases_device, values=['first_week_purchases'], columns=['device'], index=['reg_date'])
+device_pivot.columns = device_pivot.columns.droplevel()
+
 print(device_pivot.head())
 
 '''
@@ -24,7 +28,8 @@ INSTRUCTIONS 1/2
 '''
 
 # Plot the average first week purchases for each country by registration date
-country_pivot.plot(x='reg_date', y=['USA', 'CAN', 'FRA', 'BRA', 'TUR', 'DEU'])
+country_pivot.reset_index().plot(x='reg_date', y=['USA', 'CAN', 'FRA', 'BRA', 'TUR', 'DEU'])
+
 plt.show()
 
 '''
@@ -34,5 +39,6 @@ INSTRUCTIONS 2/2
 '''
 
 # Plot the average first week purchases for each device by registration date
-device_pivot.plot(x='reg_date', y=['and', 'iOS'])
+device_pivot.reset_index().plot(x='reg_date', y=['and', 'iOS'])
+
 plt.show()

@@ -4,9 +4,34 @@ Sensitivity
 Continuing with the conversion rate metric, you will now utilize the results from the previous exercise to evaluate a few potential sensitivities that we could make use of in planning our experiment. The baseline conversion_rate has been loaded for you, calculated in the same way we saw in Chapter One. Additionally the daily_paywall_views and daily_purchases values you calculated previously have been loaded.
 '''
 
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+
+purchase_data = pd.read_csv(
+    '../datasets/user_purchases.csv',
+        parse_dates = ['date'],
+        index_col = 0,
+        dtype = {
+            'uid': 'int',
+            'first_week_purchases': 'bool',
+            'age': 'int8'
+        }
+    ).rename(columns={'first_week_purchases': 'purchase'})
+
+#demographics_data = purchases[['uid', 'reg_date', 'device', 'gender', 'country', 'age']]
+#paywall_views = purchases[['uid', 'date', 'purchase', 'sku', 'price']]
+
+#purchase_data = demographics_data.merge(paywall_views, how='inner', on=['uid'])
+#purchase_data.date = purchase_data.date.dt.floor('d')
+
+daily_purchase_data = purchase_data.groupby(by=['date'], as_index=False)
+daily_purchase_data = daily_purchase_data.agg({'purchase': ['sum', 'count']})
+
+daily_purchases = daily_purchase_data.purchase['sum'].mean()
+daily_paywall_views = daily_purchase_data.purchase['count'].mean()
+daily_purchases = daily_purchases * 1000
+daily_paywall_views = daily_paywall_views * 1000
+
+conversion_rate = 0.01
 
 '''
 INSTRUCTIONS 1/3

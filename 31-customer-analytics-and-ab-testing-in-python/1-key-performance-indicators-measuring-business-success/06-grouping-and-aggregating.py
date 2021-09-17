@@ -11,10 +11,15 @@ The purchase_data DataFrame from the previous exercise has been pre-loaded for y
 import pandas as pd 
 
 customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date':'date'})
+
 app_purchases = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
 
 purchase_data = app_purchases.merge(customer_data, on=['uid'], how='inner')
-purchase_summary = purchase_data.agg({'price': ['mean', 'median'], 'age': ['mean', 'median']})
+
+purchase_summary = purchase_data.agg({
+    'price': ['mean', 'median'],
+    'age': ['mean', 'median']
+})
 
 '''
 INSTRUCTIONS
@@ -28,7 +33,9 @@ INSTRUCTIONS
 grouped_purchase_data = purchase_data.groupby(by=['device', 'gender'])
 
 # Aggregate the data
-purchase_summary = grouped_purchase_data.agg({'price': ['mean', 'median', 'std']})
+purchase_summary = grouped_purchase_data.agg({
+    'price': ['mean', 'median', 'std']
+})
 
 # Examine the results
 print(purchase_summary)

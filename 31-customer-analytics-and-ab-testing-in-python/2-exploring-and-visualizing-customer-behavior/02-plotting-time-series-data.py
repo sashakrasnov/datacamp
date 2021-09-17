@@ -8,7 +8,7 @@ The dataset user_purchases has been joined to the demographics data and properly
 We will try to view the impact of this change by looking at a graph of purchases as described in the instructions.
 '''
 
-import pandas as pd 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -34,4 +34,5 @@ user_purchases.reset_index(inplace=True)
 
 # Plot the results
 user_purchases.plot(x='reg_date', y='first_week_purchases')
+
 plt.show()

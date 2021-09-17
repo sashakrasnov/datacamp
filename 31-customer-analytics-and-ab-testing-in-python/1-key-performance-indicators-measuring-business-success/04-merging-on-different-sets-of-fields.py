@@ -8,9 +8,10 @@ In this exercise you will explore merging on both of these columns and looking a
 The two datasets from the previous exercise - customer_data and app_purchases- have been loaded for you, with 'reg_date' in customer_data renamed to 'date'.
 '''
 
-import pandas as pd 
+import pandas as pd
 
-customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date':'date'})
+customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date': 'date'}).astype({'date': 'datetime64[ns]'})
+
 app_purchases = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
 
 '''

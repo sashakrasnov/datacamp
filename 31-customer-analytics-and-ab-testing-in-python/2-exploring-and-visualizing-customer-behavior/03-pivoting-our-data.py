@@ -10,7 +10,7 @@ As a reminder, .pivot_table() has the following signature:
 |   pd.pivot_table(data, values, columns, index)
 '''
 
-import pandas as pd 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -25,6 +25,7 @@ INSTRUCTIONS 1/2
 
 # Pivot the data
 country_pivot = pd.pivot_table(user_purchases_country, values=['first_week_purchases'], columns=['country'], index=['reg_date'])
+
 print(country_pivot.head())
 
 '''
@@ -35,4 +36,5 @@ INSTRUCTIONS 2/2
 
 # Pivot the data
 device_pivot = pd.pivot_table(user_purchases_device, values=['first_week_purchases'], columns=['device'], index=['reg_date'])
+
 print(device_pivot.head())

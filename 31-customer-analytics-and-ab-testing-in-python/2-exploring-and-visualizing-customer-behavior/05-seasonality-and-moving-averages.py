@@ -8,9 +8,11 @@ In this exercise, we will correct for weekly, monthly, and yearly seasonality an
 The revenue data is loaded for you as daily_revenue.
 '''
 
-import pandas as pd 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
+daily_revenue = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date']).groupby('date').sum().rename(columns={'price': 'revenue'}).reset_index()
 
 '''
 INSTRUCTIONS
@@ -22,14 +24,15 @@ INSTRUCTIONS
 '''
 
 # Compute 7_day_rev
-daily_revenue['7_day_rev'] = daily_revenue.revenue.rolling(window=7,center=False).mean()
+daily_revenue['7_day_rev'] = daily_revenue.revenue.rolling(window=7, center=False).mean()
 
 # Compute 28_day_rev
-daily_revenue['28_day_rev'] = daily_revenue.revenue.rolling(window=28,center=False).mean()
+daily_revenue['28_day_rev'] = daily_revenue.revenue.rolling(window=28, center=False).mean()
     
 # Compute 365_day_rev
-daily_revenue['365_day_rev'] = daily_revenue.revenue.rolling(window=365,center=False).mean()
+daily_revenue['365_day_rev'] = daily_revenue.revenue.rolling(window=365, center=False).mean()
     
 # Plot date, and revenue, along with the 3 rolling functions (in order)    
 daily_revenue.plot(x='date', y=['revenue', '7_day_rev', '28_day_rev', '365_day_rev', ])
+
 plt.show()

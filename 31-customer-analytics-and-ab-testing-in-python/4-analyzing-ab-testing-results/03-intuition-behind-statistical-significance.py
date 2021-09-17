@@ -10,14 +10,25 @@ In this exercise you will work to gain an intuitive understanding of statistical
 |       scale_two = test_conv * (1 - test_conv) * (1 / test_size)
 |       scale_val = (scale_one + scale_two)**0.5
 |
-|       p_value = 2 * stats.norm.cdf(lift, loc = 0, scale = scale_val )
+|       p_value = 2 * stats.norm.cdf(lift, loc = 0, scale = scale_val)
 |
 |       return p_value
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+from scipy import stats
+
+
+def get_pvalue(con_conv, test_conv, con_size, test_size):  
+    lift =  - abs(test_conv - con_conv)
+
+    scale_one = con_conv * (1 - con_conv) * (1 / con_size)
+    scale_two = test_conv * (1 - test_conv) * (1 / test_size)
+    scale_val = (scale_one + scale_two)**0.5
+
+    p_value = 2 * stats.norm.cdf(lift, loc = 0, scale = scale_val)
+
+    return p_value
 
 '''
 INSTRUCTIONS 1/3
@@ -27,6 +38,7 @@ INSTRUCTIONS 1/3
 
 # Get the p-value
 p_value = get_pvalue(con_conv=0.1, test_conv=0.17, con_size=1000, test_size=1000)
+
 print(p_value)
 
 '''
@@ -37,6 +49,7 @@ INSTRUCTIONS 2/3
 
 # Get the p-value
 p_value = get_pvalue(con_conv=0.1, test_conv=0.15, con_size=100, test_size=100)
+
 print(p_value)
 
 '''
@@ -47,6 +60,7 @@ INSTRUCTIONS 3/3
 
 # Get the p-value
 p_value = get_pvalue(con_conv=0.48, test_conv=0.50, con_size=1000, test_size=1000)
+
 print(p_value)
 
 '''

@@ -7,8 +7,20 @@ The four parameters needed for the p-value function are the two conversion rates
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+from scipy import stats
+
+
+def get_pvalue(con_conv, test_conv, con_size, test_size):  
+    lift =  - abs(test_conv - con_conv)
+
+    scale_one = con_conv * (1 - con_conv) * (1 / con_size)
+    scale_two = test_conv * (1 - test_conv) * (1 / test_size)
+    scale_val = (scale_one + scale_two)**0.5
+
+    p_value = 2 * stats.norm.cdf(lift, loc = 0, scale = scale_val)
+
+    return p_value
+
 
 cont_conv = 0.09096495570387314
 test_conv = 0.1020053238686779
@@ -23,13 +35,14 @@ INSTRUCTIONS
 
 # Compute the p-value
 p_value = get_pvalue(con_conv=cont_conv, test_conv=test_conv, con_size=cont_size, test_size=test_size)
+
 print(p_value)
 
 # Check for statistical significance
 if p_value >= 0.05:
-    print("Not Significant")
+    print('Not Significant')
 else:
-    print("Significant Result")
+    print('Significant Result')
 
 '''
 0.04900185792087508

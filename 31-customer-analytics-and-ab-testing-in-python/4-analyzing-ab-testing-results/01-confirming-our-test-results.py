@@ -7,8 +7,6 @@ The data from the test is loaded for you as "ab_test_results" and it has already
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
 
 '''
 INSTRUCTIONS 1/3
@@ -17,7 +15,8 @@ INSTRUCTIONS 1/3
 '''
 
 # Compute and print the results
-results = ab_test_results.groupby('group').agg({'uid': pd.Series.nunique}) 
+results = ab_test_results.groupby('group').agg({'uid': pd.Series.nunique})
+
 print(results)
 
 '''
@@ -27,13 +26,14 @@ INSTRUCTIONS 2/3
 '''
 
 # Find the unique users in each group 
-results = ab_test_results.groupby('group').agg({'uid': pd.Series.nunique}) 
+results = ab_test_results.groupby('group').agg({'uid': pd.Series.nunique})
 
 # Find the overall number of unique users using "len" and "unique"
 unique_users = len(ab_test_results.uid.unique())
 
 # Find the percentage in each group
 results = results / unique_users * 100
+
 print(results)
 
 '''
@@ -50,5 +50,5 @@ unique_users = len(ab_test_results.uid.unique())
 
 # Find the percentage in each group
 results = results / unique_users * 100
-print(results)
 
+print(results)

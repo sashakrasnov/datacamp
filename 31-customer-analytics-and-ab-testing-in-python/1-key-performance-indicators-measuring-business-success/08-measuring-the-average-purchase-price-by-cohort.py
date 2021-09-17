@@ -13,13 +13,12 @@ import numpy as np
 
 from datetime import timedelta
 
-#customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).rename(columns={'reg_date':'date'})
-customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date'])
+customer_data = pd.read_csv('../datasets/customer_data.csv', parse_dates=['reg_date']).astype({'reg_date': 'datetime64[ns]'})
 app_purchases = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
 
 purchase_data = app_purchases.merge(customer_data, on=['uid'], how='inner')
 
-current_date = pd.Timestamp(2018,3,17)
+current_date = pd.Timestamp(2018, 3, 17)
 
 '''
 INSTRUCTIONS 1/3
@@ -35,9 +34,10 @@ The price for purchases where:
 max_reg_date = current_date - timedelta(days=28)
 
 # Find the month 1 values
-month1 = np.where((purchase_data.reg_date < max_reg_date) &
-                 (purchase_data.date < purchase_data.reg_date + timedelta(days=28)),
-                 purchase_data.price, np.NaN)
+month1 = np.where(
+    (purchase_data.reg_date < max_reg_date) & (purchase_data.date < purchase_data.reg_date + timedelta(days=28)),
+    purchase_data.price, np.NaN
+)
                  
 # Update the value in the DataFrame
 purchase_data['month1'] = month1
@@ -52,9 +52,10 @@ INSTRUCTIONS 2/3
 max_reg_date = current_date - timedelta(days=28)
 
 # Find the month 1 values 
-month1 = np.where((purchase_data.reg_date < max_reg_date) &
-                 (purchase_data.date <= purchase_data.reg_date + timedelta(days=28)),
-                 purchase_data.price, np.NaN)
+month1 = np.where(
+    (purchase_data.reg_date < max_reg_date) & (purchase_data.date <= purchase_data.reg_date + timedelta(days=28)),
+    purchase_data.price, np.NaN
+)
                  
 # Update the value in the DataFrame 
 purchase_data['month1'] = month1
@@ -72,9 +73,10 @@ INSTRUCTIONS 3/3
 max_purchase_date = current_date - timedelta(days=28)
 
 # Find the Month 1 Values using the conditions provided in the instructions 
-month1 = np.where((purchase_data.reg_date < max_purchase_date) &
-                 (purchase_data.date <= purchase_data.reg_date + timedelta(days=28)),
-                 purchase_data.price, np.NaN)
+month1 = np.where(
+    (purchase_data.reg_date < max_purchase_date) & (purchase_data.date <= purchase_data.reg_date + timedelta(days=28)),
+    purchase_data.price, np.NaN
+)
 
 # Update the value in the DataFrame 
 purchase_data['month1'] = month1
@@ -83,9 +85,10 @@ purchase_data['month1'] = month1
 purchase_data_upd = purchase_data.groupby(by=['gender', 'device'], as_index=False) 
 
 # Aggregate the month1 and price data 
-purchase_summary = purchase_data_upd.agg(
-                        {'month1': ['mean', 'median'],
-                        'price': ['mean', 'median']})
+purchase_summary = purchase_data_upd.agg({
+    'month1': ['mean', 'median'],
+    'price': ['mean', 'median']
+})
 
 # Examine the results 
 print(purchase_summary)

@@ -4,9 +4,21 @@ Conversion rate sensitivities
 To mix things up, we will spend the next few exercises working with the conversion rate metric we explored in Chapter One. Specifically you will work to examine what that value becomes under different percentage lifts and look at how many more conversions per day this change would result in. First you will find the average number of paywall views and purchases that were made per day in our observed sample. Good luck!
 '''
 
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+
+purchases = pd.read_csv(
+    '../datasets/user_purchases.csv',
+        parse_dates = ['date'],
+        index_col = 0,
+        dtype = {
+            'uid': 'int',
+            'first_week_purchases': 'bool',
+            'age': 'int8'
+        }
+    ).rename(columns={'first_week_purchases': 'purchase'})
+
+demographics_data = purchases[['uid', 'reg_date', 'device', 'gender', 'country', 'age']]
+paywall_views = purchases[['uid', 'date', 'purchase', 'sku', 'price']]
 
 '''
 INSTRUCTIONS

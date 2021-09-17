@@ -12,6 +12,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+purchase_data = pd.read_csv('../datasets/inapp_purchases.csv', parse_dates=['date'])
+
 '''
 INSTRUCTIONS
 
@@ -32,4 +34,5 @@ revenue_user_day = purchase_data_agg.price.sum()
 
 # Calculate the final average
 revenue_user_day = revenue_user_day.price.mean()
+
 print(revenue_user_day)

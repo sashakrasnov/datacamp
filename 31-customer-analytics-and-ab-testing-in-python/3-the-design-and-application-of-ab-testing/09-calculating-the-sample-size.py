@@ -21,8 +21,53 @@ You will continue working with the paywall conversion rate data for this exercis
 '''
 
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
+
+from scipy import stats
+
+def get_power(n, p1, p2, cl):
+    alpha = 1 - cl
+    qu = stats.norm.ppf(1 - alpha/2)
+    diff = abs(p2 - p1)
+    bp = (p1 + p2) / 2
+    
+    v1 = p1 * (1 - p1)
+    v2 = p2 * (1 - p2)
+    bv = bp * (1 - bp)
+    
+    power_part_one = stats.norm.cdf((n**0.5 * diff - qu * (2 * bv)**0.5) / (v1+v2) ** 0.5)
+    power_part_two = 1 - stats.norm.cdf((n**0.5 * diff + qu * (2 * bv)**0.5) / (v1+v2) ** 0.5)
+    
+    power = power_part_one + power_part_two
+    
+    return power
+
+
+def get_sample_size(power, p1, p2, cl, max_n=1000000):
+    n = 1 
+    while n <= max_n:
+        tmp_power = get_power(n, p1, p2, cl)
+
+        if tmp_power >= power: 
+            return n 
+        else: 
+            n = n + 100
+
+    return 'Increase Max N Value'
+
+
+purchases = pd.read_csv(
+    '../datasets/user_purchases.csv',
+        parse_dates = ['date'],
+        index_col = 0,
+        dtype = {
+            'uid': 'int',
+            'first_week_purchases': 'bool',
+            'age': 'int8'
+        }
+    ).rename(columns={'first_week_purchases': 'purchase'})
+
+demographics_data = purchases[['uid', 'reg_date', 'device', 'gender', 'country', 'age']]
+paywall_views = purchases[['uid', 'date', 'purchase', 'sku', 'price']]
 
 '''
 INSTRUCTIONS 1/3
@@ -57,6 +102,7 @@ conversion_rate = (sum(purchase_data.purchase) / purchase_data.purchase.count())
 # Percent Lift: 0.1
 p2 = conversion_rate * (1 + 0.1)
 sample_size = get_sample_size(0.8, conversion_rate, p2, 0.90)
+
 print(sample_size)
 
 '''
@@ -76,5 +122,5 @@ conversion_rate = (sum(purchase_data.purchase) / purchase_data.purchase.count())
 # Percent Lift: 0.1
 p2 = conversion_rate * (1 + 0.1)
 sample_size = get_sample_size(0.95, conversion_rate, p2, 0.90)
-print(sample_size)
 
+print(sample_size)
